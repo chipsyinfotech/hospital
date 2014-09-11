@@ -40,6 +40,7 @@ public class HCFontManager {
 	public static final int FNT_TITLE = 11;
 	public static final int FNT_TEXT = 12;
 	public static final int FNT_AMOUNT = 13;
+	public static final int FNT_TEXTS = 14;
 
 
 	public enum Font {
@@ -104,6 +105,8 @@ public class HCFontManager {
 			return R.color.white;
 		case FNT_TEXT:
 			return R.color.red;
+		case FNT_TEXTS:
+			return android.R.color.black;
 		case FNT_WELCOME:
 			return R.color.welcome;
 
@@ -124,6 +127,8 @@ public class HCFontManager {
 		case FNT_EDIT_LARGE:
 		case FNT_EDIT_SMALL:
 		case FNT_MENU:
+			return Font.FNT_REGULAR;
+		case FNT_TEXTS:
 			return Font.FNT_REGULAR;
 		case FNT_ABOUT:
 			return Font.FNT_BOLD;
@@ -151,6 +156,8 @@ public class HCFontManager {
 		case FNT_BUTTON:
 			return R.dimen.sz_ms;
 		case FNT_TEXT:
+			return R.dimen.sz_ss;
+		case FNT_TEXTS:
 			return R.dimen.sz_ss;
 		case FNT_MENU:
 			return R.dimen.sz_sl;

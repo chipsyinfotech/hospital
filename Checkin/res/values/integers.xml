@@ -29,6 +29,7 @@
     <integer name="fnt_hm_nm">11</integer>
     <integer name="fnt_text" >12</integer>
     <integer name="fnt_amount">13</integer>
+       <integer name="fnt_texts">14</integer>
 
 </resources>
 

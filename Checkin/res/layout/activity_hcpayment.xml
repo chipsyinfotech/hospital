@@ -1,11 +1,9 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:checkin="http://schemas.android.com/apk/res/com.mavericks.checkin"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
 
     <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:checkin="http://schemas.android.com/apk/res/com.mavericks.checkin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/white_bar"
         android:orientation="vertical" >
 
@@ -31,7 +29,7 @@
         <ImageView
             android:id="@+id/img_div1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/img_header"
             android:layout_marginTop="@dimen/margin_s"
             android:background="@drawable/divider_line"
@@ -45,7 +43,7 @@
             android:layout_marginLeft="@dimen/margin_ms"
             android:layout_marginTop="@dimen/margin_lx"
             android:text="@string/register"
-            checkin:font_type="@integer/fnt_btn" />
+            checkin:font_type="@integer/fnt_texts" />
 
         <com.mavericks.checkin.views.HCTextView
             android:id="@+id/text_rupees"
@@ -54,7 +52,7 @@
             android:layout_alignBottom="@+id/text_register"
             android:layout_alignParentRight="true"
             android:text="@string/rupees"
-            checkin:font_type="@integer/fnt_btn" />
+            checkin:font_type="@integer/fnt_texts" />
 
         <com.mavericks.checkin.views.HCTextView
             android:id="@+id/text_consultant"
@@ -64,7 +62,7 @@
             android:layout_marginLeft="@dimen/margin_ms"
             android:layout_marginTop="@dimen/margin_lx"
             android:text="@string/consult"
-            checkin:font_type="@integer/fnt_btn" />
+            checkin:font_type="@integer/fnt_texts" />
 
         <com.mavericks.checkin.views.HCTextView
             android:id="@+id/text_rupee"
@@ -73,7 +71,7 @@
             android:layout_alignBottom="@+id/text_consultant"
             android:layout_alignParentRight="true"
             android:text="@string/rupees"
-            checkin:font_type="@integer/fnt_btn" />
+            checkin:font_type="@integer/fnt_texts" />
 
         <com.mavericks.checkin.views.HCTextView
             android:id="@+id/text_check"
@@ -83,7 +81,7 @@
             android:layout_marginLeft="@dimen/margin_ms"
             android:layout_marginTop="@dimen/margin_lx"
             android:text="@string/check"
-            checkin:font_type="@integer/fnt_btn" />
+            checkin:font_type="@integer/fnt_texts" />
 
         <com.mavericks.checkin.views.HCTextView
             android:id="@+id/text_convience"
@@ -93,7 +91,7 @@
             android:layout_marginLeft="@dimen/margin_ms"
             android:layout_marginTop="@dimen/margin_s"
             android:text="@string/convience"
-            checkin:font_type="@integer/fnt_btn" />
+            checkin:font_type="@integer/fnt_texts" />
 
         <com.mavericks.checkin.views.HCTextView
             android:id="@+id/text_rup"
@@ -102,12 +100,12 @@
             android:layout_alignBottom="@+id/text_convience"
             android:layout_alignParentRight="true"
             android:text="@string/rupees"
-            checkin:font_type="@integer/fnt_btn" />
+            checkin:font_type="@integer/fnt_texts" />
 
         <ImageView
             android:id="@+id/img_div2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/text_convience"
             android:layout_marginTop="@dimen/margin_ms"
             android:background="@drawable/divider_line"
@@ -132,21 +130,24 @@
             android:text="@string/rupees"
             checkin:font_type="@integer/fnt_text" />
 
-        <ImageView
+        <CheckBox
             android:id="@+id/img_priority"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_rupi"
             android:layout_marginTop="@dimen/margin_lx"
             android:contentDescription="@string/about"
-            android:src="@drawable/priority_button_non_press" />
+               android:button="@drawable/prior"
+             />
 
         <com.mavericks.checkin.views.HCTextView
             android:id="@+id/text_prior"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/img_priority"
-            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/img_priority"
+            android:layout_below="@+id/text_rupi"
+              android:layout_marginTop="@dimen/margin_lx"
+           
             android:text="@string/priority"
             checkin:font_type="@integer/fnt_text" />
 
@@ -155,10 +156,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_prior"
-            android:layout_marginLeft="@dimen/margin_ms"
+            android:layout_marginLeft="@dimen/margin_xs"
             android:layout_marginTop="@dimen/margin_s"
-            android:text="@string/amount"
-            checkin:font_type="@integer/fnt_btn" />
+            android:text="@string/add"
+            checkin:font_type="@integer/fnt_texts" />
+
+           <com.mavericks.checkin.views.HCButton
+               android:id="@+id/text_checks"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xx"
+               android:layout_alignParentBottom="true"
+               android:layout_alignParentRight="true"
+               android:background="@drawable/make_payment_button"
+               checkin:font_type="@integer/fnt_text" />
+
     </RelativeLayout>
 
-</ScrollView>

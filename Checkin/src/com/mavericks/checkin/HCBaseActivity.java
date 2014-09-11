@@ -17,7 +17,7 @@
 //
 package com.mavericks.checkin;
 
-//Base activity first
+
 
 
 import android.app.Activity;
