@@ -3,136 +3,162 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <RelativeLayout
+    <LinearLayout
+        
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/white_bar"
         android:orientation="vertical" >
 
-        <RelativeLayout
-            android:id="@+id/rel_register"
+        <LinearLayout
+            android:id="@+id/lin_lay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/white_bar"
             android:orientation="vertical" >
 
-            <ImageView
-                android:id="@+id/img_header"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:id="@+id/rel_register"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_sm"
-                android:layout_marginTop="@dimen/margin_s"
-                android:src="@drawable/hospial_logo"
-                android:contentDescription="@string/about" />
-            
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_sm"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/hospial_logo" />
+
+                <ImageView
+                    android:id="@+id/img_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/margin_sm"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:background="@drawable/info_icon"
+                    android:contentDescription="@string/about" />
+            </RelativeLayout>
 
             <ImageView
                 android:id="@+id/img_div1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/img_header"
                 android:layout_marginTop="@dimen/margin_s"
                 android:background="@drawable/divider_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_select"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_div1"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/select_hospital_icon" />
-
-            <Spinner
-                android:id="@+id/spinner_hospital"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_select"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_toRightOf="@+id/img_select"
-                android:prompt="@string/date" />
-
-            <ImageView
-                android:id="@+id/img_line1"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/spinner_hospital"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/select_hospital_icon" />
+
+                <Spinner
+                    android:id="@+id/spinner_hospital"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:prompt="@string/date" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/tab_select"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_special"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line1"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/specialization_icon" />
-
-            <Spinner
-                android:id="@+id/spinner_special"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_special"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_toRightOf="@+id/img_special"
-                android:prompt="@string/date" />
-
-            <ImageView
-                android:id="@+id/img_line2"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/spinner_special"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_special"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/specialization_icon" />
+
+                <Spinner
+                    android:id="@+id/spinner_special"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:prompt="@string/date" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/tab_special"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line2"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/date_icon" />
-
-            <Spinner
-                android:id="@+id/spinner_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_date"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_toRightOf="@+id/img_special"
-                android:prompt="@string/date" />
-
-            <ImageView
-                android:id="@+id/img_line3"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/spinner_date"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/date_icon" />
+
+                <Spinner
+                    android:id="@+id/spinner_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:prompt="@string/date" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/tab_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <com.mavericks.checkin.views.HCTextView
-                android:id="@+id/text_appointment"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="@dimen/margin_ms"
-                android:layout_below="@+id/img_line3"
-                android:layout_marginTop="@dimen/margin_s"
-                android:text="@string/appointment"
-                checkin:font_type="@integer/fnt_btn" />
+                android:orientation="horizontal" >
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_appointment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:text="@string/appointment"
+                    checkin:font_type="@integer/fnt_btn" />
+            </LinearLayout>
 
             <RadioGroup
                 android:id="@+id/radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text_appointment"
                 android:orientation="horizontal" >
 
                 <com.mavericks.checkin.views.HCRadioButton
@@ -146,525 +172,572 @@
                     android:id="@+id/radio_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
                     android:button="@drawable/no"
                     checkin:font_type="@integer/fnt_btn" />
             </RadioGroup>
 
             <ImageView
-                android:id="@+id/img_line4"
+                android:id="@+id/tab_radio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/radio"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line4"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/user_icon" />
-
-            <Spinner
-                android:id="@+id/spinner_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_user"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_toRightOf="@+id/img_special"
-                android:prompt="@string/date" />
-
-            <ImageView
-                android:id="@+id/img_line5"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/spinner_user"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/user_icon" />
+
+                <Spinner
+                    android:id="@+id/spinner_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:prompt="@string/date" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/tab_doctor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line5"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/time_icon" />
-
-            <Spinner
-                android:id="@+id/spinner_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_time"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_toRightOf="@+id/img_time"
-                android:prompt="@string/date" />
-
-            <ImageView
-                android:id="@+id/img_line6"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/spinner_time"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/time_icon" />
+
+                <Spinner
+                    android:id="@+id/spinner_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:prompt="@string/date" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/tab_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
             <RadioGroup
                 android:id="@+id/visit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                
-                  android:button="@drawable/yes"
-                android:layout_below="@+id/img_line6"
+                android:button="@drawable/yes"
                 android:orientation="horizontal" >
 
                 <com.mavericks.checkin.views.HCRadioButton
                     android:id="@+id/radio_visit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    
-                      android:button="@drawable/visit"
+                    android:button="@drawable/visit"
                     checkin:font_type="@integer/fnt_btn" />
 
                 <com.mavericks.checkin.views.HCRadioButton
                     android:id="@+id/radio_revisit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                     android:button="@drawable/revisit"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:button="@drawable/revisit"
                     checkin:font_type="@integer/fnt_btn" />
             </RadioGroup>
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
-            android:id="@+id/rel_visit"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/rel_register"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:visibility="invisible" >
 
             <ImageView
-                android:id="@+id/img_line7"
+                android:id="@+id/tab_visit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_s"
                 android:background="@drawable/divider_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line7"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/user_icon" />
-
-            <com.mavericks.checkin.views.HCEditText
-                android:id="@+id/text_name"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_name"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:layout_toRightOf="@+id/img_name"
-                android:text="@string/pname"
-                checkin:font_type="@integer/fnt_edit_small" />
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_pname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/user_icon" />
+
+                <com.mavericks.checkin.views.HCEditText
+                    android:id="@+id/text_pname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:text="@string/pname"
+                    checkin:font_type="@integer/fnt_edit_small" />
+            </LinearLayout>
 
             <ImageView
-                android:id="@+id/img_line8"
+                android:id="@+id/tab_pname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text_name"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_fname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line8"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/user_icon" />
-
-            <com.mavericks.checkin.views.HCEditText
-                android:id="@+id/text_fname"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="@dimen/margin_ms"
-                android:layout_alignTop="@+id/img_fname"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:layout_toRightOf="@+id/img_name"
-                android:text="@string/fname"
-                checkin:font_type="@integer/fnt_edit_small" />
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_fname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/user_icon" />
+
+                <com.mavericks.checkin.views.HCEditText
+                    android:id="@+id/text_fname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:text="@string/fname"
+                    checkin:font_type="@integer/fnt_edit_small" />
+            </LinearLayout>
 
             <ImageView
-                android:id="@+id/img_line9"
+                android:id="@+id/tab_fname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text_fname"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line9"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/age_icon" />
-
-            <com.mavericks.checkin.views.HCEditText
-                android:id="@+id/text_age"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_age"
-                android:layout_below="@+id/text_fname"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_sl"
-                android:layout_toRightOf="@+id/img_age"
-                android:text="@string/age"
-                checkin:font_type="@integer/fnt_edit_small" />
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/age_icon" />
+
+                <com.mavericks.checkin.views.HCEditText
+                    android:id="@+id/text_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:text="@string/age"
+                    checkin:font_type="@integer/fnt_edit_small" />
+            </LinearLayout>
 
             <ImageView
-                android:id="@+id/img_line10"
+                android:id="@+id/tab_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text_age"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <com.mavericks.checkin.views.HCTextView
-                android:id="@+id/text_gender"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line10"
-                android:layout_marginTop="@dimen/margin_sl"
-                android:text="@string/gender"
-                checkin:font_type="@integer/fnt_btn" />
+                android:orientation="horizontal" >
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_sl"
+                    android:text="@string/gender"
+                    checkin:font_type="@integer/fnt_btn" />
+            </LinearLayout>
 
             <RadioGroup
                 android:id="@+id/radio_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text_gender"
                 android:orientation="horizontal" >
 
                 <com.mavericks.checkin.views.HCRadioButton
                     android:id="@+id/radioMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/male"
-                      android:button="@drawable/male"
+                    android:button="@drawable/male"
                     checkin:font_type="@integer/fnt_btn" />
 
                 <com.mavericks.checkin.views.HCRadioButton
                     android:id="@+id/radioFemale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/female"
-                     android:button="@drawable/female"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:button="@drawable/female"
                     checkin:font_type="@integer/fnt_btn" />
             </RadioGroup>
 
             <ImageView
-                android:id="@+id/img_line11"
+                android:id="@+id/tab_gender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/radio_button"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_hospital"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line11"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/hospital_number" />
-
-            <com.mavericks.checkin.views.HCEditText
-                android:id="@+id/text_hnumber"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_hospital"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:layout_toRightOf="@+id/img_hospital"
-                android:text="@string/hnumber"
-                checkin:font_type="@integer/fnt_edit_small" />
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_hospital"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/hospital_number" />
+
+                <com.mavericks.checkin.views.HCEditText
+                    android:id="@+id/text_hnumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:text="@string/hnumber"
+                    checkin:font_type="@integer/fnt_edit_small" />
+            </LinearLayout>
 
             <ImageView
-                android:id="@+id/img_line12"
+                android:id="@+id/tab_hnumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text_hnumber"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_call"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line12"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/call_icon" />
-
-            <com.mavericks.checkin.views.HCEditText
-                android:id="@+id/text_mobile"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_call"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:layout_toRightOf="@+id/img_call"
-                android:text="@string/mobile"
-                checkin:font_type="@integer/fnt_edit_small" />
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/call_icon" />
+
+                <com.mavericks.checkin.views.HCEditText
+                    android:id="@+id/text_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:text="@string/mobile"
+                    checkin:font_type="@integer/fnt_edit_small" />
+            </LinearLayout>
 
             <ImageView
-                android:id="@+id/img_line13"
+                android:id="@+id/tab_call"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text_mobile"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line13"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/mail_icon" />
-
-            <com.mavericks.checkin.views.HCEditText
-                android:id="@+id/text_hemail"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_email"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_sl"
-                android:layout_toRightOf="@+id/img_email"
-                android:text="@string/hemail"
-                checkin:font_type="@integer/fnt_edit_small" />
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/mail_icon" />
+
+                <com.mavericks.checkin.views.HCEditText
+                    android:id="@+id/text_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_sl"
+                    android:text="@string/hemail"
+                    checkin:font_type="@integer/fnt_edit_small" />
+            </LinearLayout>
 
             <ImageView
-                android:id="@+id/img_line14"
+                android:id="@+id/tab_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text_hemail"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line14"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/address_icon" />
-
-            <com.mavericks.checkin.views.HCEditText
-                android:id="@+id/text_address"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_address"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:layout_toRightOf="@+id/img_address"
-                android:text="@string/address"
-                checkin:font_type="@integer/fnt_edit_small" />
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/address_icon" />
+
+                <com.mavericks.checkin.views.HCEditText
+                    android:id="@+id/text_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:text="@string/address"
+                    checkin:font_type="@integer/fnt_edit_small" />
+            </LinearLayout>
 
             <ImageView
-                android:id="@+id/img_line15"
+                android:id="@+id/tab_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text_address"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line15"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/mail_icon" />
-
-            <com.mavericks.checkin.views.HCEditText
-                android:id="@+id/text_location"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_location"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:layout_toRightOf="@+id/img_location"
-                android:text="@string/location"
-                checkin:font_type="@integer/fnt_edit_small" />
+                android:orientation="horizontal" >
 
-            <com.mavericks.checkin.views.HCButton
-                android:id="@+id/text_checkin"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/img_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/map_icon" />
+
+                <com.mavericks.checkin.views.HCEditText
+                    android:id="@+id/text_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:text="@string/location"
+                    checkin:font_type="@integer/fnt_edit_small" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/tab_location"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/check_in_button"
-                checkin:font_type="@integer/fnt_text" />
-        </RelativeLayout>
+                android:layout_marginTop="@dimen/margin_s"
+                android:background="@drawable/tab_line"
+                android:contentDescription="@string/about" />
 
-        <RelativeLayout
-            android:id="@+id/rel_revisit"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+                <com.mavericks.checkin.views.HCButton
+                    android:id="@+id/text_checkin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/margin_xx"
+                    android:background="@drawable/check_in_button"
+                    checkin:font_type="@integer/fnt_text" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/rel_register" >
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-            <ImageView
-                android:id="@+id/img_rname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/user_icon" />
-
-            <com.mavericks.checkin.views.HCEditText
-                android:id="@+id/text_rname"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:layout_toRightOf="@+id/img_rname"
-                android:text="@string/pname"
-                checkin:font_type="@integer/fnt_edit_small" />
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_rname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/user_icon" />
+
+                <com.mavericks.checkin.views.HCEditText
+                    android:id="@+id/text_rname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:text="@string/pname"
+                    checkin:font_type="@integer/fnt_edit_small" />
+            </LinearLayout>
 
             <ImageView
-                android:id="@+id/img_line16"
+                android:id="@+id/tab_rname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text_rname"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_rhospital"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line16"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/hospital_number" />
-
-            <com.mavericks.checkin.views.HCEditText
-                android:id="@+id/text_rhnumber"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_rhospital"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:layout_toRightOf="@+id/img_rhospital"
-                android:text="@string/hnumber"
-                checkin:font_type="@integer/fnt_edit_small" />
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_rhospital"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/hospital_number" />
+
+                <com.mavericks.checkin.views.HCEditText
+                    android:id="@+id/text_rhnumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:text="@string/hnumber"
+                    checkin:font_type="@integer/fnt_edit_small" />
+            </LinearLayout>
 
             <ImageView
-                android:id="@+id/img_line17"
+                android:id="@+id/tab_rhospital"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text_rhnumber"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_rcall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line17"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/call_icon" />
-
-            <com.mavericks.checkin.views.HCEditText
-                android:id="@+id/text_rmobile"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_rcall"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:layout_toRightOf="@+id/img_rcall"
-                android:text="@string/mobile"
-                checkin:font_type="@integer/fnt_edit_small" />
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_rcall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/call_icon" />
+
+                <com.mavericks.checkin.views.HCEditText
+                    android:id="@+id/text_rmobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:text="@string/mobile"
+                    checkin:font_type="@integer/fnt_edit_small" />
+            </LinearLayout>
 
             <ImageView
-                android:id="@+id/img_line18"
+                android:id="@+id/tab_remail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text_rmobile"
                 android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
+                android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
-            <ImageView
-                android:id="@+id/img_remail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_line18"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_s"
-                android:contentDescription="@string/about"
-                android:src="@drawable/mail_icon" />
-
-            <com.mavericks.checkin.views.HCEditText
-                android:id="@+id/text_remail"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/img_remail"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginTop="@dimen/margin_sl"
-                android:layout_toRightOf="@+id/img_remail"
-                android:text="@string/hemail"
-                checkin:font_type="@integer/fnt_edit_small" />
+                android:orientation="horizontal" >
 
-            <com.mavericks.checkin.views.HCButton
-                android:id="@+id/text_rcheckin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/check_in_button"
-                checkin:font_type="@integer/fnt_text" />
-        </RelativeLayout>
-    </RelativeLayout>
+                <ImageView
+                    android:id="@+id/img_remail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:contentDescription="@string/about"
+                    android:src="@drawable/mail_icon" />
+
+                <com.mavericks.checkin.views.HCEditText
+                    android:id="@+id/text_remail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_sl"
+                    android:text="@string/hemail"
+                    checkin:font_type="@integer/fnt_edit_small" />
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+            
+                <com.mavericks.checkin.views.HCButton
+                    android:id="@+id/text_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/margin_xx"
+                    android:background="@drawable/check_in_button"
+                    checkin:font_type="@integer/fnt_text" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
 
 </ScrollView>
