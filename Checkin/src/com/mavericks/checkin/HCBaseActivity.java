@@ -17,7 +17,7 @@
 //
 package com.mavericks.checkin;
 
-//sssssssssssssssssssssssss
+//Base activity
 
 
 import android.app.Activity;
