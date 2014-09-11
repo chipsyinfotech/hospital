@@ -1,0 +1,46 @@
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.mavericks.abharan.ABHealthAndBeautyActivity" >
+
+    <RadioGroup android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/rad_list">
+        <RadioButton android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rad_latest"
+            android:text="Latest"/>
+        <RadioButton android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rad_watched"
+            android:text="Watched"/>
+    </RadioGroup>
+   <com.bulletnoid.android.widget.StaggeredGridView.StaggeredGridView
+        android:layout_below="@id/rad_latest"
+        android:id="@+id/list_health"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include
+        android:id="@+id/retry_frame"
+        layout="@layout/view_retry"
+        android:visibility="invisible" />
+
+    <include
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/prg_wt"
+        android:layout_height="@dimen/prg_ht"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        layout="@layout/view_progress_bar" />
+
+</RelativeLayout>

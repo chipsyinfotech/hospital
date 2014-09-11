@@ -1,0 +1,71 @@
+<resources>
+<dimen name="slidingmenu_width">250dip</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+    <dimen name="prg_wt">80dp</dimen>
+    <dimen name="prg_ht">80dp</dimen>
+    <dimen name="dlg_width">290dp</dimen>
+    <dimen name="btn_width_s">150dp</dimen>
+    <dimen name="btn_width_m">170dp</dimen>
+    <dimen name="btn_width">190dp</dimen>
+    <dimen name="btn_width_l">250dp</dimen>
+    <dimen name="btn_width_x">390dp</dimen>
+    <dimen name="btn_width_xl">440dp</dimen>
+    <dimen name="btn_height">240dp</dimen>
+    <dimen name="btn_height_s">150dp</dimen>
+     <dimen name="edt_height_s">60dp</dimen>
+        <dimen name="edit_height_sm">60dp</dimen>   
+         <dimen name="edit_height_mm">85dp</dimen> 
+           <dimen name="edit_height_mmm">300dp</dimen>          
+     <dimen name="edt_height_m">60dp</dimen>
+    <dimen name="edt_height_l">60dp</dimen>
+    <dimen name="title_height">130dp</dimen>
+    <dimen name="title_logo_wt">200dp</dimen>
+    <dimen name="pic_m_w">130dp</dimen>
+    <dimen name="pic_m_h">130dp</dimen>
+    <dimen name="pic_ms_h">350dp</dimen>
+    <dimen name="pic_ms_w">350dp</dimen>
+    <dimen name="pic_l_w">500dp</dimen>
+    <dimen name="pic_l_h">500dp</dimen>
+
+    <!-- Margins -->
+    <dimen name="margin_s">10dp</dimen>
+    <dimen name="margin_ss">12dp</dimen>
+    <dimen name="margin_sm">14dp</dimen>
+    <dimen name="margin_sl">16dp</dimen>
+    <dimen name="margin_sx">18dp</dimen>
+    <dimen name="margin_ms">30dp</dimen>
+    <dimen name="margin_mm">22dp</dimen>
+    <dimen name="margin_ml">24dp</dimen>
+    <dimen name="margin_mx">26dp</dimen>
+    <dimen name="margin_ls">28dp</dimen>
+    <dimen name="margin_lm">30dp</dimen>
+    <dimen name="margin_lx">32dp</dimen>
+    <dimen name="margin_xs">34dp</dimen>
+    <dimen name="margin_xm">36dp</dimen>
+    <dimen name="margin_xl">38dp</dimen>
+    <dimen name="margin_xx">40dp</dimen>
+     <dimen name="margin_fx">60dp</dimen>
+         <dimen  name="margin_gx">70dp</dimen>
+     <dimen name="margin_ff">100dp</dimen>
+       <dimen name="margin_sss">10dp</dimen>
+       <dimen name="margin_hx">90dp</dimen>
+
+    <!-- font sizes -->
+    <dimen name="sz_ss">23dp</dimen>
+    <dimen name="sz_sm">22dp</dimen>
+    <dimen name="sz_sl">24dp</dimen>
+    <dimen name="sz_sx">26dp</dimen>
+    <dimen name="sz_ms">28dp</dimen>
+    <dimen name="sz_mm">66dp</dimen>
+    <dimen name="sz_ml">32dp</dimen>
+    <dimen name="sz_mx">34dp</dimen>
+    <dimen name="sz_ls">36dp</dimen>
+    <dimen name="sz_lm">38dp</dimen>
+    <dimen name="sz_ll">40dp</dimen>
+    <dimen name="sz_lx">42dp</dimen>
+    <dimen name="sz_xs">44dp</dimen>
+    <dimen name="sz_xm">46dp</dimen>
+    <dimen name="sz_xl">48dp</dimen>
+    <dimen name="sz_xx">50dp</dimen>
+
+</resources>

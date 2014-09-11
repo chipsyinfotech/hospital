@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Abharan</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Home screen -->
+    <string name="welcome">Welcome</string>
+    <!-- Sign In -->
+    <string name="username">username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">sign in</string>
+    <string name="about">About US</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="str_name">I hv forgotten my password?</string>
+    <string name="title">Help create the mood</string>
+    <string name="mobile">Mobile Number</string>
+    <string name="digit">4 Digit secret pin</string>
+    <string name="forpaswrd">Forgot Password</string>
+    <string name="hospital">HOSPITAL CHECK.IN</string>
+    <string name="select">Select Hospital</string>
+    <string  name="special">Specialtization</string>
+    <string  name="address">Address</string>
+    <string  name="location">Location</string>
+    <string  name="checkin">CHECK IN</string>
+    <string  name="date">Date</string>
+    <string name="appointment">Have you already taken prior appointment?</string>
+    <string  name="yes">Yes</string>
+    <string name="no">No</string>
+    
+    <string name="log">Login</string>
+    <string name="pname">Name</string>
+    <string name="fname">Fathers Name</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="hnumber">Hospital Number</string>
+    <string name="hemail">e-Mail ID</string>
+    <string name="login">LOGIN</string>
+    <string name="payment">Payment</string>
+    <string name="register">Registration charges:</string>
+    <string  name="consult">Consultant Charges:</string>
+    <string  name="rupees">Rs.50</string>
+     <string  name="rup">Rs.200</string>
+     <string  name="check">HospitalCheck.in</string>
+     <string  name="convience">Convience Charges:</string>
+     <string  name="amount">Total amount to be paid:</string>
+<string  name="priority">Do you need priority pass??</string>
+<string name="add">add Rs.100</string>
+    <!-- -Register -->
+   
+    <string name="name">Full Name</string>
+    <string name="id">Email/User Id</string>
+    <string name="phone">Phone Number</string>
+    <string name="founder_name">Late Shri Burde Sadananda Kamath </string>
+    <string name="confirm">Confirm Password</string>
+    <string name="founder">Founder</string>
+    <string name="life">Lifestyle</string>
+    <string name="contact">Contact Us</string>
+    <string name="notification">Notification</string>
+    <!-- Form validity -->
+    <string name="err_fullnm">Please enter your fullname</string>
+    <string name="err_email">Please enter your email</string>
+    <string name="err_invalidemail">Please enter a valid email</string>
+    <string name="err_invalidphone">Please enter a valid phone number</string>
+    <string name="err_phone">Please enter your phone number</string>
+    <string name="err_pswrd">Please enter your password</string>
+    <string name="err_conpswrd">Please Re enter your password</string>
+    <string name="err_pswrd_mismatch">Password mismatch</string>
+    <!-- <string name="title">Help create the mood</string> -->
+
+
+    <!-- server status -->
+
+    <string name="network_error">We cannot connect you right now.
+	Please check your network settings for connectivity</string>
+    <string name="err_server_not_accessible"> Server Not Accessible. Try Again!</string>
+    <string name="err_server">Could not Download!</string>
+    <string name="err_call">This device is not Configurable to make Calls!</string>
+    <string name="err_msg">This device is not Configurable to send Messages!</string>
+    <string name="err_browser">No application can handle this request, Please install a webbrowser</string>
+    <string name="update_error">A new version of Archana Projects is available.</string>
+    <!-- Server Error -->
+    <!-- <string name="network_error">An active internet connection is required to access this. Please check your settings or try again later.</string> -->
+    <string name="encoding_error">Base64 encoding error. Please Try again.</string>
+    <string name="download_error">Could not download. Please try again.</string>
+    <string name="retry">Retry</string>
+    <string name="no_result">No Results</string>
+    <string name="no_record_found">No Records Found</string>
+    <!-- Empty view Text -->
+
+    <string name="title_activity_absign_in">ABSignInActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_abregistration">ABRegistrationActivity</string>
+
+    <!-- Facebook -->
+    <string name="app_id">328328154014227</string>
+    <string name="title_activity_abhome">ABHomeActivity</string>
+    <string name="title_activity_ablife_style">ABLifeStyleActivity</string>
+    <string name="title_activity_ababoutus">ABAboutusActivity</string>
+    <string name="title_activity_abdetail">ABDetailActivity</string>
+    <string name="title_activity_hcsign_in">HCSignInActivity</string>
+    <string name="title_activity_hcregistration">HCRegistrationActivity</string>
+    <string name="title_activity_hcpayment">HCPaymentActivity</string>
+    <string name="title_activity_hcselection">HCSelectionActivity</string>
+
+</resources>

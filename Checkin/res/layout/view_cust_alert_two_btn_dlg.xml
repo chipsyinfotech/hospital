@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:checkin="http://schemas.android.com/apk/res/com.mavericks.checkin"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/margin_s" >
+
+    <!-- Title. -->
+
+      <com.mavericks.checkin.views.HCTextView
+        android:id="@+id/txt_title"
+        android:layout_width="@dimen/dlg_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_s"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="@dimen/margin_s"
+        checkin:font_type="@integer/fnt_dlg" />
+
+   
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_s"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" 
+        >
+
+        <!-- Negative button -->
+
+           <com.mavericks.checkin.views.HCButton
+            android:id="@+id/btn_negative"
+            android:layout_width="@dimen/btn_w_ms"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_s"
+            android:text="@string/cancel"
+            checkin:font_type="@integer/fnt_btn" />
+            
+        <!-- Positive Button -->
+
+          <com.mavericks.checkin.views.HCButton
+            android:id="@+id/btn_positive"
+            android:layout_width="@dimen/btn_w_ms"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_s"
+            android:text="@string/ok"
+            checkin:font_type="@integer/fnt_btn" />
+    </LinearLayout>
+
+</LinearLayout>

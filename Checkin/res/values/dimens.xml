@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<dimen name="slidingmenu_width">250dip</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+    <dimen name="prg_wt">50dp</dimen>
+    <dimen name="prg_ht">50dp</dimen>
+    <dimen name="dlg_width">220dp</dimen>
+    <dimen name="btn_w_ss">10dp</dimen>
+    <dimen name="btn_w_sm">15dp</dimen>
+    <dimen name="btn_w_sl">20dp</dimen>
+    <dimen name="btn_w_sx">25dp</dimen>
+    <dimen name="btn_w_ms">40dp</dimen>
+    <dimen name="btn_w_mm">60dp</dimen>
+    <dimen name="btn_w_ml">80dp</dimen>
+    <dimen name="btn_w_mx">100dp</dimen>
+    <dimen name="btn_w_ls">120dp</dimen>
+    <dimen name="btn_w_lm">140dp</dimen>
+    <dimen name="btn_w_ll">160dp</dimen>
+    <dimen name="btn_w_lx">180dp</dimen>
+    <dimen name="btn_w_xs">200dp</dimen>
+    <dimen name="btn_w_xm">220dp</dimen> 
+    <dimen name="edit_height_sm">25dp</dimen> 
+      <dimen name="edit_height_mmm">150dp</dimen>         
+    <dimen name="edt_height_s">20dp</dimen>
+    <dimen name="edt_height_m">10dp</dimen>
+    <dimen name="edt_height_l">60dp</dimen>    
+    <dimen name="title_height">60dp</dimen>
+    <dimen name="title_logo_wt">60dp</dimen>
+    <dimen name="pic_s_w">50dp</dimen>
+    <dimen name="pic_s_h">50dp</dimen>
+    <dimen name="pic_m_w">80dp</dimen>
+    <dimen name="pic_ms_h">150dp</dimen>
+    <dimen name="pic_ms_w">150dp</dimen>
+    <dimen name="pic_m_h">80dp</dimen>
+    <dimen name="pic_l_w">300dp</dimen>
+    <dimen name="pic_l_h">300dp</dimen>
+
+    <!-- Margins -->
+    <dimen name="margin_s">5dp</dimen>
+    <dimen name="margin_ss">8dp</dimen>
+    <dimen name="margin_sm">10dp</dimen>
+    <dimen name="margin_sl">12dp</dimen>
+    <dimen name="margin_sx">14dp</dimen>
+    <dimen name="margin_ms">10dp</dimen>
+    <dimen name="margin_mm">18dp</dimen>
+    <dimen name="margin_ml">20dp</dimen>
+    <dimen name="margin_mx">22dp</dimen>
+    <dimen name="margin_ls">24dp</dimen>
+    <dimen name="margin_lm">26dp</dimen>
+    <dimen name="margin_lx">28dp</dimen>
+    <dimen name="margin_xs">30dp</dimen>
+    <dimen name="margin_xm">32dp</dimen>
+    <dimen name="margin_xl">34dp</dimen>
+    <dimen name="margin_xx">36dp</dimen>
+    <dimen name="margin_fx">15dp</dimen>
+
+    <!-- font sizes -->
+    <dimen name="sz_ss">12dp</dimen>
+    <dimen name="sz_sm">14dp</dimen>
+    <dimen name="sz_sl">16dp</dimen>
+    <dimen name="sz_sx">18dp</dimen>
+    <dimen name="sz_ms">20dp</dimen>
+    <dimen name="sz_mm">22dp</dimen>
+    <dimen name="sz_ml">24dp</dimen>
+    <dimen name="sz_mx">26dp</dimen>
+    <dimen name="sz_ls">28dp</dimen>
+    <dimen name="sz_lm">30dp</dimen>
+    <dimen name="sz_ll">32dp</dimen>
+    <dimen name="sz_lx">34dp</dimen>
+    <dimen name="sz_xs">36dp</dimen>
+    <dimen name="sz_xm">38dp</dimen>
+    <dimen name="sz_xl">40dp</dimen>
+    <dimen name="sz_xx">42dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <!-- image sizes -->
+    <dimen name="img_sz_prof">100dp</dimen>
+
+</resources>

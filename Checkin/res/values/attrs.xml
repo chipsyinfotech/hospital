@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="customView">
+        <attr name="font_type" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="customSwitch">
+        <attr name="text_color" format="color" />
+        <attr name="text_size" format="dimension" />
+        <attr name="switch_on_text" format="string" />
+        <attr name="switch_off_text" format="string" />
+        <attr name="font" format="string" />
+        <attr name="image_src" format="reference" />
+    </declare-styleable>
+
+</resources>

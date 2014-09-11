@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:checkin="http://schemas.android.com/apk/res/com.mavericks.checkin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_bar"
+    tools:context="com.mavericks.checkin.HCSignInActivity" >
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_ms"
+            android:gravity="center"
+            android:text="@string/login"
+            checkin:font_type="@integer/fnt_text" />
+        <ImageView 
+            android:id="@+id/div_lin1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_ls"
+            
+            android:layout_below="@+id/text_log"
+            android:background="@drawable/divider_line"/>
+         <ImageView 
+             android:id="@+id/div_lin2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div_lin1"
+             android:contentDescription="@string/about"
+            android:layout_marginTop="@dimen/margin_xs"
+            android:background="@drawable/divider_line"/>
+          <com.mavericks.checkin.views.HCEditText
+            android:id="@+id/text_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div_lin2"
+            android:layout_marginTop="@dimen/margin_xs"
+            android:layout_marginLeft="@dimen/margin_sm"
+            android:text="@string/mobile"
+            checkin:font_type="@integer/fnt_edit_small" />
+          
+             <com.mavericks.checkin.views.HCEditText
+            android:id="@+id/text_digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_mobile"
+            android:layout_marginTop="@dimen/margin_xs"
+            android:layout_marginLeft="@dimen/margin_sm"
+            android:text="@string/digit"
+            checkin:font_type="@integer/fnt_edit_small" />
+             
+    <com.mavericks.checkin.views.HCButton
+            android:id="@+id/text_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_digit"
+            android:layout_marginTop="@dimen/margin_xs"
+            android:layout_alignParentRight="true"
+            android:text="@string/forpaswrd"
+            checkin:font_type="@integer/fnt_btn" />
+
+    <com.mavericks.checkin.views.HCButton
+        android:id="@+id/text_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/login"
+        android:layout_marginBottom="@dimen/margin_xs"
+        checkin:font_type="@integer/fnt_text" />
+    
+</RelativeLayout>
