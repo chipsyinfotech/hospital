@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:checkin="http://schemas.android.com/apk/res/com.mavericks.checkin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_bar"
+    android:orientation="vertical" >
+
+    <com.mavericks.checkin.views.HCTextView
+        android:id="@+id/text_signup"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edit_height_sm"
+        android:layout_marginTop="@dimen/margin_ms"
+        android:gravity="center"
+        android:text="@string/signup"
+        checkin:font_type="@integer/fnt_login" />
+
+    <com.mavericks.checkin.views.HCTextView
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+       android:layout_height="@dimen/edit_height_sm"
+        android:layout_below="@+id/text_signup"
+        android:layout_marginLeft="@dimen/margin_ls"
+         android:layout_marginRight="@dimen/margin_ls"
+        android:layout_marginTop="@dimen/margin_lx"
+        android:text="@string/email"
+        checkin:font_type="@integer/fnt_texts" />
+
+    <com.mavericks.checkin.views.HCEditText
+        android:id="@+id/text_email"
+        android:layout_width="match_parent"
+         android:layout_height="@dimen/edt_height_m"
+        android:layout_below="@+id/email"
+        android:layout_marginLeft="@dimen/margin_ls"
+          android:layout_marginRight="@dimen/margin_ls"
+        android:layout_marginTop="@dimen/margin_s"
+        android:background="@android:color/transparent"
+        android:hint="@string/email"
+        checkin:font_type="@integer/fnt_edit_small" />
+
+    <com.mavericks.checkin.views.HCTextView
+        android:id="@+id/digit"
+        android:layout_width="match_parent"
+       android:layout_height="@dimen/edit_height_sm"
+        android:layout_below="@+id/text_email"
+        android:layout_marginLeft="@dimen/margin_ls"
+          android:layout_marginRight="@dimen/margin_ls"
+        android:layout_marginTop="@dimen/margin_lx"
+        android:text="@string/enter"
+        checkin:font_type="@integer/fnt_texts" />
+
+    <com.mavericks.checkin.views.HCEditText
+        android:id="@+id/text_digit"
+        android:layout_width="match_parent"
+          android:layout_height="@dimen/edt_height_m"
+        android:layout_below="@+id/digit"
+        android:layout_marginLeft="@dimen/margin_ls"
+          android:layout_marginRight="@dimen/margin_ls"
+        android:layout_marginTop="@dimen/margin_s"
+        android:background="@android:color/transparent"
+        android:hint="@string/digit"
+        android:maxLength="4"
+        android:inputType="textPassword"
+        checkin:font_type="@integer/fnt_edit_small" />
+
+    <com.mavericks.checkin.views.HCTextView
+        android:id="@+id/rdigit"
+        android:layout_width="match_parent"
+      android:layout_height="@dimen/edit_height_sm"
+        android:layout_below="@+id/text_digit"
+        android:layout_marginLeft="@dimen/margin_ls"
+          android:layout_marginRight="@dimen/margin_ls"
+        android:layout_marginTop="@dimen/margin_lx"
+        android:text="@string/re_enter"
+        checkin:font_type="@integer/fnt_texts" />
+
+    <com.mavericks.checkin.views.HCEditText
+        android:id="@+id/text_rdigit"
+        android:layout_width="match_parent"
+          android:layout_height="@dimen/edt_height_m"
+        android:layout_below="@+id/rdigit"
+        android:layout_marginLeft="@dimen/margin_ls"
+          android:layout_marginRight="@dimen/margin_ls"
+        android:layout_marginTop="@dimen/margin_s"
+         android:hint="@string/digit"
+         android:maxLength="4"
+        android:background="@android:color/transparent"
+        android:inputType="textPassword"
+        checkin:font_type="@integer/fnt_edit_small" />
+
+    <com.mavericks.checkin.views.HCTextView
+        android:id="@+id/img_signup"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edit_height_sm"
+        android:layout_below="@+id/text_rdigit"
+        android:layout_marginTop="@dimen/margin_lx"
+        android:contentDescription="@string/about"
+        android:gravity="center"
+        android:text="@string/signup"
+        checkin:font_type="@integer/fnt_login" />
+
+</RelativeLayout>
