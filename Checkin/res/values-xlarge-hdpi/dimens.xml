@@ -45,7 +45,7 @@
     <dimen name="margin_xx">52dp</dimen>
      <dimen name="margin_fx">70dp</dimen>
          <dimen  name="margin_gx">150dp</dimen>
-     
+      <dimen name="margin_add">450dp</dimen>
       <dimen name="margin_sss">22dp</dimen>
       <dimen name="margin_hx">120dp</dimen>
 

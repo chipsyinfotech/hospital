@@ -47,6 +47,7 @@
     <dimen name="margin_ff">70dp</dimen>
     <dimen name="margin_fx">40dp</dimen>
     <dimen name="margin_sss">10dp</dimen>
+     <dimen name="margin_add">150dp</dimen>
 
     <!-- font sizes -->
     <dimen name="sz_ss">16dp</dimen>

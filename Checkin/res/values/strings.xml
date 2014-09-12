@@ -21,15 +21,14 @@
     <string name="forpaswrd">Forgot Password</string>
     <string name="hospital">HOSPITAL CHECK.IN</string>
     <string name="select">Select Hospital</string>
-    <string  name="special">Specialtization</string>
-    <string  name="address">Address</string>
-    <string  name="location">Location</string>
-    <string  name="checkin">CHECK IN</string>
-    <string  name="date">Date</string>
+    <string name="special">Specialtization</string>
+    <string name="address">Address</string>
+    <string name="location">Location</string>
+    <string name="checkin">CHECK IN</string>
+    <string name="date">Date</string>
     <string name="appointment">Have you already taken prior appointment?</string>
-    <string  name="yes">Yes</string>
+    <string name="yes">Yes</string>
     <string name="no">No</string>
-    
     <string name="log">Login</string>
     <string name="pname">Name</string>
     <string name="fname">Fathers Name</string>
@@ -42,16 +41,22 @@
     <string name="login">LOGIN</string>
     <string name="payment">Payment</string>
     <string name="register">Registration Charges:</string>
-    <string  name="consult">Consultant Charges:</string>
-    <string  name="rupees">Rs.50</string>
-     <string  name="rup">Rs.200</string>
-     <string  name="check">HospitalCheck.in</string>
-     <string  name="convience">Convience Charges:</string>
-     <string  name="amount">Total amount to be paid:</string>
-<string  name="priority">Do you need priority pass??</string>
-<string name="add">add Rs.100</string>
+    <string name="consult">Consultant Charges:</string>
+    <string name="rupees">Rs.50</string>
+    <string name="rupee">Rs.100</string>
+    <string name="rup">Rs.200</string>
+    <string name="check">HospitalCheck.in</string>
+    <string name="convience">Convience Charges:</string>
+    <string name="amount">Total amount to be paid:</string>
+    <string name="priority">Do you need priority pass??</string>
+    <string name="add">add</string>
+    <string  name="email">Email Address</string>
+    <string  name="enter">Please Enter 4 Digit Pin</string>
+      <string  name="re_enter">Please Re-Enter 4 Digit Pin</string>
+    <string  name="signup">Sign Up</string>
+
     <!-- -Register -->
-   
+
     <string name="name">Full Name</string>
     <string name="id">Email/User Id</string>
     <string name="phone">Phone Number</string>
@@ -107,5 +112,42 @@
     <string name="title_activity_hcregistration">HCRegistrationActivity</string>
     <string name="title_activity_hcpayment">HCPaymentActivity</string>
     <string name="title_activity_hcselection">HCSelectionActivity</string>
+    <string name="hospital_prompt">Select Hospital</string>
+
+    <string-array name="hospital_arrays">
+        <item>Select Hospital</item>
+        <item>KMC Manipal</item>
+        <item>KMC Udupi</item>
+    </string-array>
+
+    <string name="special_prompt">Specialization</string>
+
+    <string-array name="special_arrays">
+        <item>Specialization</item>
+        <item>ET</item>
+    </string-array>
+
+    <string name="date_prompt">Specialization</string>
+
+    <string-array name="date_arrays">
+        <item>Select Date</item>
+        <item>12-Sep-2014</item>
+    </string-array>
+
+    <string name="doctor_prompt">Specialization</string>
+
+    <string-array name="doctor_arrays">
+        <item>Select Doctor</item>
+        <item>Krishna Prasad</item>
+    </string-array>
+
+    <string name="time_prompt">Specialization</string>
+
+    <string-array name="time_arrays">
+        <item>Select Time</item>
+        <item>10:AM</item>
+    </string-array>
+
+    <string name="title_activity_hcsignup">HCSignupActivity</string>
 
 </resources>

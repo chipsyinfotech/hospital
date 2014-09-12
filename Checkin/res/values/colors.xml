@@ -16,8 +16,10 @@
     <color name="pink">#FF6EC7</color>
     <color name="cyan">#0abab5</color>
      <color name="neon_pink">#ea367a</color>
+     <color name="dark_red">#e05656</color>
     <color name="navy">#000080</color>
     <color name="black">#000000</color>
     <color name="welcome">#fbd7d6</color>
+    <color name="light_black">#6d7277</color>
 
 </resources>

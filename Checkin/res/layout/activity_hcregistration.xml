@@ -1,10 +1,10 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:checkin="http://schemas.android.com/apk/res/com.mavericks.checkin"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:scrollbars="none" >
 
-    <LinearLayout
-        
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/white_bar"
@@ -14,13 +14,13 @@
             android:id="@+id/lin_lay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/white_bar"
             android:orientation="vertical" >
 
             <RelativeLayout
                 android:id="@+id/rel_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/header_line"
                 android:orientation="horizontal" >
 
                 <ImageView
@@ -43,14 +43,6 @@
                     android:contentDescription="@string/about" />
             </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/img_div1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/margin_s"
-                android:background="@drawable/divider_line"
-                android:contentDescription="@string/about" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,10 +59,13 @@
 
                 <Spinner
                     android:id="@+id/spinner_hospital"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
-                    android:prompt="@string/date" />
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:background="@android:color/transparent"
+                    android:entries="@array/hospital_arrays"
+                    android:prompt="@string/hospital_prompt" />
             </LinearLayout>
 
             <ImageView
@@ -97,10 +92,13 @@
 
                 <Spinner
                     android:id="@+id/spinner_special"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
-                    android:prompt="@string/date" />
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:background="@android:color/transparent"
+                    android:entries="@array/special_arrays"
+                    android:prompt="@string/special_prompt" />
             </LinearLayout>
 
             <ImageView
@@ -127,10 +125,13 @@
 
                 <Spinner
                     android:id="@+id/spinner_date"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
-                    android:prompt="@string/date" />
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:background="@android:color/transparent"
+                    android:entries="@array/date_arrays"
+                    android:prompt="@string/date_prompt" />
             </LinearLayout>
 
             <ImageView
@@ -152,13 +153,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_s"
                     android:text="@string/appointment"
-                    checkin:font_type="@integer/fnt_btn" />
+                    checkin:font_type="@integer/fnt_prior" />
             </LinearLayout>
 
             <RadioGroup
                 android:id="@+id/radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_s"
                 android:orientation="horizontal" >
 
                 <com.mavericks.checkin.views.HCRadioButton
@@ -172,7 +174,6 @@
                     android:id="@+id/radio_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margin_ms"
                     android:button="@drawable/no"
                     checkin:font_type="@integer/fnt_btn" />
             </RadioGroup>
@@ -201,10 +202,13 @@
 
                 <Spinner
                     android:id="@+id/spinner_user"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
-                    android:prompt="@string/date" />
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:background="@android:color/transparent"
+                    android:entries="@array/doctor_arrays"
+                    android:prompt="@string/doctor_prompt" />
             </LinearLayout>
 
             <ImageView
@@ -231,10 +235,13 @@
 
                 <Spinner
                     android:id="@+id/spinner_time"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
-                    android:prompt="@string/date" />
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:background="@android:color/transparent"
+                    android:entries="@array/time_arrays"
+                    android:prompt="@string/time_prompt" />
             </LinearLayout>
 
             <ImageView
@@ -249,6 +256,7 @@
                 android:id="@+id/visit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_s"
                 android:button="@drawable/yes"
                 android:orientation="horizontal" >
 
@@ -263,17 +271,18 @@
                     android:id="@+id/radio_revisit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margin_ms"
                     android:button="@drawable/revisit"
                     checkin:font_type="@integer/fnt_btn" />
             </RadioGroup>
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/lin_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/lin_lay"
             android:orientation="vertical"
-            android:visibility="invisible" >
+            android:visibility="visible" >
 
             <ImageView
                 android:id="@+id/tab_visit"
@@ -303,7 +312,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
-                    android:text="@string/pname"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/pname"
                     checkin:font_type="@integer/fnt_edit_small" />
             </LinearLayout>
 
@@ -335,7 +345,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
-                    android:text="@string/fname"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/fname"
                     checkin:font_type="@integer/fnt_edit_small" />
             </LinearLayout>
 
@@ -367,7 +378,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
-                    android:text="@string/age"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/age"
                     checkin:font_type="@integer/fnt_edit_small" />
             </LinearLayout>
 
@@ -397,6 +409,7 @@
                 android:id="@+id/radio_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_s"
                 android:orientation="horizontal" >
 
                 <com.mavericks.checkin.views.HCRadioButton
@@ -443,7 +456,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
-                    android:text="@string/hnumber"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/hnumber"
                     checkin:font_type="@integer/fnt_edit_small" />
             </LinearLayout>
 
@@ -475,7 +489,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
-                    android:text="@string/mobile"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/mobile"
+                    android:inputType="number"
                     checkin:font_type="@integer/fnt_edit_small" />
             </LinearLayout>
 
@@ -507,7 +523,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_sl"
-                    android:text="@string/hemail"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/hemail"
+                    android:inputType="textEmailAddress"
                     checkin:font_type="@integer/fnt_edit_small" />
             </LinearLayout>
 
@@ -539,7 +557,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
-                    android:text="@string/address"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/address"
                     checkin:font_type="@integer/fnt_edit_small" />
             </LinearLayout>
 
@@ -571,7 +590,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
-                    android:text="@string/location"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/location"
                     checkin:font_type="@integer/fnt_edit_small" />
             </LinearLayout>
 
@@ -602,7 +622,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_below="@+id/lin_lay"
+            android:orientation="vertical"
+            android:visibility="invisible" >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -624,7 +646,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
-                    android:text="@string/pname"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/pname"
                     checkin:font_type="@integer/fnt_edit_small" />
             </LinearLayout>
 
@@ -656,7 +679,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
-                    android:text="@string/hnumber"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/hnumber"
+                    android:inputType="number"
                     checkin:font_type="@integer/fnt_edit_small" />
             </LinearLayout>
 
@@ -688,7 +713,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
-                    android:text="@string/mobile"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/mobile"
+                    android:inputType="number"
                     checkin:font_type="@integer/fnt_edit_small" />
             </LinearLayout>
 
@@ -719,15 +746,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
-                    android:layout_marginTop="@dimen/margin_sl"
-                    android:text="@string/hemail"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/hemail"
+                    android:inputType="textEmailAddress"
                     checkin:font_type="@integer/fnt_edit_small" />
             </LinearLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal" >
-            
+
                 <com.mavericks.checkin.views.HCButton
                     android:id="@+id/text_check"
                     android:layout_width="wrap_content"
@@ -738,6 +768,6 @@
                     checkin:font_type="@integer/fnt_text" />
             </RelativeLayout>
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
 </ScrollView>

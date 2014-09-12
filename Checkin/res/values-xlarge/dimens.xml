@@ -26,6 +26,7 @@
     <dimen name="pic_ms_w">450dp</dimen>
     <dimen name="pic_l_w">600dp</dimen>
     <dimen name="pic_l_h">600dp</dimen>
+     <dimen name="margin_add">300dp</dimen>
 
     <!-- Margins -->
     <dimen name="margin_s">22dp</dimen>
