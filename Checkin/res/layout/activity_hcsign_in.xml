@@ -4,8 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/white_bar"
+  
     android:orientation="vertical"
     tools:context="com.mavericks.checkin.HCSignInActivity" >
+    
 
     <com.mavericks.checkin.views.HCTextView
         android:id="@+id/text_log"
@@ -15,23 +17,20 @@
         android:gravity="center"
         android:text="@string/login"
         checkin:font_type="@integer/fnt_login" />
-
-    <ImageView
-        android:id="@+id/div_lin1"
+    <RelativeLayout 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_below="@+id/text_log"
-        android:contentDescription="@string/about"
-        android:layout_marginTop="@dimen/margin_ls"
-        android:background="@drawable/divider_line" />
+        android:layout_height="fill_parent">
 
+    
     <ImageView
         android:id="@+id/div_lin2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_xs"
         android:background="@drawable/divider_line"
-           android:layout_below="@+id/div_lin1"
+           
         android:contentDescription="@string/about" />
     <LinearLayout
         android:id="@+id/lin_layout"
@@ -50,12 +49,12 @@
                     android:src="@drawable/mail_icon" />
 
                 <com.mavericks.checkin.views.HCEditText
-                    android:id="@+id/text_mobile"
+                    android:id="@+id/text_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_xs"
-                    android:inputType="number"
+                    android:inputType="textEmailAddress"
                     android:background="@android:color/transparent"
                     android:hint="@string/hemail"
                     checkin:font_type="@integer/fnt_edit_small" />
@@ -91,6 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_xs"
+                    android:inputType="textPassword"
                     android:maxLength="4"
                     android:background="@android:color/transparent"
                     android:hint="@string/digit"
@@ -126,5 +126,6 @@
          checkin:font_type="@integer/fnt_login" 
            android:contentDescription="@string/about"
            android:text="@string/login" />
+       </RelativeLayout>
    
     </RelativeLayout>
