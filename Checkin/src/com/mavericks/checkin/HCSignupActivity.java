@@ -1,3 +1,4 @@
+
 package com.mavericks.checkin;
 
 import android.app.Activity;
@@ -40,11 +41,7 @@ public class HCSignupActivity extends Activity implements OnClickListener {
 
 	}
 
-	/**
-	 * checks if the form is valid
-	 * 
-	 * @return
-	 */
+	
 	private void isFormValid() {
 
 		if (mEdtemail.getText().toString().trim().length() == 0) {
@@ -65,7 +62,7 @@ public class HCSignupActivity extends Activity implements OnClickListener {
 				.equals(mEdtconfirmdigit.getText().toString())) {
 			Toast.makeText(this, "password mismatch", Toast.LENGTH_LONG).show();
 		} else
-			Toast.makeText(this, "signup successful", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, "Signup successful", Toast.LENGTH_LONG).show();
 
 	}
 

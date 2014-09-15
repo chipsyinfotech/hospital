@@ -25,6 +25,7 @@
     <string name="address">Address</string>
     <string name="location">Location</string>
     <string name="checkin">CHECK IN</string>
+    <string  name="make_payment">MAKE PAYMENT</string>
     <string name="date">Date</string>
     <string name="appointment">Have you already taken prior appointment?</string>
     <string name="yes">Yes</string>
@@ -72,6 +73,8 @@
     <string name="err_invalidemail">Please enter a valid email</string>
     <string name="err_invalidphone">Please enter a valid phone number</string>
     <string name="err_phone">Please enter your phone number</string>
+    <string  name="err_digit">Please enter your pin</string>
+    <string  name="err_confrmdigit">Please Re enter your pin</string>
     <string name="err_pswrd">Please enter your password</string>
     <string name="err_conpswrd">Please Re enter your password</string>
     <string name="err_pswrd_mismatch">Password mismatch</string>

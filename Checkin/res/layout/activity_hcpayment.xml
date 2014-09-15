@@ -176,7 +176,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="@dimen/margin_xx"
-        android:background="@drawable/make_payment_button"
-        checkin:font_type="@integer/fnt_text" />
+        android:text="@string/make_payment"
+        android:background="@drawable/check"
+        checkin:font_type="@integer/fnt_login" />
 
 </RelativeLayout>

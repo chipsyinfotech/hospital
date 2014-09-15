@@ -73,7 +73,7 @@ public class HCSignInActivity extends Activity implements OnClickListener {
 
 		
 		} else
-			Toast.makeText(this, "signin successful", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, "Login Successful", Toast.LENGTH_LONG).show();
 
 	}
 

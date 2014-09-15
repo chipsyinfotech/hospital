@@ -192,16 +192,16 @@
                 android:orientation="horizontal" >
 
                 <ImageView
-                    android:id="@+id/img_user"
+                    android:id="@+id/img_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
-                    android:src="@drawable/user_icon" />
+                    android:src="@drawable/name_icon" />
 
                 <Spinner
-                    android:id="@+id/spinner_user"
+                    android:id="@+id/spinner_name"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
@@ -304,7 +304,7 @@
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
-                    android:src="@drawable/user_icon" />
+                    android:src="@drawable/name_icon" />
 
                 <com.mavericks.checkin.views.HCEditText
                     android:id="@+id/text_pname"
@@ -337,7 +337,7 @@
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
-                    android:src="@drawable/user_icon" />
+                    android:src="@drawable/name_icon" />
 
                 <com.mavericks.checkin.views.HCEditText
                     android:id="@+id/text_fname"
@@ -448,7 +448,7 @@
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
-                    android:src="@drawable/hospital_number" />
+                    android:src="@drawable/select_hospital_icon" />
 
                 <com.mavericks.checkin.views.HCEditText
                     android:id="@+id/text_hnumber"
@@ -481,7 +481,7 @@
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
-                    android:src="@drawable/call_icon" />
+                    android:src="@drawable/mobile_number_icon" />
 
                 <com.mavericks.checkin.views.HCEditText
                     android:id="@+id/text_mobile"
@@ -515,7 +515,7 @@
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
-                    android:src="@drawable/mail_icon" />
+                    android:src="@drawable/email_icon" />
 
                 <com.mavericks.checkin.views.HCEditText
                     android:id="@+id/text_email"
@@ -582,7 +582,7 @@
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
-                    android:src="@drawable/map_icon" />
+                    android:src="@drawable/location_icon" />
 
                 <com.mavericks.checkin.views.HCEditText
                     android:id="@+id/text_location"
@@ -614,8 +614,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="@dimen/margin_xx"
-                    android:background="@drawable/check_in_button"
-                    checkin:font_type="@integer/fnt_text" />
+                    android:background="@drawable/check"
+                    android:text="@string/checkin"
+                    checkin:font_type="@integer/fnt_login" />
             </RelativeLayout>
         </LinearLayout>
 
@@ -637,8 +638,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
-                    android:contentDescription="@string/about"
-                    android:src="@drawable/user_icon" />
+                    android:contentDescription="@string/add"
+                    android:src="@drawable/name_icon" />
 
                 <com.mavericks.checkin.views.HCEditText
                     android:id="@+id/text_rname"
@@ -671,7 +672,7 @@
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
-                    android:src="@drawable/hospital_number" />
+                    android:src="@drawable/select_hospital_icon" />
 
                 <com.mavericks.checkin.views.HCEditText
                     android:id="@+id/text_rhnumber"
@@ -705,7 +706,7 @@
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
-                    android:src="@drawable/call_icon" />
+                    android:src="@drawable/mobile_number_icon" />
 
                 <com.mavericks.checkin.views.HCEditText
                     android:id="@+id/text_rmobile"
@@ -739,7 +740,7 @@
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
-                    android:src="@drawable/mail_icon" />
+                    android:src="@drawable/email_icon" />
 
                 <com.mavericks.checkin.views.HCEditText
                     android:id="@+id/text_remail"
@@ -764,8 +765,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="@dimen/margin_xx"
-                    android:background="@drawable/check_in_button"
-                    checkin:font_type="@integer/fnt_text" />
+                    android:text="@string/checkin"
+                    android:background="@drawable/check"
+                    checkin:font_type="@integer/fnt_login" />
             </RelativeLayout>
         </LinearLayout>
     </RelativeLayout>

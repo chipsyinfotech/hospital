@@ -32,6 +32,7 @@
        <integer name="fnt_texts">14</integer>
         <integer name="fnt_prior">15</integer>
         <integer name="fnt_login">16</integer>
+        <integer name="fnt_log">17</integer>
 
 </resources>
 
