@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
    
     android:layout_height="match_parent"
-    android:background="@drawable/white_bar"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context="com.mavericks.checkin.HCSignInActivity" >
 
@@ -119,8 +119,8 @@
             android:text="@string/forpaswrd"
             checkin:font_type="@integer/fnt_texts" />
 
-        <com.mavericks.checkin.views.HCButton
-            android:id="@+id/btn_login"
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_password"

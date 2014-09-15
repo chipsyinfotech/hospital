@@ -7,13 +7,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class HCSignupActivity extends Activity implements OnClickListener {
 	EditText mEdtemail;
 	EditText mEdtdigit;
 	EditText mEdtconfirmdigit;
-	Button mBtnsignup;
+	TextView mTxtsignup;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +22,9 @@ public class HCSignupActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_hcsignup);
 		mEdtemail = (EditText) findViewById(R.id.edt_email);
 		mEdtdigit = (EditText) findViewById(R.id.edt_digit);
-		mEdtconfirmdigit = (EditText) findViewById(R.id.edt_confirmdigit);
-		mBtnsignup = (Button) findViewById(R.id.btn_signup);
-		mBtnsignup.setOnClickListener(this);
+		mEdtconfirmdigit = (EditText) findViewById(R.id.edt_confrmdigit);
+		mTxtsignup = (TextView) findViewById(R.id.text_signup);
+		mTxtsignup.setOnClickListener(this);
 
 	}
 
@@ -31,7 +32,7 @@ public class HCSignupActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 
-		case R.id.btn_signup:
+		case R.id.text_signup:
 			isFormValid();
 
 			break;

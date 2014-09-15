@@ -26,7 +26,7 @@ import android.widget.Toast;
 public class HCSignInActivity extends Activity implements OnClickListener {
 	EditText mEdtemail;
 	EditText mEdtdigit;
-	Button mBtnlogin;
+	TextView mTxtlogin;
 	TextView mTxtpaswrd;
 
 	@Override
@@ -36,8 +36,8 @@ public class HCSignInActivity extends Activity implements OnClickListener {
 		mEdtemail = (EditText) findViewById(R.id.edt_email);
 		mEdtdigit = (EditText) findViewById(R.id.edt_digit);
 		mTxtpaswrd=(TextView) findViewById(R.id.text_password);
-		mBtnlogin=(Button) findViewById(R.id.btn_login);
-		mBtnlogin.setOnClickListener(this);
+		mTxtlogin=(TextView) findViewById(R.id.text_login);
+		mTxtlogin.setOnClickListener(this);
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public class HCSignInActivity extends Activity implements OnClickListener {
 
 		case R.id.text_password:
 			
-		case R.id.btn_login:
+		case R.id.text_login:
 			login();
 
 			break;
