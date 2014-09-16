@@ -22,7 +22,7 @@ public class HCSignupActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_hcsignup);
 		mEdtemail = (EditText) findViewById(R.id.edt_email);
 		mEdtdigit = (EditText) findViewById(R.id.edt_digit);
-		mEdtconfirmdigit = (EditText) findViewById(R.id.edt_confrmdigit);
+		mEdtconfirmdigit = (EditText) findViewById(R.id.edt_confirmdigit);
 		mTxtsignup = (TextView) findViewById(R.id.text_signup);
 		mTxtsignup.setOnClickListener(this);
 
@@ -41,7 +41,7 @@ public class HCSignupActivity extends Activity implements OnClickListener {
 		}
 
 	}
-
+	
 	
 	private void isFormValid() {
 
