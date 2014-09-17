@@ -172,11 +172,11 @@ public class HCFontManager {
 		case FNT_BUTTON:
 			return R.dimen.sz_ms;
 		case FNT_TEXT:
-			return R.dimen.sz_ss;
+			return R.dimen.sz_sm;
 		case FNT_PRIOR:
 			return R.dimen.sz_ss;
 		case FNT_TEXTS:
-			return R.dimen.sz_ss;
+			return R.dimen.sz_sm;
 		case FNT_MENU:
 			return R.dimen.sz_sl;
 		case FNT_DLG:

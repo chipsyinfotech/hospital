@@ -166,6 +166,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                       android:background="@drawable/yes_button_non_press"
                     android:button="@drawable/yes"
                     checkin:font_type="@integer/fnt_btn" />
 
@@ -174,6 +175,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                      android:background="@drawable/no_button_non_press"
                     android:button="@drawable/no"
                     checkin:font_type="@integer/fnt_btn" />
             </RadioGroup>
@@ -263,7 +265,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:button="@drawable/visit"
+                      android:button="@drawable/visit"
+                android:background="@drawable/new_visit_button_non_press"
                     checkin:font_type="@integer/fnt_btn" />
 
                 <com.mavericks.checkin.views.HCRadioButton
@@ -271,6 +274,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/re_visit_button_non_press"
                     android:button="@drawable/revisit"
                     checkin:font_type="@integer/fnt_btn" />
             </RadioGroup>
@@ -420,6 +424,7 @@
                         android:id="@+id/radioMale"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                          android:background="@drawable/male_icon_non_press"
                         android:layout_weight="1"
                         android:button="@drawable/male"
                         checkin:font_type="@integer/fnt_btn" />
@@ -428,6 +433,7 @@
                         android:id="@+id/radioFemale"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                          android:background="@drawable/female_icon_non_press"
                         android:layout_weight="1"
                         android:button="@drawable/female"
                         checkin:font_type="@integer/fnt_btn" />
@@ -614,7 +620,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="@dimen/margin_xx"
+                    android:layout_marginTop="@dimen/margin_xs"
                     android:background="@drawable/check"
                     android:text="@string/checkin"
                     checkin:font_type="@integer/fnt_login" />
@@ -627,7 +633,8 @@
             android:layout_below="@+id/lin_lay"
             android:orientation="vertical"
             android:visibility="invisible" >
-                <ImageView
+
+            <ImageView
                 android:id="@+id/tab_rvisit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -764,15 +771,14 @@
                         android:inputType="textEmailAddress"
                         checkin:font_type="@integer/fnt_edit_small" />
                 </LinearLayout>
-                 <ImageView
+
+                <ImageView
                     android:id="@+id/tab_remail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_s"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
-                
-                
             </LinearLayout>
 
             <RelativeLayout

@@ -1,52 +1,32 @@
-/*! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * @File:
- *		HCSplashActivity.java
- * @Project:
- *		Checkin
- * @Abstract:
- *		
- * @Copyright:
- *     		Copyright © 2014, 101 Mavericks.
- *		Written under contract by Chipsy Information Technology.
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-/*! Revision history (Most recent first)
- Created by vijayalaxmi on 09-Sep-2014
- */package com.mavericks.checkin;
+package com.mavericks.checkin;
 
 import android.app.Activity;
 import android.content.Intent;
-
 import android.os.Bundle;
 import android.os.Handler;
 
-
-
 public class HCSplashActivity extends Activity {
-	 
+	 private final int SPLASH_DISPLAY_LENGTH = 4000;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_hcsplash);
+		
+		
 
-    private static int SPLASH_TIME_OUT = 3000;
- 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hcsplash);
- 
-        new Handler().postDelayed(new Runnable() {
- 
-           
- 
-            @Override
-            public void run() {
-              
-             
-                Intent i = new Intent(HCSplashActivity.this, HCRegistrationActivity.class);
-                startActivity(i);
- 
-              
-                finish();
-            }
-        }, SPLASH_TIME_OUT);
-    }
- 
-}
+		      
+		        new Handler().postDelayed(new Runnable(){
+		            @Override
+		            public void run() {
+		                /* Create an Intent that will start the Menu-Activity. */
+		                Intent mainIntent = new Intent(HCSplashActivity.this,HCRegistrationActivity.class);
+		                HCSplashActivity.this.startActivity(mainIntent);
+		                HCSplashActivity.this.finish();
+		            }
+		        }, SPLASH_DISPLAY_LENGTH);
+		    }
+		
+	}
+
+	
+

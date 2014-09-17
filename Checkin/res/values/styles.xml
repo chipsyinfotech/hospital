@@ -5,7 +5,7 @@
     <!-- Application theme. -->
     <style name="AppTheme" >
       <item name="android:windowNoTitle">true</item>
-  <item name="android:windowBackground">@android:color/white</item> 
+  <item name="android:windowBackground">@android:color/background_light</item> 
     </style>
 
       <style name="Theme_Dialog_No_Title">

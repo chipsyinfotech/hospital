@@ -2,7 +2,7 @@
     xmlns:checkin="http://schemas.android.com/apk/res/com.mavericks.checkin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/white_bar"
+    android:background="@color/white"
     android:orientation="vertical" >
 
   <RelativeLayout
@@ -31,13 +31,22 @@
                     android:background="@drawable/info_icon"
                     android:contentDescription="@string/about" />
             </RelativeLayout>
-
+<RelativeLayout
+                android:id="@+id/rel_charge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_ms"
+                android:layout_marginRight="@dimen/margin_ms"
+                   android:layout_below="@+id/rel_register"
+                   android:gravity="center"
+                android:background="@drawable/header_line"
+                android:orientation="horizontal" >
 
     <com.mavericks.checkin.views.HCTextView
         android:id="@+id/text_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rel_register"
+     
         android:layout_marginLeft="@dimen/margin_ms"
         android:layout_marginTop="@dimen/margin_lx"
         android:text="@string/register"
@@ -134,6 +143,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_rupi"
         android:layout_marginTop="@dimen/margin_add"
+        android:background="@drawable/priority_button_non_press"
         android:button="@drawable/prior"
         android:contentDescription="@string/about" />
 
@@ -162,20 +172,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_prior"
         android:layout_marginTop="@dimen/margin_s"
-        android:layout_marginLeft="@dimen/margin_s"
+        android:layout_marginLeft="@dimen/margin_ms"
         android:layout_toRightOf="@+id/text_add"
         android:text="@string/rupee"
         checkin:font_type="@integer/fnt_text" />
+    </RelativeLayout>
     
    
 
-    <com.mavericks.checkin.views.HCButton
-        android:id="@+id/text_checks"
+    <com.mavericks.checkin.views.HCTextView
+        android:id="@+id/text_payment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="@dimen/margin_xx"
+       android:layout_marginBottom="@dimen/margin_ms"
         android:text="@string/make_payment"
         android:background="@drawable/check"
         checkin:font_type="@integer/fnt_login" />

@@ -25,7 +25,7 @@
     <string name="address">Address</string>
     <string name="location">Location</string>
     <string name="checkin">CHECK IN</string>
-    <string  name="make_payment">MAKE PAYMENT</string>
+    <string name="make_payment">MAKE PAYMENT</string>
     <string name="date">Date</string>
     <string name="appointment">Have you already taken prior appointment?</string>
     <string name="yes">Yes</string>
@@ -51,10 +51,10 @@
     <string name="amount">Total amount to be paid:</string>
     <string name="priority">Do you need priority pass??</string>
     <string name="add">add</string>
-    <string  name="email">Email Address</string>
-    <string  name="enter">Please Enter 4 Digit Pin</string>
-      <string  name="re_enter">Please Re-Enter 4 Digit Pin</string>
-    <string  name="signup">Sign Up</string>
+    <string name="email">Email Address</string>
+    <string name="enter">Please Enter 4 Digit Pin</string>
+    <string name="re_enter">Please Re-Enter 4 Digit Pin</string>
+    <string name="signup">Sign Up</string>
 
     <!-- -Register -->
 
@@ -73,8 +73,8 @@
     <string name="err_invalidemail">Please enter a valid email</string>
     <string name="err_invalidphone">Please enter a valid phone number</string>
     <string name="err_phone">Please enter your phone number</string>
-    <string  name="err_digit">Please enter your pin</string>
-    <string  name="err_confrmdigit">Please Re enter your pin</string>
+    <string name="err_digit">Please enter your pin</string>
+    <string name="err_confrmdigit">Please Re enter your pin</string>
     <string name="err_pswrd">Please enter your password</string>
     <string name="err_conpswrd">Please Re enter your password</string>
     <string name="err_pswrd_mismatch">Password mismatch</string>
@@ -152,5 +152,9 @@
     </string-array>
 
     <string name="title_activity_hcsignup">HCSignupActivity</string>
+    <string name="title_activity_hcsplash">HCSplashActivity</string>
+    <string name="title_activity_hcpop_up">HCPopUpActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_hcpop">HCPopActivity</string>
 
 </resources>
