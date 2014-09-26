@@ -44,6 +44,7 @@ public class HCFontManager {
 	public static final int FNT_PRIOR = 15;
 	public static final int FNT_LOGIN = 16;
 	public static final int FNT_LOG = 17;
+	public static final int FNT_LOGS = 18;
 
 
 	public enum Font {
@@ -109,6 +110,8 @@ public class HCFontManager {
 			return R.color.white;
 		case FNT_LOG:
 			return R.color.dark_red;
+		case FNT_LOGS:
+			return R.color.sky_blue;
 
 
 		case FNT_HM_NM:
@@ -148,6 +151,8 @@ public class HCFontManager {
 			return Font.FNT_BOLD;
 		case FNT_LOG:
 			return Font.FNT_BOLD;
+		case FNT_LOGS:
+			return Font.FNT_BOLD;
 		case FNT_FOUNDER:
 			return Font.FNT_BOLD;
 
@@ -185,6 +190,8 @@ public class HCFontManager {
 			return R.dimen.sz_ms;
 		case FNT_LOG:
 			return R.dimen.sz_ms;
+		case FNT_LOGS:
+			return R.dimen.sz_sm;
 
 		case FNT_EDIT_LARGE:
 			return R.dimen.sz_mm;

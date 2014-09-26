@@ -2,34 +2,19 @@ package com.mavericks.checkin.holders;
 
 
 public class HCProfileHolder extends HCBaseHolder{
-
+	
+	
 	String name;
 	String pic;
 	String password;
 	String user_id;
 	String phone;
-	String fbId;
-	String twId;
-	String AbaranId;
+	String transaction_id;
 	
-	public String getFbId() {
-		return fbId;
-	}
-	public void setFbId(String fbId) {
-		this.fbId = fbId;
-	}
-	public String getTwId() {
-		return twId;
-	}
-	public void setTwId(String twId) {
-		this.twId = twId;
-	}
-	public String getAbaranId() {
-		return AbaranId;
-	}
-	public void setAbaranId(String abaranId) {
-		AbaranId = abaranId;
-	}
+	
+	
+	
+	
 	public String getPassword() {
 		return password;
 	}
@@ -61,5 +46,10 @@ public class HCProfileHolder extends HCBaseHolder{
 		this.pic = pic;
 	}
 	
-	
+	public String getTransaction_id() {
+		return transaction_id;
+	}
+	public void setTransaction_id(String transaction_id) {
+		this.transaction_id = transaction_id;
 }
+	}

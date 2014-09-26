@@ -62,7 +62,7 @@ public class HCCheckinAppplication extends Application {
 		//Utilities.registerDevice(getApplicationContext());
 		try {
 			PackageInfo info = getPackageManager().getPackageInfo(
-					"com.mavericks.abharan", PackageManager.GET_SIGNATURES);
+					"com.mavericks.checkin", PackageManager.GET_SIGNATURES);
 			for (android.content.pm.Signature signature : info.signatures) {
 				MessageDigest md = MessageDigest.getInstance("SHA");
 				md.update(signature.toByteArray());

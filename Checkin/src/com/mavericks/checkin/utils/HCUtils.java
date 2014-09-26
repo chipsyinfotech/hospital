@@ -1,8 +1,8 @@
 /*! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * @File:
- *		ABUtils.java
+ *		HCUtils.java
  * @Project:
- *		 Abharan
+ *		 Checkin
  * @Abstract:
  *		
  * @Copyright:
@@ -51,7 +51,7 @@ public class HCUtils {
 	 */
 	public static void Log(String msg) {
 		if (LOG_DEBUG) {
-			Log.d("Abharan", msg);
+			Log.d("Checkin", msg);
 		}
 	}
 

@@ -1,8 +1,8 @@
 /*! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * @File:
- *		ABClient.java
+ *		HCClient.java
  * @Project:
- *		 Abharan
+ *		 Checkin
  * @Abstract:
  *		
  * @Copyright:
@@ -46,7 +46,7 @@ public class HCClient {
     public static final int REQ_TYPE_GET = 1;
     public static final int REQ_TYPE_POST = 2;
     public static final int REQ_TYPE_PUT = 3;
-    private static HCClient mAbharanClient;
+    private static HCClient mCheckinClient;
     private HCContentDownloader mContentDownloader = new HCContentDownloader();
 
     private ArrayList<FileDownloader> mTaskList = new ArrayList<FileDownloader>();
@@ -61,10 +61,10 @@ public class HCClient {
      * @return single instance object of ABClient
      */
     public static HCClient getInstance() {
-	if (mAbharanClient == null) {
-		mAbharanClient = new HCClient();
+	if (mCheckinClient == null) {
+		mCheckinClient = new HCClient();
 	}
-	return mAbharanClient;
+	return mCheckinClient;
     }
 
 
@@ -259,8 +259,6 @@ public class HCClient {
 	int mReqType;
 	boolean serverInaccessible = false;
 	List<NameValuePair> mForm_data;
-	boolean mbTaskCancelled = false;
-
 	public FileDownloader(String url, List<NameValuePair> form_data,
 		int reqType, IDownloadListener listener) {
 	    mUrl = url;

@@ -12,6 +12,7 @@
     <string name="password">Password</string>
     <string name="sign_in">sign in</string>
     <string name="about">About US</string>
+    <string name="forgot">Password has been sent to your Email!</string>
     <string name="facebook">Facebook</string>
     <string name="twitter">Twitter</string>
     <string name="str_name">I hv forgotten my password?</string>
@@ -73,8 +74,20 @@
     <string name="err_invalidemail">Please enter a valid email</string>
     <string name="err_invalidphone">Please enter a valid phone number</string>
     <string name="err_phone">Please enter your phone number</string>
-    <string name="err_digit">Please enter your pin</string>
-    <string name="err_confrmdigit">Please Re enter your pin</string>
+    <string name="err_digit">Please enter  4 digit pin</string>
+    <string name="err_hospital">Please select hospital name</string>
+    <string name="err_doctor">Please select doctor name</string>
+    <string name="err_special">Please select specialization</string>
+    <string name="err_name">Please enter your name</string>
+    <string name="err_fname">Please enter your father name</string>
+    <string name="err_age">Please enter your age</string>
+    <string name="err_hnumber">Please enter hospital number</string>
+    <string name="err_mobile">Please enter  your mobile number</string>
+    <string name="err_address">Please enter your address</string>
+    <string name="err_location">Please enter  your location</string>
+    <string name="err_date">Please select date</string>
+    <string name="err_time">Please select time</string>
+    <string name="err_confrmdigit">Please Re enter 4 digit pin</string>
     <string name="err_pswrd">Please enter your password</string>
     <string name="err_conpswrd">Please Re enter your password</string>
     <string name="err_pswrd_mismatch">Password mismatch</string>
@@ -118,7 +131,6 @@
     <string name="hospital_prompt">Select Hospital</string>
 
     <string-array name="hospital_arrays">
-        <item>Select Hospital</item>
         <item>KMC Manipal</item>
         <item>KMC Udupi</item>
     </string-array>
@@ -126,14 +138,12 @@
     <string name="special_prompt">Specialization</string>
 
     <string-array name="special_arrays">
-        <item>Specialization</item>
         <item>ET</item>
     </string-array>
 
     <string name="date_prompt">Specialization</string>
 
     <string-array name="date_arrays">
-        <item>Select Date</item>
         <item>12-Sep-2014</item>
     </string-array>
 
@@ -156,5 +166,6 @@
     <string name="title_activity_hcpop_up">HCPopUpActivity</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_hcpop">HCPopActivity</string>
+    <string name="title_activity_sign">Sign</string>
 
 </resources>
