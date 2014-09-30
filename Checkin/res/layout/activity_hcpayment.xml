@@ -5,190 +5,182 @@
     android:background="@color/white"
     android:orientation="vertical" >
 
-  <RelativeLayout
-                android:id="@+id/rel_register"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/header_line"
-                android:orientation="horizontal" >
-
-                <ImageView
-                    android:id="@+id/img_header"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margin_sm"
-                    android:layout_marginTop="@dimen/margin_s"
-                    android:contentDescription="@string/about"
-                    android:src="@drawable/hospial_logo" />
-
-                <ImageView
-                    android:id="@+id/img_info"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginLeft="@dimen/margin_sm"
-                    android:layout_marginTop="@dimen/margin_s"
-                    android:background="@drawable/info_icon"
-                    android:contentDescription="@string/about" />
-            </RelativeLayout>
-<RelativeLayout
-                android:id="@+id/rel_charge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginRight="@dimen/margin_ms"
-                   android:layout_below="@+id/rel_register"
-                   android:gravity="center"
-                
-                android:orientation="horizontal" >
-
-    <com.mavericks.checkin.views.HCTextView
-        android:id="@+id/text_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-     
-        android:layout_marginLeft="@dimen/margin_ms"
-        android:layout_marginTop="@dimen/margin_lx"
-        android:text="@string/register"
-        checkin:font_type="@integer/fnt_texts" />
-
-    <com.mavericks.checkin.views.HCTextView
-        android:id="@+id/text_rupees"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/text_register"
-        android:layout_alignParentRight="true"
-        android:text="@string/rupees"
-        checkin:font_type="@integer/fnt_texts" />
-
-    <com.mavericks.checkin.views.HCTextView
-        android:id="@+id/text_consultant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_register"
-        android:layout_marginLeft="@dimen/margin_ms"
-        android:layout_marginTop="@dimen/margin_lx"
-        android:text="@string/consult"
-        checkin:font_type="@integer/fnt_texts" />
-
-    <com.mavericks.checkin.views.HCTextView
-        android:id="@+id/text_rupee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/text_consultant"
-        android:layout_alignParentRight="true"
-        android:text="@string/rupee"
-        checkin:font_type="@integer/fnt_texts" />
-
-    <com.mavericks.checkin.views.HCTextView
-        android:id="@+id/text_check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_consultant"
-        android:layout_marginLeft="@dimen/margin_ms"
-        android:layout_marginTop="@dimen/margin_lx"
-        android:text="@string/check"
-        checkin:font_type="@integer/fnt_texts" />
-
-    <com.mavericks.checkin.views.HCTextView
-        android:id="@+id/text_convience"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_check"
-        android:layout_marginLeft="@dimen/margin_ms"
-        android:layout_marginTop="@dimen/margin_s"
-        android:text="@string/convience"
-        checkin:font_type="@integer/fnt_texts" />
-
-    <com.mavericks.checkin.views.HCTextView
-        android:id="@+id/text_rup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/text_convience"
-        android:layout_alignParentRight="true"
-        android:text="@string/rupees"
-        checkin:font_type="@integer/fnt_texts" />
-
-    <ImageView
-        android:id="@+id/img_div2"
+    <RelativeLayout
+        android:id="@+id/rel_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_convience"
-        android:layout_marginTop="@dimen/margin_ms"
-        android:background="@drawable/divider_line"
-        android:contentDescription="@string/about" />
+        android:background="@drawable/header_line"
+        android:orientation="horizontal" >
 
-    <com.mavericks.checkin.views.HCTextView
-        android:id="@+id/text_amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/img_div2"
-        android:layout_marginLeft="@dimen/margin_ms"
-        android:layout_marginTop="@dimen/margin_ms"
-        android:text="@string/amount"
-        checkin:font_type="@integer/fnt_text" />
+        <ImageView
+            android:id="@+id/img_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_sm"
+            android:layout_marginTop="@dimen/margin_s"
+            android:contentDescription="@string/about"
+            android:src="@drawable/hospial_logo" />
 
-    <com.mavericks.checkin.views.HCTextView
-        android:id="@+id/text_rupi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/text_amount"
-        android:layout_alignParentRight="true"
-        android:text="@string/rupees"
-        checkin:font_type="@integer/fnt_text" />
-
-    <CheckBox
-        android:id="@+id/img_priority"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_rupi"
-        android:layout_marginTop="@dimen/margin_add"
-        android:background="@drawable/priority_button_non_press"
-        android:button="@drawable/prior"
-        android:contentDescription="@string/about" />
-
-    <com.mavericks.checkin.views.HCTextView
-        android:id="@+id/text_prior"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_rupi"
-        android:layout_marginTop="@dimen/margin_add"
-        android:layout_toRightOf="@+id/img_priority"
-        android:text="@string/priority"
-        checkin:font_type="@integer/fnt_prior" />
-
-    <com.mavericks.checkin.views.HCTextView
-        android:id="@+id/text_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_prior"
-        android:layout_marginLeft="@dimen/margin_xs"
-        android:layout_marginTop="@dimen/margin_s"
-        android:text="@string/add"
-        checkin:font_type="@integer/fnt_texts" />
-    <com.mavericks.checkin.views.HCTextView
-        android:id="@+id/text_money"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_prior"
-        android:layout_marginTop="@dimen/margin_s"
-        android:layout_marginLeft="@dimen/margin_ms"
-        android:layout_toRightOf="@+id/text_add"
-        android:text="@string/rupee"
-        checkin:font_type="@integer/fnt_text" />
-    
-    <ImageView
-        android:id="@+id/img_div3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_money"
-        android:layout_marginTop="@dimen/margin_s"
-        android:background="@drawable/divider_line"
-        android:contentDescription="@string/about" />
-    
+        <ImageView
+            android:id="@+id/img_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/margin_sm"
+            android:layout_marginTop="@dimen/margin_s"
+            android:background="@drawable/info_icon"
+            android:contentDescription="@string/about" />
     </RelativeLayout>
-    
-   
+
+    <RelativeLayout
+        android:id="@+id/rel_charge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_register"
+        android:layout_marginLeft="@dimen/margin_mx"
+        android:layout_marginRight="@dimen/margin_mx"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_lx"
+            android:text="@string/register"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_rupees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/text_register"
+            android:layout_alignParentRight="true"
+            android:text="@string/rupees"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_consultant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_register"
+            android:layout_marginTop="@dimen/margin_lx"
+            android:text="@string/consult"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_rupee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/text_consultant"
+            android:layout_alignParentRight="true"
+            android:text="@string/rupee"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_consultant"
+            android:layout_marginTop="@dimen/margin_lx"
+            android:text="@string/check"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_convience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_check"
+            android:layout_marginTop="@dimen/margin_s"
+            android:text="@string/convience"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_rup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/text_convience"
+            android:layout_alignParentRight="true"
+            android:text="@string/rupees"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <ImageView
+            android:id="@+id/img_div2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_convience"
+            android:layout_marginTop="@dimen/margin_ms"
+            android:background="@drawable/divider_line"
+            android:contentDescription="@string/about" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_div2"
+            android:layout_marginTop="@dimen/margin_ms"
+            android:text="@string/amount"
+            checkin:font_type="@integer/fnt_text" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_rupi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/text_amount"
+            android:layout_alignParentRight="true"
+            android:text="@string/rupees"
+            checkin:font_type="@integer/fnt_text" />
+
+        <CheckBox
+            android:id="@+id/img_priority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_rupi"
+            android:layout_marginTop="@dimen/margin_add"
+            android:background="@drawable/priority_button_non_press"
+            android:button="@drawable/prior"
+            android:contentDescription="@string/about" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_prior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_rupi"
+            android:layout_marginTop="@dimen/margin_add"
+            android:layout_toRightOf="@+id/img_priority"
+            android:text="@string/priority"
+            checkin:font_type="@integer/fnt_prior" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_prior"
+            android:layout_marginLeft="@dimen/margin_xs"
+            android:layout_marginTop="@dimen/margin_s"
+            android:text="@string/add"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_prior"
+            android:layout_marginLeft="@dimen/margin_ms"
+            android:layout_marginTop="@dimen/margin_s"
+            android:layout_toRightOf="@+id/text_add"
+            android:text="@string/rupee"
+            checkin:font_type="@integer/fnt_text" />
+
+        <ImageView
+            android:id="@+id/img_div3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_money"
+            android:layout_marginTop="@dimen/margin_s"
+            android:background="@drawable/divider_line"
+            android:contentDescription="@string/about" />
+    </RelativeLayout>
 
     <com.mavericks.checkin.views.HCTextView
         android:id="@+id/text_payment"
@@ -196,9 +188,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-       android:layout_marginBottom="@dimen/margin_ms"
-        android:text="@string/make_payment"
+        android:layout_marginBottom="@dimen/margin_ms"
         android:background="@drawable/check"
+        android:text="@string/make_payment"
         checkin:font_type="@integer/fnt_login" />
 
 </RelativeLayout>

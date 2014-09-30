@@ -1,7 +1,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:checkin="http://schemas.android.com/apk/res/com.mavericks.checkin"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:scrollbars="none" >
 
     <RelativeLayout
@@ -21,18 +21,19 @@
                 android:id="@+id/img_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/margin_s"
                 android:contentDescription="@string/about"
                 android:src="@drawable/hospial_logo" />
-<com.mavericks.checkin.views.HCTextView
+
+            <com.mavericks.checkin.views.HCTextView
                 android:id="@+id/text_log"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                checkin:font_type="@integer/fnt_logs" 
-                android:layout_marginTop="@dimen/margin_s"
-              android:text="@string/log"/>
+                android:layout_marginTop="@dimen/margin_sm"
+                android:text="@string/log"
+                checkin:font_type="@integer/fnt_logs" />
         </RelativeLayout>
 
         <LinearLayout
@@ -40,20 +41,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/rel_register"
-            android:layout_marginLeft="@dimen/margin_ms"
-            android:layout_marginRight="@dimen/margin_ms"
+            android:layout_marginLeft="@dimen/margin_mx"
+            android:layout_marginRight="@dimen/margin_mx"
             android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:orientation="horizontal" >
 
                 <ImageView
                     android:id="@+id/img_select"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
                     android:src="@drawable/select_hospital_icon" />
 
@@ -61,33 +62,30 @@
                     android:id="@+id/spinner_hospital"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margin_sm"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginLeft="@dimen/margin_ms"
                     android:background="@android:color/transparent"
-                     android:entries="@array/hospital_arrays"
-        android:prompt="@string/hospital_prompt"
-                 
-                />
+                    android:entries="@array/hospital_arrays"
+                    android:prompt="@string/hospital_prompt" />
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/tab_select"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_s"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_sm"
                 android:orientation="horizontal" >
 
                 <ImageView
                     android:id="@+id/img_special"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
                     android:src="@drawable/specialization_icon" />
 
@@ -96,32 +94,29 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
-                    android:layout_marginTop="@dimen/margin_s"
                     android:background="@android:color/transparent"
-                          android:entries="@array/special_arrays"
-        android:prompt="@string/special_prompt"
-                 
-                />
+                    android:entries="@array/special_arrays"
+                    android:prompt="@string/special_prompt" />
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/tab_special"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_s"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:orientation="horizontal" >
 
                 <ImageView
                     android:id="@+id/img_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
                     android:src="@drawable/date_icon" />
 
@@ -130,31 +125,29 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
-                    android:layout_marginTop="@dimen/margin_s"
                     android:background="@android:color/transparent"
-                     android:entries="@array/date_arrays"
-        android:prompt="@string/date_prompt"
-                 />
+                    android:entries="@array/date_arrays"
+                    android:prompt="@string/date_prompt" />
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/tab_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_s"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:orientation="horizontal" >
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_appointment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
                     android:text="@string/appointment"
                     checkin:font_type="@integer/fnt_prior" />
             </LinearLayout>
@@ -163,7 +156,7 @@
                 android:id="@+id/radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_s"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:orientation="horizontal" >
 
                 <com.mavericks.checkin.views.HCRadioButton
@@ -171,7 +164,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                       android:background="@drawable/yes_button_non_press"
+                    android:background="@drawable/yes_button_non_press"
                     android:button="@drawable/yes"
                     checkin:font_type="@integer/fnt_btn" />
 
@@ -180,7 +173,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                      android:background="@drawable/no_button_non_press"
+                    android:background="@drawable/no_button_non_press"
                     android:button="@drawable/no"
                     checkin:font_type="@integer/fnt_btn" />
             </RadioGroup>
@@ -189,7 +182,7 @@
                 android:id="@+id/tab_radio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_s"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
@@ -197,13 +190,13 @@
                 android:id="@+id/lin_doctor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:orientation="horizontal" >
 
                 <ImageView
                     android:id="@+id/img_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
                     android:src="@drawable/name_icon" />
 
@@ -211,32 +204,30 @@
                     android:id="@+id/spinner_doctor"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margin_sm"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginLeft="@dimen/margin_ms"
                     android:background="@android:color/transparent"
-                     android:entries="@array/doctor_arrays"
-        android:prompt="@string/doctor_prompt"
-                  />
+                    android:entries="@array/doctor_arrays"
+                    android:prompt="@string/doctor_prompt" />
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/tab_doctor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_s"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:orientation="horizontal" >
 
                 <ImageView
                     android:id="@+id/img_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
                     android:contentDescription="@string/about"
                     android:src="@drawable/time_icon" />
 
@@ -245,16 +236,16 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
-                    android:layout_marginTop="@dimen/margin_s"
                     android:background="@android:color/transparent"
-                  />
+                    android:entries="@array/time_arrays"
+                    android:prompt="@string/time_prompt" />
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/tab_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_s"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
@@ -262,7 +253,7 @@
                 android:id="@+id/visit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_s"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:button="@drawable/yes"
                 android:orientation="horizontal" >
 
@@ -271,8 +262,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                      android:button="@drawable/visit"
-                android:background="@drawable/new_visit_button_non_press"
+                    android:background="@drawable/new_visit_button_non_press"
+                    android:button="@drawable/visit"
                     checkin:font_type="@integer/fnt_btn" />
 
                 <com.mavericks.checkin.views.HCRadioButton
@@ -291,34 +282,33 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/lin_lay"
-            android:orientation="vertical"
-             >
+            android:layout_marginTop="@dimen/margin_ms"
+            android:orientation="vertical" >
 
             <ImageView
                 android:id="@+id/tab_visit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ms"
                 android:background="@drawable/divider_line"
                 android:contentDescription="@string/about" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginRight="@dimen/margin_ms"
+                android:layout_marginLeft="@dimen/margin_mx"
+                android:layout_marginRight="@dimen/margin_mx"
                 android:orientation="vertical" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/img_pname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:contentDescription="@string/about"
                         android:src="@drawable/name_icon" />
 
@@ -327,9 +317,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:background="@android:color/transparent"
                         android:hint="@string/pname"
+                        android:inputType="text"
                         checkin:font_type="@integer/fnt_edit_small" />
                 </LinearLayout>
 
@@ -337,21 +327,22 @@
                     android:id="@+id/tab_pname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/img_fname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:contentDescription="@string/about"
+                        android:inputType="text"
                         android:src="@drawable/name_icon" />
 
                     <com.mavericks.checkin.views.HCEditText
@@ -359,7 +350,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:background="@android:color/transparent"
                         android:hint="@string/fname"
                         checkin:font_type="@integer/fnt_edit_small" />
@@ -369,20 +359,20 @@
                     android:id="@+id/tab_fname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/img_age"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:contentDescription="@string/about"
                         android:src="@drawable/age_icon" />
 
@@ -391,11 +381,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
-                        android:layout_marginTop="@dimen/margin_s"
-                        android:inputType="number"
-                        android:maxLength="2"
                         android:background="@android:color/transparent"
                         android:hint="@string/age"
+                        android:inputType="number"
+                        android:maxLength="2"
                         checkin:font_type="@integer/fnt_edit_small" />
                 </LinearLayout>
 
@@ -403,20 +392,20 @@
                     android:id="@+id/tab_age"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:orientation="horizontal" >
 
                     <com.mavericks.checkin.views.HCTextView
                         android:id="@+id/text_gender"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_sl"
                         android:text="@string/gender"
                         checkin:font_type="@integer/fnt_btn" />
                 </LinearLayout>
@@ -425,15 +414,15 @@
                     android:id="@+id/radio_gender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:orientation="horizontal" >
 
                     <com.mavericks.checkin.views.HCRadioButton
                         android:id="@+id/radio_male"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                          android:background="@drawable/male_icon_non_press"
                         android:layout_weight="1"
+                        android:background="@drawable/male_icon_non_press"
                         android:button="@drawable/male"
                         checkin:font_type="@integer/fnt_btn" />
 
@@ -441,8 +430,8 @@
                         android:id="@+id/radio_female"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                          android:background="@drawable/female_icon_non_press"
                         android:layout_weight="1"
+                        android:background="@drawable/female_icon_non_press"
                         android:button="@drawable/female"
                         checkin:font_type="@integer/fnt_btn" />
                 </RadioGroup>
@@ -451,20 +440,20 @@
                     android:id="@+id/tab_gender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/img_hospital"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:contentDescription="@string/about"
                         android:src="@drawable/select_hospital_icon" />
 
@@ -473,9 +462,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:background="@android:color/transparent"
                         android:hint="@string/hnumber"
+                        android:inputType="phone"
                         checkin:font_type="@integer/fnt_edit_small" />
                 </LinearLayout>
 
@@ -483,20 +472,20 @@
                     android:id="@+id/tab_hnumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/img_call"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:contentDescription="@string/about"
                         android:src="@drawable/mobile_number_icon" />
 
@@ -505,10 +494,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:background="@android:color/transparent"
                         android:hint="@string/mobile"
-                        android:inputType="number"
+                        android:inputType="phone"
                         checkin:font_type="@integer/fnt_edit_small" />
                 </LinearLayout>
 
@@ -516,20 +504,20 @@
                     android:id="@+id/tab_call"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/img_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:contentDescription="@string/about"
                         android:src="@drawable/email_icon" />
 
@@ -538,7 +526,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
-                        android:layout_marginTop="@dimen/margin_sl"
                         android:background="@android:color/transparent"
                         android:hint="@string/hemail"
                         android:inputType="textEmailAddress"
@@ -549,20 +536,20 @@
                     android:id="@+id/tab_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/img_address"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:contentDescription="@string/about"
                         android:src="@drawable/address_icon" />
 
@@ -571,7 +558,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:background="@android:color/transparent"
                         android:hint="@string/address"
                         checkin:font_type="@integer/fnt_edit_small" />
@@ -581,20 +567,20 @@
                     android:id="@+id/tab_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/img_location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:contentDescription="@string/about"
                         android:src="@drawable/location_icon" />
 
@@ -603,7 +589,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:background="@android:color/transparent"
                         android:hint="@string/location"
                         checkin:font_type="@integer/fnt_edit_small" />
@@ -613,22 +598,23 @@
                     android:id="@+id/tab_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
             </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/edit_height_mmm"
                 android:orientation="horizontal" >
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_visit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="@dimen/margin_xs"
+                    android:layout_marginBottom="@dimen/margin_ms"
                     android:background="@drawable/check"
                     android:text="@string/checkin"
                     checkin:font_type="@integer/fnt_login" />
@@ -640,34 +626,33 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/lin_lay"
-            android:orientation="vertical"
-            >
+            android:layout_marginTop="@dimen/margin_ms"
+            android:orientation="vertical" >
 
             <ImageView
                 android:id="@+id/tab_rvisit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ms"
                 android:background="@drawable/divider_line"
                 android:contentDescription="@string/about" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_ms"
-                android:layout_marginRight="@dimen/margin_ms"
+                android:layout_marginLeft="@dimen/margin_mx"
+                android:layout_marginRight="@dimen/margin_mx"
                 android:orientation="vertical" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/img_rname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:contentDescription="@string/add"
                         android:src="@drawable/name_icon" />
 
@@ -676,9 +661,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:background="@android:color/transparent"
                         android:hint="@string/pname"
+                        android:inputType="text"
                         checkin:font_type="@integer/fnt_edit_small" />
                 </LinearLayout>
 
@@ -686,20 +671,20 @@
                     android:id="@+id/tab_rpname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/img_rhospital"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:contentDescription="@string/about"
                         android:src="@drawable/select_hospital_icon" />
 
@@ -708,10 +693,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:background="@android:color/transparent"
                         android:hint="@string/hnumber"
-                        android:inputType="number"
+                        android:inputType="phone"
                         checkin:font_type="@integer/fnt_edit_small" />
                 </LinearLayout>
 
@@ -719,20 +703,20 @@
                     android:id="@+id/tab_rhospital"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/img_rcall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:contentDescription="@string/about"
                         android:src="@drawable/mobile_number_icon" />
 
@@ -741,10 +725,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:background="@android:color/transparent"
                         android:hint="@string/mobile"
-                        android:inputType="number"
+                        android:inputType="phone"
                         checkin:font_type="@integer/fnt_edit_small" />
                 </LinearLayout>
 
@@ -752,20 +735,20 @@
                     android:id="@+id/tab_rmobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/img_remail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:contentDescription="@string/about"
                         android:src="@drawable/email_icon" />
 
@@ -774,7 +757,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
-                        android:layout_marginTop="@dimen/margin_s"
                         android:background="@android:color/transparent"
                         android:hint="@string/hemail"
                         android:inputType="textEmailAddress"
@@ -785,22 +767,23 @@
                     android:id="@+id/tab_remail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
             </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/edit_height_mmm"
                 android:orientation="horizontal" >
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_revisit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="@dimen/margin_xx"
+                    android:layout_marginBottom="@dimen/margin_ms"
                     android:background="@drawable/check"
                     android:text="@string/checkin"
                     checkin:font_type="@integer/fnt_login" />

@@ -25,12 +25,16 @@ public class HCSession {
 		HCUtils.editPrefString(HCConstants.PREF_PIC, profile.getPic(), c);
 		HCUtils.editPrefString(HCConstants.PREF_USRID, profile.getUser_id(), c);
 		HCUtils.editPrefString(HCConstants.PREF_USRNAME, profile.getName(), c);
+		HCUtils.editPrefString(HCConstants.PREF_EMAIL, profile.getEmail(), c);
 	}
 
 	
 
 	public String getFbId(Context c) {
 		return HCUtils.getPrefString(HCConstants.PREF_FBID, "", c);
+	}
+	public String getEmailId(Context c) {
+		return HCUtils.getPrefString(HCConstants.PREF_EMAIL, "", c);
 	}
 
 	public String getTwId(Context c) {
@@ -45,7 +49,7 @@ public class HCSession {
 		return HCUtils.getPrefString(HCConstants.PREF_PIC, "", c);
 	}
 
-	public String getUsrId(Context c) {
+	public String getUser_id(Context c) {
 		return HCUtils.getPrefString(HCConstants.PREF_USRID, "", c);
 	}
 
@@ -61,6 +65,7 @@ public class HCSession {
 		HCUtils.removePreference(HCConstants.PREF_TWID, c);
 		HCUtils.removePreference(HCConstants.PREF_USRID, c);
 		HCUtils.removePreference(HCConstants.PREF_USRNAME, c);
+		HCUtils.removePreference(HCConstants.PREF_EMAIL, c);
 
 	}
 }

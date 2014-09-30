@@ -32,6 +32,7 @@ import com.mavericks.checkin.client.HCIRequestListener;
 import com.mavericks.checkin.client.HCServerUtils;
 import com.mavericks.checkin.client.HCSession;
 import com.mavericks.checkin.holders.HCProfileHolder;
+import com.mavericks.checkin.parser.HCForgotParser;
 import com.mavericks.checkin.parser.HCStatusParser;
 import com.mavericks.checkin.utils.HCAlertManager;
 import com.mavericks.checkin.utils.HCConstants;
@@ -43,7 +44,8 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 	TextView mTxtpaswrd;
 	String email;
 	String digit;
-TextView mTxtsignup;
+	TextView mTxtsignup;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -51,22 +53,23 @@ TextView mTxtsignup;
 		mEdtemail = (EditText) findViewById(R.id.edt_email);
 		mEdtdigit = (EditText) findViewById(R.id.edt_digit);
 		mTxtpaswrd = (TextView) findViewById(R.id.text_password);
-        mTxtsignup=(TextView)findViewById(R.id.text_signup);
+		mTxtsignup = (TextView) findViewById(R.id.text_signup);
 		mTxtlogin = (TextView) findViewById(R.id.text_login);
 		mTxtlogin.setOnClickListener(this);
 		mTxtpaswrd.setOnClickListener(this);
 		mTxtsignup.setOnClickListener(this);
 	}
+
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.text_password:
-			if(isForgotValid())
+			if (isForgotValid())
 				ForgotPassword();
 			break;
 
 		case R.id.text_signup:
-                      signup();
+			signup();
 		case R.id.text_login:
 
 			if (isFormValid())
@@ -78,23 +81,24 @@ TextView mTxtsignup;
 		}
 
 	}
-	private boolean isForgotValid() {		
+
+	private boolean isForgotValid() {
 		int msg = 0;
 		boolean bValid = true;
 
 		if (mEdtemail.getText().toString().trim().length() == 0) {
 			msg = R.string.err_email;
 			bValid = false;
-		}else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(mEdtemail.getText().toString()).matches()) {
+		} else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(
+				mEdtemail.getText().toString()).matches()) {
 			msg = R.string.err_invalidemail;
 			mEdtemail.setText("");
-			bValid = false;	
+			bValid = false;
 		}
 		if (msg != 0)
 			HCAlertManager.showAlertWithOneBtn(this, getString(msg), null);
 		return bValid;
 	}
-
 
 	private boolean isFormValid() {
 		email = mEdtemail.getText().toString();
@@ -121,14 +125,14 @@ TextView mTxtsignup;
 		return bValid;
 
 	}
+
 	private void ForgotPassword() {
 		showProgressDialog(null, false);
-		final HCStatusParser parser = new HCStatusParser();
-
+		final HCForgotParser parser = new HCForgotParser();
 		List<NameValuePair> formData = new ArrayList<NameValuePair>();
 		formData.add(new BasicNameValuePair(HCConstants.PAR_EMAIL_ID, ""
 				+ mEdtemail.getText().toString()));
-	
+
 		HCClient.getInstance().request(this, HCServerUtils.REQ_FORGOT_PASS,
 				null, formData, null, parser, new HCIRequestListener() {
 
@@ -149,14 +153,15 @@ TextView mTxtsignup;
 				});
 
 	}
-	
+
 	private void login() {
 
 		showProgressDialog(null, false);
 		final HCStatusParser parser = new HCStatusParser();
 
 		List<NameValuePair> formData = new ArrayList<NameValuePair>();
-		formData.add(new BasicNameValuePair(HCConstants.PAR_EMAIL_ID, ""+ mEdtemail.getText().toString()));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_EMAIL_ID, ""
+				+ mEdtemail.getText().toString()));
 		formData.add(new BasicNameValuePair(HCConstants.PAR_PSWRD, ""
 				+ mEdtdigit.getText().toString()));
 		HCClient.getInstance().request(this, HCServerUtils.REQ_HOSPITAL_LOGIN,
@@ -168,7 +173,8 @@ TextView mTxtsignup;
 						if (status == HCConstants.ERROR_CODE_SUCCESS) {
 							startActivity(new Intent(HCSignInActivity.this,
 									HCRegistrationActivity.class));
-							overridePendingTransition(R.anim.anim_from_middle, 0);
+							overridePendingTransition(R.anim.anim_from_middle,
+									0);
 							HCSession.getInstance().storeSession(
 									HCSignInActivity.this,
 									(HCProfileHolder) parser.getDataHolder());
@@ -183,18 +189,16 @@ TextView mTxtsignup;
 				});
 
 	}
-private void signup()
-{
-	startActivity(new Intent(HCSignInActivity.this,
-			HCSignupActivity.class));
-	overridePendingTransition(R.anim.slide_in_right, 0);
-}
 
-@Override
-public void onBackPressed() {
-	
-	super.onBackPressed();
-	overridePendingTransition(0,android.R.anim.fade_out);
-}
-}
+	private void signup() {
+		startActivity(new Intent(HCSignInActivity.this, HCSignupActivity.class));
+		overridePendingTransition(R.anim.slide_in_right, 0);
+	}
 
+	@Override
+	public void onBackPressed() {
+
+		super.onBackPressed();
+		overridePendingTransition(0, android.R.anim.fade_out);
+	}
+}

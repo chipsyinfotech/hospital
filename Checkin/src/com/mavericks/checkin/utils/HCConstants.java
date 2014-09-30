@@ -34,6 +34,8 @@ public class HCConstants {
 	public static final String PREF_TWID = "pref_tw_id";
 	public static final String PREF_TRID = "pref_tr_id";
 	public static final String PREF_HID = "pref_hospital_id";
+	public static final String PREF_EMAIL = "pref_email_address";
+	
 	public static final String PREF_ADDRESS = "pref_hospital_address";
 	public static final String PREF_HGROUP = "pref_hospital_group";
 	public static final String PREF_DIV_REG = "pref_isDevice_registered";
@@ -60,9 +62,12 @@ public class HCConstants {
 	public static final String PAR_VISIT_DATE= "visiting_date";
 	public static final String PAR_TIME_ID = "timing_id";
 	public static final String PAR_FNAME = "first_name";
+	public static final String PAR_MOTHER = "mother_name";
+	public static final String PAR_MARRIED = "married";
 	public static final String PAR_LNAME = "last_name";
 	public static final String PAR_HOSPITAL_ID= "hospital_id";
 	public static final String PAR_PASS= "priority_pass";
+	public static final String PAR_TOTAL_AMOUNT= "total_amount";
 	public static final String PAR_FANAME= "father_name";
 	public static final String PAR_GENDER= "gender";
 	public static final String PAR_ADDRESS= "address";

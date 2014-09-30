@@ -5,9 +5,10 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="15"
         android:targetSdkVersion="21" />
-      <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -39,7 +40,12 @@
         <activity
             android:name=".HCSplashActivity"
             android:label="@string/title_activity_hcsplash" >
-             <intent-filter>
+        </activity>
+        <activity
+            android:name=".HCRegistrationActivity"
+            android:label="@string/title_activity_hcregistration"
+            android:theme="@style/AppTheme" >
+                 <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category
@@ -48,20 +54,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HCRegistrationActivity"
-            android:label="@string/title_activity_hcregistration"
-            android:theme="@style/AppTheme" >
-             
-                 
-          
-          
-             
-            
-        </activity>
-        <activity
             android:name=".HCPaymentActivity"
             android:label="@string/title_activity_hcpayment" >
-           
+       
         </activity>
         <activity
             android:name=".HCSelectionActivity"
@@ -71,14 +66,10 @@
             android:name=".HCSignInActivity"
             android:label="@string/title_activity_hcsign_in"
             android:theme="@style/AppTheme" >
-       
-          
         </activity>
         <activity
             android:name=".HCSignupActivity"
             android:label="@string/title_activity_hcsignup" >
-              
-             
         </activity>
         <activity
             android:name=".HCPopUpActivity"
@@ -95,7 +86,7 @@
         <activity
             android:name=".Sign"
             android:label="@string/title_activity_sign" >
-             
         </activity>
     </application>
+
 </manifest>

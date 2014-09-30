@@ -27,6 +27,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -37,6 +38,7 @@ import com.mavericks.checkin.client.HCClient;
 import com.mavericks.checkin.client.HCHospitalSession;
 import com.mavericks.checkin.client.HCIRequestListener;
 import com.mavericks.checkin.client.HCServerUtils;
+import com.mavericks.checkin.client.HCSession;
 import com.mavericks.checkin.holders.HCHospitalHolder;
 import com.mavericks.checkin.parser.HCVisitParser;
 import com.mavericks.checkin.utils.HCAlertManager;
@@ -79,12 +81,18 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 	EditText mEdtremail;
 	TextView mTxtappointment;
 	String usernumber;
-	String mUserid = null;
+	ImageView doctor;
+	String special = "101";
+	String time = "12";
+	String date = "01-10-2014";
+	String hospital_id = "1234";
 	String lname = null;
-	String prioritypass = null;
-	String appointment=null;
+	String prioritypass = "1";
+	String appointment = null;
 	TextView mTxtgender;
-	
+	String amount = null;
+	String mother = null;
+	String married = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -100,6 +108,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		mEdtvfname = (EditText) findViewById(R.id.edt_fname);
 		mEdtvage = (EditText) findViewById(R.id.edt_age);
 		mEdtvhnumber = (EditText) findViewById(R.id.edt_hnumber);
+		doctor = (ImageView) findViewById(R.id.tab_doctor);
 		mEdtvmobile = (EditText) findViewById(R.id.edt_mobile);
 		mEdtvemail = (EditText) findViewById(R.id.edt_email);
 		mEdtvaddress = (EditText) findViewById(R.id.edt_address);
@@ -134,6 +143,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		revisit.setOnClickListener(this);
 		mTxtvcheckin.setOnClickListener(this);
 		mTxtrcheckin.setOnClickListener(this);
+		doctor.setVisibility(View.GONE);
 		lDoctor.setVisibility(View.GONE);
 		lVisit.setVisibility(View.VISIBLE);
 		rVisit.setVisibility(View.GONE);
@@ -153,6 +163,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 
 		case R.id.radio_yes:
 			lDoctor.setVisibility(View.VISIBLE);
+			doctor.setVisibility(View.VISIBLE);
 			break;
 		case R.id.text_log:
 			login();
@@ -161,23 +172,25 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		case R.id.radio_no:
 			lDoctor.setVisibility(View.INVISIBLE);
 			findViewById(R.id.lin_doctor).setVisibility(View.GONE);
+			doctor.setVisibility(View.GONE);
 			break;
 		case R.id.radio_visit:
 			lVisit.setVisibility(View.VISIBLE);
 
 			if (findViewById(R.id.lin_revisit).getVisibility() == View.VISIBLE)
-				findViewById(R.id.lin_revisit).setVisibility(View.INVISIBLE);
+				findViewById(R.id.lin_revisit).setVisibility(View.GONE);
 
 			break;
 		case R.id.radio_revisit:
 			rVisit.setVisibility(View.VISIBLE);
 
 			if (findViewById(R.id.lin_visit).getVisibility() == View.VISIBLE)
-				findViewById(R.id.lin_visit).setVisibility(View.INVISIBLE);
+				findViewById(R.id.lin_visit).setVisibility(View.GONE);
 			break;
-		case R.id.spinner_hospital:spinner();
-		break;
-		
+		case R.id.spinner_hospital:
+			spinner();
+			break;
+
 		default:
 			break;
 		}
@@ -188,7 +201,6 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 
 		int msg = 0;
 		boolean bValid = true;
-	
 
 		if (mEdtvname.getText().toString().trim().length() == 0) {
 			msg = R.string.err_name;
@@ -234,9 +246,8 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 
 		int msg = 0;
 		boolean bValid = true;
-		
 
-		 if (mEdtrname.getText().toString().trim().length() == 0) {
+		if (mEdtrname.getText().toString().trim().length() == 0) {
 			msg = R.string.err_name;
 			bValid = false;
 		}
@@ -271,32 +282,36 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 	private void newvisit() {
 		showProgressDialog(null, false);
 		final HCVisitParser parser = new HCVisitParser();
-
 		List<NameValuePair> formData = new ArrayList<NameValuePair>();
-		formData.add(new BasicNameValuePair(HCConstants.PARAM_USERID, mUserid));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_SPECIAL_ID, ""
-				+ mSpnspecialization.getContext().toString()));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_VISIT_DATE, ""
-				+ mSpndate.getContext().toString()));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_TIME_ID, ""
-				+ mSpntime.getContext().toString()));
+		formData.add(new BasicNameValuePair(HCConstants.PARAM_USERID, ""
+				+ HCSession.getInstance().getUser_id(this)));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_HOSPITAL_ID,
+				hospital_id));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_SPECIAL_ID, special));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_VISIT_DATE, date));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_TIME_ID, time));
 		formData.add(new BasicNameValuePair(HCConstants.PAR_FNAME, ""
 				+ mEdtvname.getText().toString()));
 		formData.add(new BasicNameValuePair(HCConstants.PAR_LNAME, lname));
 		formData.add(new BasicNameValuePair(HCConstants.PAR_MOB_NUMB, ""
 				+ mEdtvmobile.getText().toString()));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_HOSPITAL_ID, ""
-				+ mSpnhospital.getContext().toString()));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_PASS, prioritypass));
 		formData.add(new BasicNameValuePair(HCConstants.PAR_FANAME, ""
 				+ mEdtvfname.getText().toString()));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_GENDER, ""
-				+ mTxtgender.getText().toString()));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_ADDRESS, ""
-				+ mEdtvaddress.getText().toString()));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_MOTHER, mother));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_MARRIED, married));
 		formData.add(new BasicNameValuePair(HCConstants.PAR_AGE, ""
 				+ mEdtvage.getText().toString()));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_APPOINTMENT, appointment));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_GENDER, ""
+				+ mTxtgender.getText().toString()));
+
+		formData.add(new BasicNameValuePair(HCConstants.PAR_ADDRESS, ""
+				+ mEdtvaddress.getText().toString()));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_PASS, prioritypass));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_TOTAL_AMOUNT,
+				amount));
+
+		formData.add(new BasicNameValuePair(HCConstants.PAR_APPOINTMENT,
+				appointment));
 		formData.add(new BasicNameValuePair(HCConstants.PAR_DNAME, ""
 				+ mSpndoctor.getContext().toString()));
 		HCClient.getInstance().request(this, HCServerUtils.REQ_HOSPITAL_VISIT,
@@ -322,13 +337,11 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		final HCVisitParser parser = new HCVisitParser();
 
 		List<NameValuePair> formData = new ArrayList<NameValuePair>();
-		formData.add(new BasicNameValuePair(HCConstants.PARAM_USERID, mUserid));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_SPECIAL_ID, ""
-				+ mSpnspecialization.getContext().toString()));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_VISIT_DATE, ""
-				+ mSpndate.getContext().toString()));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_TIME_ID, ""
-				+ mSpntime.getContext().toString()));
+		formData.add(new BasicNameValuePair(HCConstants.PARAM_USERID, ""
+				+ HCSession.getInstance().getUser_id(this)));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_SPECIAL_ID, special));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_VISIT_DATE, date));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_TIME_ID, time));
 		formData.add(new BasicNameValuePair(HCConstants.PAR_FNAME, ""
 				+ mEdtrname.getText().toString()));
 		formData.add(new BasicNameValuePair(HCConstants.PAR_LNAME, lname));
@@ -336,11 +349,13 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 				+ mEdtrmobile.getText().toString()));
 
 		formData.add(new BasicNameValuePair(HCConstants.PAR_HNUMBER, usernumber));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_HOSPITAL_ID, ""
-				+ mSpnhospital.getContext().toString()));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_HOSPITAL_ID,
+				hospital_id));
 		formData.add(new BasicNameValuePair(HCConstants.PAR_PASS, prioritypass));
-
-		formData.add(new BasicNameValuePair(HCConstants.PAR_APPOINTMENT, appointment));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_TOTAL_AMOUNT,
+				amount));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_APPOINTMENT,
+				appointment));
 		formData.add(new BasicNameValuePair(HCConstants.PAR_DNAME, ""
 				+ mSpndoctor.getContext().toString()));
 		HCClient.getInstance().request(this,
@@ -352,32 +367,31 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 						hideProgressDialog();
 						startActivity(new Intent(HCRegistrationActivity.this,
 								HCPaymentActivity.class));
-						
+
 						HCHospitalSession.getInstance().storeSession(
 								HCRegistrationActivity.this,
 								(HCHospitalHolder) parser.getDataHolder());
-						
+
 						finish();
 					}
 				});
 
 	}
 
-private void spinner()
-{
-	
-	
-}
-private void login()
-{
-	startActivity(new Intent(HCRegistrationActivity.this,
-			HCSignInActivity.class));
-	overridePendingTransition(R.anim.anim_from_middle, 0);
-}
-@Override
-public void onBackPressed() {
-	
-	super.onBackPressed();
-	overridePendingTransition(0,android.R.anim.fade_out);
-}
+	private void spinner() {
+
+	}
+
+	private void login() {
+		startActivity(new Intent(HCRegistrationActivity.this,
+				HCSignInActivity.class));
+		overridePendingTransition(R.anim.anim_from_middle, 0);
+	}
+
+	@Override
+	public void onBackPressed() {
+
+		super.onBackPressed();
+		overridePendingTransition(0, android.R.anim.fade_out);
+	}
 }

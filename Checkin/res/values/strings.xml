@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Abharan</string>
+    <string name="app_name">Checkin</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
 
