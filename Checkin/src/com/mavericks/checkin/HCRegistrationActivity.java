@@ -43,6 +43,7 @@ import com.mavericks.checkin.holders.HCHospitalHolder;
 import com.mavericks.checkin.parser.HCVisitParser;
 import com.mavericks.checkin.utils.HCAlertManager;
 import com.mavericks.checkin.utils.HCConstants;
+import com.mavericks.checkin.utils.HCUtils;
 
 public class HCRegistrationActivity extends HCBaseActivity implements
 		OnClickListener {
@@ -156,11 +157,12 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		case R.id.text_visit:
 			if (isFormNewValid())
 				newvisit();
+			
 
 		case R.id.text_revisit:
 			if (isFormRevisitValid())
 				revisit();
-
+			
 		case R.id.radio_yes:
 			lDoctor.setVisibility(View.VISIBLE);
 			doctor.setVisibility(View.VISIBLE);
@@ -387,6 +389,9 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 				HCSignInActivity.class));
 		overridePendingTransition(R.anim.anim_from_middle, 0);
 	}
+
+
+	
 
 	@Override
 	public void onBackPressed() {

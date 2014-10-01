@@ -25,8 +25,10 @@ public class HCConstants {
 	public static final int SCR_HOME = 100;
 	// Preference Name
 	public static final String PREF_NAME = "pref_hospital";
+	public static final String PREF_LOGIN = "pref_hospital";
 	public static final String PREF_USRNAME = "pref_usr_nm";
 	public static final String PREF_PIC = "pref_pic";
+	public static final String  PREF_LOGINTYPE= "pref_loginType";
 	public static final String PREF_PASSWORD = "pref_pswrd";
 	public static final String PREF_USRID = "pref_usr_id";
 	public static final String PREF_PHONE = "pref_phone";

@@ -4,15 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
-     >
+    android:orientation="vertical" >
 
     <LinearLayout
         android:id="@+id/lin_lay1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_mx"
-        android:layout_marginRight="@dimen/margin_mx"
         android:layout_marginTop="@dimen/margin_xs"
         android:orientation="vertical" >
 
@@ -30,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_s"
-            android:background="@drawable/divider_line"
+            android:background="@drawable/header_line"
             android:contentDescription="@string/about" />
     </LinearLayout>
 
@@ -38,8 +35,8 @@
         android:id="@+id/lin_lay2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/margin_lm"
-        android:layout_marginRight="@dimen/margin_lm"
+        android:layout_marginLeft="@dimen/margin_mx"
+        android:layout_marginRight="@dimen/margin_mx"
         android:gravity="center_vertical"
         android:orientation="vertical" >
 
@@ -47,13 +44,13 @@
             android:id="@+id/lin_la"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_ms"
             android:orientation="horizontal" >
 
             <ImageView
                 android:id="@+id/img_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_s"
                 android:contentDescription="@string/about"
                 android:src="@drawable/email_icon" />
 
@@ -62,34 +59,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_s"
-                android:layout_marginTop="@dimen/margin_s"
                 android:background="@android:color/transparent"
                 android:hint="@string/hemail"
                 android:inputType="textEmailAddress"
                 checkin:font_type="@integer/fnt_edit_small" />
-
-          
         </LinearLayout>
-          <ImageView
-                android:id="@+id/tab_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_sm"
-                android:background="@drawable/tab_line"
-                android:contentDescription="@string/about" />
+
+        <ImageView
+            android:id="@+id/tab_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_ms"
+            android:background="@drawable/tab_line"
+            android:contentDescription="@string/about" />
 
         <LinearLayout
             android:id="@+id/lin_layouts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_sm"
+           android:layout_marginTop="@dimen/margin_ms"
             android:orientation="horizontal" >
 
             <ImageView
                 android:id="@+id/img_digit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-               
                 android:contentDescription="@string/about"
                 android:src="@drawable/digital_pin_icon" />
 
@@ -98,35 +92,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_s"
-           
                 android:background="@android:color/transparent"
                 android:hint="@string/digit"
                 android:inputType="numberPassword"
                 android:maxLength="4"
                 checkin:font_type="@integer/fnt_edit_small" />
-
-           
         </LinearLayout>
-         
-         <ImageView
-                android:id="@+id/tab_digit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_sm"
-                android:background="@drawable/tab_line"
-                android:contentDescription="@string/about" />
-           <LinearLayout
+
+        <ImageView
+            android:id="@+id/tab_digit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_ms"
+            android:background="@drawable/tab_line"
+            android:contentDescription="@string/about" />
+
+        <LinearLayout
             android:id="@+id/lin_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_sm"
+            android:layout_marginTop="@dimen/margin_ms"
             android:orientation="horizontal" >
 
             <ImageView
                 android:id="@+id/img_confirmdigit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-               
                 android:contentDescription="@string/about"
                 android:src="@drawable/digital_pin_icon" />
 
@@ -140,42 +131,27 @@
                 android:inputType="numberPassword"
                 android:maxLength="4"
                 checkin:font_type="@integer/fnt_edit_small" />
-
-  
         </LinearLayout>
-        <ImageView
-                android:id="@+id/tab_cdigit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_sm"
-                android:background="@drawable/tab_line"
-                android:contentDescription="@string/about" />
-           
-        
-    </LinearLayout>
 
- 
         <ImageView
-            android:id="@+id/div_lin"
+            android:id="@+id/tab_cdigit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-         android:layout_marginBottom="@dimen/margin_mx"
-         android:layout_marginLeft="@dimen/margin_mx"
-         android:layout_marginRight="@dimen/margin_mx"
-            android:layout_above="@+id/text_signup"
-            android:background="@drawable/divider_line"
+            android:layout_marginTop="@dimen/margin_ms"
+            android:background="@drawable/tab_line"
             android:contentDescription="@string/about" />
+    </LinearLayout>
 
-        <com.mavericks.checkin.views.HCTextView
-            android:id="@+id/text_signup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-              android:layout_marginBottom="@dimen/margin_ms"
-            android:background="@drawable/check"
-            android:contentDescription="@string/about"
-            android:text="@string/signup"
-            checkin:font_type="@integer/fnt_login" />
+    <com.mavericks.checkin.views.HCTextView
+        android:id="@+id/text_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/margin_ms"
+        android:background="@drawable/check"
+        android:contentDescription="@string/about"
+        android:text="@string/signup"
+        checkin:font_type="@integer/fnt_login" />
 
 </RelativeLayout>
