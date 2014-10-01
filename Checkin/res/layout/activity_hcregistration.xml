@@ -24,7 +24,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="@dimen/margin_s"
                 android:contentDescription="@string/about"
-                android:src="@drawable/meanu_icon" />
+                android:src="@drawable/menu_icon" />
 
             <ImageView
                 android:id="@+id/img_header"
