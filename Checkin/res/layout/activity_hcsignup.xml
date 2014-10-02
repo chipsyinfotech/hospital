@@ -6,30 +6,15 @@
     android:background="@color/white"
     android:orientation="vertical" >
 
-    <LinearLayout
-        android:id="@+id/lin_lay1"
+    <com.mavericks.checkin.views.HCTextView
+        android:id="@+id/text_sign"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_xs"
-        android:orientation="vertical" >
-
-        <com.mavericks.checkin.views.HCTextView
-            android:id="@+id/text_sign"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_ms"
-            android:gravity="center_horizontal"
-            android:text="@string/signup"
-            checkin:font_type="@integer/fnt_log" />
-
-        <ImageView
-            android:id="@+id/div_lin1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_s"
-            android:background="@drawable/divider_line"
-            android:contentDescription="@string/about" />
-    </LinearLayout>
+        android:layout_marginTop="@dimen/margin_ms"
+        android:background="@drawable/header_line"
+        android:gravity="center_horizontal"
+        android:text="@string/signup"
+        checkin:font_type="@integer/fnt_log" />
 
     <LinearLayout
         android:id="@+id/lin_lay2"
@@ -77,7 +62,7 @@
             android:id="@+id/lin_layouts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-           android:layout_marginTop="@dimen/margin_ms"
+            android:layout_marginTop="@dimen/margin_ms"
             android:orientation="horizontal" >
 
             <ImageView
