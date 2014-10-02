@@ -162,7 +162,7 @@
             </LinearLayout>
 
             <RadioGroup
-                android:id="@+id/radio"
+                android:id="@+id/radio_app"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_ms"
@@ -196,7 +196,7 @@
                 android:contentDescription="@string/about" />
 
             <LinearLayout
-                android:id="@+id/lin_doctor"
+                android:id="@+id/app_form"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_ms"
@@ -209,14 +209,13 @@
                     android:contentDescription="@string/about"
                     android:src="@drawable/name_icon" />
 
-                <Spinner
-                    android:id="@+id/spinner_doctor"
+                <com.mavericks.checkin.views.HCEditText
+                    android:id="@+id/edt_doctor"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:background="@android:color/transparent"
-                    android:entries="@array/doctor_arrays"
-                    android:prompt="@string/doctor_prompt" />
+                   />
             </LinearLayout>
 
             <ImageView
@@ -259,7 +258,7 @@
                 android:contentDescription="@string/about" />
 
             <RadioGroup
-                android:id="@+id/visit"
+                android:id="@+id/radio_visre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_ms"
@@ -287,7 +286,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/lin_visit"
+            android:id="@+id/newvisit_form"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/lin_lay"
@@ -504,9 +503,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
                         android:background="@android:color/transparent"
-                        android:maxLength="10"
                         android:hint="@string/mobile"
                         android:inputType="phone"
+                        android:maxLength="10"
                         checkin:font_type="@integer/fnt_edit_small" />
                 </LinearLayout>
 
@@ -619,7 +618,7 @@
                 android:orientation="horizontal" >
 
                 <com.mavericks.checkin.views.HCTextView
-                    android:id="@+id/text_visit"
+                    android:id="@+id/text_checkin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
@@ -632,7 +631,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/lin_revisit"
+            android:id="@+id/revisit_form"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/lin_lay"
@@ -737,8 +736,8 @@
                         android:layout_marginLeft="@dimen/margin_ms"
                         android:background="@android:color/transparent"
                         android:hint="@string/mobile"
-                           android:maxLength="10"
                         android:inputType="phone"
+                        android:maxLength="10"
                         checkin:font_type="@integer/fnt_edit_small" />
                 </LinearLayout>
 
@@ -789,7 +788,7 @@
                 android:orientation="horizontal" >
 
                 <com.mavericks.checkin.views.HCTextView
-                    android:id="@+id/text_revisit"
+                    android:id="@+id/text_rcheckin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"

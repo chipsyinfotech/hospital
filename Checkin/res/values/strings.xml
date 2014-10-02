@@ -11,7 +11,7 @@
     <string name="username">username</string>
     <string name="password">Password</string>
     <string name="sign_in">sign in</string>
-    <string name="about">About US</string>
+    <string name="about">ABOUT US</string>
     <string name="forgot">Password has been sent to your Email!</string>
     <string name="facebook">Facebook</string>
     <string name="twitter">Twitter</string>
@@ -167,5 +167,6 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_hcpop">HCPopActivity</string>
     <string name="title_activity_sign">Sign</string>
+    <string name="title_activity_hcabout_us">HCAboutUsActivity</string>
 
 </resources>

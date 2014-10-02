@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gcm.GCMRegistrar;
 import com.mavericks.checkin.client.HCClient;
@@ -71,22 +72,32 @@ public class HCSignupActivity extends HCBaseActivity implements OnClickListener 
 		boolean bValid = true;
 		if (mEdtemail.getText().toString().trim().length() == 0) {
 			msg = R.string.err_email;
+			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
+			.show();
 			bValid = false;
 		} else if (mEdtdigit.getText().toString().trim().length() == 0) {
 			msg = R.string.err_digit;
+			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
+			.show();
 			bValid = false;
 		} else if (mEdtconfirmdigit.getText().toString().trim().length() == 0) {
 			msg = R.string.err_confrmdigit;
+			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
+			.show();
 			bValid = false;
 		} else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(
 				mEdtemail.getText().toString()).matches()) {
 			msg = R.string.err_invalidemail;
+			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
+			.show();
 			mEdtemail.setText("");
 			bValid = false;
 			
 		} else if (!mEdtdigit.getText().toString()
 				.equals(mEdtconfirmdigit.getText().toString())) {
 			msg = R.string.err_pswrd_mismatch;
+			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
+			.show();
 			mEdtconfirmdigit.setText("");
 			mEdtdigit.setText("");
 			bValid = false;	
@@ -119,6 +130,9 @@ public class HCSignupActivity extends HCBaseActivity implements OnClickListener 
 							hideProgressDialog();
 							if(status == HCConstants.ERROR_CODE_SUCCESS) {
 							
+								Toast.makeText(getApplicationContext(),
+										"Record successfully inserted",
+										Toast.LENGTH_LONG).show();
 								startActivity(new Intent(HCSignupActivity.this,HCSignInActivity.class));
 								overridePendingTransition(R.anim.slide_in_top_scr, 0);
 								HCSession.getInstance().storeSession(HCSignupActivity.this,

@@ -20,15 +20,15 @@ package com.mavericks.checkin;
 
 
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 import com.mavericks.checkin.client.HCClient;
 import com.mavericks.checkin.views.HCLoadingDialog;
 
-public class HCBaseActivity extends Activity implements
+public class HCBaseActivity extends FragmentActivity implements
 
 		OnCancelListener {
 

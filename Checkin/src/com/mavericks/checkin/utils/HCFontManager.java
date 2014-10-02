@@ -101,7 +101,7 @@ public class HCFontManager {
 		case FNT_BUTTON:
 			return android.R.color.black;
 		case FNT_ABOUT:
-			return R.color.neon_pink;
+			return R.color.white;
 
 		case FNT_MENU:
 		case FNT_TITLE:
@@ -145,7 +145,7 @@ public class HCFontManager {
 		case FNT_TEXTS:
 			return Font.FNT_REGULAR;
 		case FNT_ABOUT:
-			return Font.FNT_BOLD;
+			return Font.FNT_REGULAR;
 
 		case FNT_LOGIN:
 			return Font.FNT_BOLD;
@@ -198,7 +198,7 @@ public class HCFontManager {
 		case FNT_EDIT_SMALL:
 			return R.dimen.sz_sl;
 		case FNT_ABOUT:
-			return R.dimen.sz_mx;
+			return R.dimen.sz_ms;
 		case FNT_FOUNDER:
 			return R.dimen.sz_ss;
 		case FNT_TITLE:

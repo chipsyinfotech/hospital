@@ -26,6 +26,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mavericks.checkin.client.HCClient;
 import com.mavericks.checkin.client.HCIRequestListener;
@@ -44,6 +45,7 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 	TextView mTxtpaswrd;
 	String email;
 	String digit;
+	public static String flag="";
 	TextView mTxtsignup;
 
 	@Override
@@ -88,10 +90,14 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 
 		if (mEdtemail.getText().toString().trim().length() == 0) {
 			msg = R.string.err_email;
+			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
+					.show();
 			bValid = false;
 		} else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(
 				mEdtemail.getText().toString()).matches()) {
 			msg = R.string.err_invalidemail;
+			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
+					.show();
 			mEdtemail.setText("");
 			bValid = false;
 		}
@@ -108,14 +114,20 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 		boolean bValid = true;
 		if (mEdtemail.getText().toString().trim().length() == 0) {
 			msg = R.string.err_email;
+			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
+					.show();
 			bValid = false;
 		} else if (mEdtdigit.getText().toString().trim().length() == 0) {
 			msg = R.string.err_digit;
+			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
+					.show();
 			bValid = false;
 
 		} else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(
 				mEdtemail.getText().toString()).matches()) {
 			msg = R.string.err_invalidemail;
+			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
+					.show();
 			mEdtemail.setText("");
 			bValid = false;
 
@@ -126,6 +138,9 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 
 	}
 
+	/**
+	 * function to request forgot password
+	 */
 	private void ForgotPassword() {
 		showProgressDialog(null, false);
 		final HCForgotParser parser = new HCForgotParser();
@@ -139,7 +154,9 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 					@Override
 					public void onComplete(int req_type, int status) {
 						hideProgressDialog();
+
 						if (status == HCConstants.ERROR_CODE_SUCCESS) {
+
 							HCAlertManager.showAlertWithOneBtn(
 									HCSignInActivity.this,
 									getString(R.string.forgot), null);
@@ -171,6 +188,10 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 					public void onComplete(int req_type, int status) {
 						hideProgressDialog();
 						if (status == HCConstants.ERROR_CODE_SUCCESS) {
+							Toast.makeText(getApplicationContext(),
+									"Login successfully completed",
+									Toast.LENGTH_LONG).show();
+							flag="1";
 							startActivity(new Intent(HCSignInActivity.this,
 									HCRegistrationActivity.class));
 							overridePendingTransition(R.anim.anim_from_middle,
