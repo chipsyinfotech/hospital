@@ -101,7 +101,7 @@
             android:id="@+id/lin_forgot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_mx"
+            android:layout_marginTop="@dimen/margin_lm"
             android:orientation="horizontal" >
 
             <com.mavericks.checkin.views.HCTextView

@@ -93,7 +93,7 @@ public class HCFontManager {
 
 		case FNT_BTN:
 		case FNT_PRIOR:
-			return R.color.light_black;
+			return R.color.black;
 		case FNT_DLG:
 		case FNT_EDIT_LARGE:
 		case FNT_FOUNDER:
@@ -119,7 +119,7 @@ public class HCFontManager {
 		case FNT_TEXT:
 			return R.color.dark_red;
 		case FNT_TEXTS:
-			return android.R.color.black;
+			return R.color.black;
 		case FNT_WELCOME:
 			return R.color.welcome;
 
@@ -137,13 +137,13 @@ public class HCFontManager {
 		case FNT_BUTTON:
 			return Font.FNT_LIGHT;
 		case FNT_PRIOR:
-			return Font.FNT_LIGHT;
+			return Font.FNT_REGULAR;
 		case FNT_EDIT_LARGE:
 		case FNT_EDIT_SMALL:
 		case FNT_MENU:
 			return Font.FNT_REGULAR;
 		case FNT_TEXTS:
-			return Font.FNT_LIGHT;
+			return Font.FNT_REGULAR;
 		case FNT_ABOUT:
 			return Font.FNT_BOLD;
 
@@ -179,9 +179,9 @@ public class HCFontManager {
 		case FNT_TEXT:
 			return R.dimen.sz_sm;
 		case FNT_PRIOR:
-			return R.dimen.sz_ss;
+			return R.dimen.sz_sl;
 		case FNT_TEXTS:
-			return R.dimen.sz_sm;
+			return R.dimen.sz_sl;
 		case FNT_MENU:
 			return R.dimen.sz_sl;
 		case FNT_DLG:
