@@ -23,17 +23,20 @@
     <string name="hospital">HOSPITAL CHECK.IN</string>
     <string name="select">Select Hospital</string>
     <string name="special">Specialtization</string>
+    <string name="activity">ACTIVITIES</string>
     <string name="address">Address</string>
     <string name="location">Location</string>
     <string name="checkin">CHECK IN</string>
     <string name="make_payment">MAKE PAYMENT</string>
+    <string name="suggest">Feel free to give your valuable suggestions &amp; your enquiries</string>
     <string name="date">Date</string>
     <string name="appointment">Have you already taken prior appointment?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="log">Login</string>
+    <string name="text">We thought a web-checkin would do the job even for a hospital.After all time, convenience, resources are important to hospitals and patients equally.</string>
     <string name="pname">Name</string>
-    <string name="fname">Fathers Name</string>
+    <string name="fname">Father\u0027s Name</string>
     <string name="age">Age</string>
     <string name="gender">Gender</string>
     <string name="male">Male</string>
@@ -168,5 +171,7 @@
     <string name="title_activity_hcpop">HCPopActivity</string>
     <string name="title_activity_sign">Sign</string>
     <string name="title_activity_hcabout_us">HCAboutUsActivity</string>
+    <string name="title_activity_hcuser_history">HCUserHistory</string>
+    <string name="title_activity_hchistory">HCHistoryActivity</string>
 
 </resources>

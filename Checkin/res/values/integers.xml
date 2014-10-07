@@ -34,6 +34,7 @@
         <integer name="fnt_login">16</integer>
         <integer name="fnt_log">17</integer>
         <integer name="fnt_logs">18</integer>
+         <integer name="fnt_sug">19</integer>
       
 
 </resources>

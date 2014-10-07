@@ -23,6 +23,7 @@ public class HCServerUtils {
 	public static final String PATH_TEXT_MESSAGE = "image";
 	public static final String PATH_GET_HOSPITAL = "/all_hospital_details.php ";
 	public static final String PATH_HOSPITAL_LOGIN = "/user_login.php";
+	public static final String PATH_HOSPITAL_HISTORY = "/user_history.php";
 	public static final String PATH_HOSPITAL_REG = "/user_register.php";
 	public static final String PATH_FORGOT_PSWRD = "/forgot_password.php";
 	public static final String PATH_HOSPITAL_VISIT = "/newvisit_submit_record.php";
@@ -36,6 +37,8 @@ public class HCServerUtils {
 	public static final int REQ_HOSPITAL_VISIT = 104;
 	public static final int REQ_HOSPITAL_REVISIT = 105;
 	public static final int REQ_GET_HOSPITAL = 106;
+	public static final int REQ_GET_HISTORY = 107;
+	
 	
 	private static String getDomailUrl(int type) {
 
@@ -68,6 +71,9 @@ public class HCServerUtils {
 		case REQ_GET_HOSPITAL:
 			path = PATH_GET_HOSPITAL;
 			break;
+		case REQ_GET_HISTORY:
+			path = PATH_HOSPITAL_HISTORY;
+			break;
 
 		}
 
@@ -81,7 +87,7 @@ public class HCServerUtils {
 
 		case REQ_LOGIN:
 		case REQ_GET_HOSPITAL:
-			
+		case REQ_GET_HISTORY:
 		case REQ_HOSPITAL_LOGIN:
 			reqType = HCClient.REQ_TYPE_POST;
 			break;
