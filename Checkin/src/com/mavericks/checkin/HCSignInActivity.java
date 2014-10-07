@@ -60,6 +60,7 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 		mTxtlogin.setOnClickListener(this);
 		mTxtpaswrd.setOnClickListener(this);
 		mTxtsignup.setOnClickListener(this);
+		
 	}
 
 	@Override
