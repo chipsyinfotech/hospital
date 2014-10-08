@@ -2,7 +2,6 @@ package com.mavericks.checkin.adapters;
 
 import java.util.ArrayList;
 
-import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,13 +13,15 @@ import android.widget.TextView;
 
 import com.mavericks.checkin.R;
 import com.mavericks.checkin.holders.HCHistoryHolder;
+import com.mavericks.checkin.utils.HCUtils;
 
-@SuppressLint("InflateParams") public class HCUserAdapter extends BaseAdapter {
+public class HCUserAdapter extends BaseAdapter {
 
 	Context mContext;
 	LayoutInflater mInflater;
 	ViewHolder mViewHolder;
 	ArrayList<HCHistoryHolder> mList;
+
 	private static class ViewHolder {
 		TextView mTxttime;
 		TextView mTxtdate;
@@ -36,10 +37,15 @@ import com.mavericks.checkin.holders.HCHistoryHolder;
 	public void setData(ArrayList<HCHistoryHolder> list) {
 		mList = list;
 	}
-	
+
 	@Override
 	public int getCount() {
-		return 6;
+		if (mList == null)
+			return 0;
+		else {
+			HCUtils.Log("SIZE :::: " + mList.size());
+			return mList.size();
+		}
 	}
 
 	@Override
@@ -57,18 +63,20 @@ import com.mavericks.checkin.holders.HCHistoryHolder;
 
 			holder = new ViewHolder();
 
-			holder.mImgPic = (ImageView) convertView.findViewById(R.id.img);
+			holder.mImgPic = (ImageView) convertView
+					.findViewById(R.id.img_hospital);
+			holder.mTxttime = (TextView) convertView
+					.findViewById(R.id.txt_time);
 
-			holder.mTxttime = (TextView) convertView.findViewById(R.id.txt_time);
-			holder.mTxtdate = (TextView) convertView.findViewById(R.id.txt_date);
-			
-
+			holder.mTxtdate = (TextView) convertView
+					.findViewById(R.id.txt_date);
 			convertView.setTag(holder);
 		} else
-			holder = (ViewHolder) convertView.getTag();
 
-		holder.mImgPic.setImageResource(R.drawable.recent_visits_icon);
-		holder.mTxttime.setText("booked for " +mList.get(position).getName()+"at"+mList.get(position).getVisit_date());
+			holder = (ViewHolder) convertView.getTag();
+		holder.mImgPic.setBackgroundResource(R.drawable.recent_visits_icon);
+		holder.mTxttime.setText("Booked for " + mList.get(position).getName()
+				+" at "   + mList.get(position).getVisit_date());
 		holder.mTxtdate.setText(mList.get(position).getVisit_date());
 		return convertView;
 	}
@@ -79,6 +87,5 @@ import com.mavericks.checkin.holders.HCHistoryHolder;
 		return mList.get(position);
 	}
 
-
-
+	
 }

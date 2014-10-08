@@ -8,6 +8,7 @@ import org.apache.http.message.BasicNameValuePair;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -20,49 +21,71 @@ import com.mavericks.checkin.client.HCServerUtils;
 import com.mavericks.checkin.holders.HCHistoryHolder;
 import com.mavericks.checkin.parser.HCHistoryParser;
 import com.mavericks.checkin.utils.HCConstants;
+import com.mavericks.checkin.utils.HCProgressUtils;
+import com.mavericks.checkin.utils.HCReturyUtils;
 
-public class HCHistoryActivity extends HCBaseActivity implements OnItemClickListener{
+public class HCHistoryActivity extends HCBaseActivity implements
+		OnItemClickListener,OnClickListener {
 	HCUserAdapter mAdapter;
 	ListView list;
 	TextView mTxt;
-String userid=null;
+	String userid = "1409810983";
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_hchistory);
 		mAdapter = new HCUserAdapter(this);
-		list = (ListView) findViewById(R.id.list);
+		list = (ListView) findViewById(R.id.list);		
 		list.setAdapter(mAdapter);
-getHistory();
+		getHistory();
 	}
-	
-	private void getHistory()
-	{
 
-			showProgressDialog(null, false);
-			final HCHistoryParser parser = new HCHistoryParser();
-			List<NameValuePair> formData = new ArrayList<NameValuePair>();
-			formData.add(new BasicNameValuePair(HCConstants.PARAM_USERID,userid));
-			HCClient.getInstance().request(this, HCServerUtils.REQ_GET_HISTORY,
-					null, formData, null, parser, new HCIRequestListener() {
-						@Override
-						public void onComplete(int req_type, int status) {
-							hideProgressDialog();
-							if(status == HCConstants.ERROR_CODE_SUCCESS) {
-							mAdapter.setData((ArrayList<HCHistoryHolder>) parser.getDataList());
-								mAdapter.notifyDataSetChanged();
-							}
+	private void getHistory() {
+
+		HCProgressUtils.showProgressBar(this, findViewById(R.id.root),
+				R.id.progressBar);
+		final HCHistoryParser parser = new HCHistoryParser();
+		List<NameValuePair> formData = new ArrayList<NameValuePair>();
+		formData.add(new BasicNameValuePair(HCConstants.PARAM_USERID,userid));
+		HCClient.getInstance().request(this, HCServerUtils.REQ_GET_HISTORY,
+				null,null, formData, parser, new HCIRequestListener() {
+					@Override
+					public void onComplete(int req_type, int status) {
+						HCProgressUtils.hideProgressBar(findViewById(R.id.root),
+								R.id.progressBar);
+						if (status == HCConstants.ERROR_CODE_SUCCESS) {
+							mAdapter.setData((ArrayList<HCHistoryHolder>) parser
+									.getDataList());
+							mAdapter.notifyDataSetChanged();
 						}
-			});
-								
-			}
-	
+						else {
+							// If we have data in database
+							HCReturyUtils.showRetryFrame(findViewById(R.id.root),
+									new OnClickListener() {
+
+										@Override
+										public void onClick(View arg0) {
+											getHistory();
+										}
+									}, HCServerUtils.REQ_GET_HISTORY);
+						}
+						}
+				});
+
+	}
 
 	@Override
-	public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+	public void onItemClick(AdapterView<?> arg0, View arg1, int position,
+			long arg3) {
+		
+
+	}
+
+	@Override
+	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	
 }

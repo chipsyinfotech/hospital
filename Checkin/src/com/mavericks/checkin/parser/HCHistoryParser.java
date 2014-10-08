@@ -27,7 +27,7 @@ public class HCHistoryParser extends HCBaseJsonParser {
 	public static final String  MOBILE=  "mobile_number";	
 	public static final String SPECIALIZATION =  "specilization";
 	public static final String HOSPITAL_NAME = "hospital_name";
-	public static final String VISIT_DATE = "visiting_date";
+	public static final String VISIT_DATE = "Visiting_date";
 	public static final String DO_NAME = "doctor_name";
 	public static final String TOTAL_AMOUNT = "total_amount";
 	ArrayList<HCHistoryHolder> mHolderList;
