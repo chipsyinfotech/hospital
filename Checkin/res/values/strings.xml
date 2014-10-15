@@ -8,25 +8,49 @@
     <!-- Home screen -->
     <string name="welcome">Welcome</string>
     <!-- Sign In -->
+    <string name="history">You can check your history in\nyour menu screen </string>
     <string name="username">username</string>
     <string name="password">Password</string>
     <string name="sign_in">sign in</string>
     <string name="about">ABOUT US</string>
+    <string name="read">Read More</string>
     <string name="forgot">Password has been sent to your Email!</string>
     <string name="facebook">Facebook</string>
     <string name="twitter">Twitter</string>
     <string name="str_name">I hv forgotten my password?</string>
     <string name="title">Help create the mood</string>
     <string name="mobile">Mobile Number</string>
+    <string name="confirmation">CONFIRMATION</string>
+    <string name="transaction">Your transaction\ncompleted successfully</string>
     <string name="digit">4 Digit secret pin</string>
     <string name="forpaswrd">Forgot Password</string>
     <string name="hospital">HOSPITAL CHECK.IN</string>
     <string name="select">Select Hospital</string>
-    <string name="special">Specialtization</string>
+    <string name="special">Specialization</string>
+    <string name="paynow">Pay Now</string>
+    <string name="makepay">You will have to make\npayment at the designated\ncheck-in counter at the hospital.\n\nIf you have Discount cards like Medicare or Health card then you will have to show them at the check-in designated counter.\n\nIn case of two "no shows" your mobile number will be blocked from system for future check-ins</string>
+    <string name="cash">Cash On Arrival</string>
+    <string name="charges">Hospital charges\u002Bconsultant charges\u002BCheck-in charges RS.50</string>
+    <string name="amount_pay">Amount to be paid:</string>
+    <string name="pay">Payment</string>
+    <string name="hospital_info">HospitalCheck.in is a healthcare\n\u0020\u0020\u0020\u0020 platform to help patients</string>
     <string name="activity">ACTIVITIES</string>
     <string name="address">Address</string>
     <string name="location">Location</string>
+    <string name="patname">Patient Name</string>
+    <string name="hname">Hospital Name</string>
+    <string name="hos_info">(a) Visit Specialist Clinic in the Hospital\n(b) Save time by selecting a tentative\nschedule,by avoiding queues for file entry\nand retrieval,payment for registration /\nrevisits,consultant charges.</string>
+    <string name="done">DONE</string>
+    <string name="time">Visit Date &amp; time</string>
+    <string name="total">Total Paid</string>
+    <string name="prior">Priority Pass</string>
+    <string name="got">Got it!</string>
+    <string name="information">If you have a chronic medical condition and needs to be seen on priority please check this option.Extra charges will apply</string>
+    <string name="booking_date">Booking Date</string>
+    <string name="note">Notes:</string>
+    <string name="condition">After making payment you will receive a confirmation e-mail &amp; SMS.Please shown the same at specialist clinic.</string>
     <string name="checkin">CHECK IN</string>
+    <string name="confirm_number">Your confirmation number is</string>
     <string name="make_payment">MAKE PAYMENT</string>
     <string name="suggest">Feel free to give your valuable suggestions &amp; your enquiries</string>
     <string name="date">Date</string>
@@ -39,7 +63,9 @@
     <string name="fname">Father\u0027s Name</string>
     <string name="age">Age</string>
     <string name="gender">Gender</string>
+    <string name="proceeded">PROCEED</string>
     <string name="male">Male</string>
+    <string name="term">Terms and Conditions</string>
     <string name="female">Female</string>
     <string name="hnumber">Hospital Number</string>
     <string name="hemail">e-Mail ID</string>
@@ -55,6 +81,7 @@
     <string name="amount">Total amount to be paid:</string>
     <string name="priority">Do you need priority pass??</string>
     <string name="add">add</string>
+    <string name="proceed">Proceed</string>
     <string name="email">Email Address</string>
     <string name="enter">Please Enter 4 Digit Pin</string>
     <string name="re_enter">Please Re-Enter 4 Digit Pin</string>
@@ -84,6 +111,7 @@
     <string name="err_name">Please enter your name</string>
     <string name="err_fname">Please enter your father name</string>
     <string name="err_age">Please enter your age</string>
+    <string name="detail">Booking Details</string>
     <string name="err_hnumber">Please enter hospital number</string>
     <string name="err_mobile">Please enter  your mobile number</string>
     <string name="err_address">Please enter your address</string>
@@ -173,5 +201,10 @@
     <string name="title_activity_hcabout_us">HCAboutUsActivity</string>
     <string name="title_activity_hcuser_history">HCUserHistory</string>
     <string name="title_activity_hchistory">HCHistoryActivity</string>
+    <string name="title_activity_hcdetail">HCDetailActivity</string>
+    <string name="title_activity_hchome">HCHomeActivity</string>
+    <string name="title_activity_hcpaymentactivity">HCPaymentactivity</string>
+    <string name="title_activity_hcpay">HCPayActivity</string>
+    <string name="title_activity_hcconfirmation">HCConfirmationActivity</string>
 
 </resources>

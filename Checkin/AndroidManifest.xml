@@ -15,6 +15,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
     <!-- GCM requires a Google account. -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -40,12 +41,13 @@
         <activity
             android:name=".HCSplashActivity"
             android:label="@string/title_activity_hcsplash" >
+             
         </activity>
         <activity
             android:name=".HCRegistrationActivity"
             android:label="@string/title_activity_hcregistration"
             android:theme="@style/AppTheme" >
-                 <intent-filter>
+             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category
@@ -56,7 +58,6 @@
         <activity
             android:name=".HCPaymentActivity"
             android:label="@string/title_activity_hcpayment" >
-       
         </activity>
         <activity
             android:name=".HCSelectionActivity"
@@ -86,6 +87,38 @@
         <activity
             android:name=".Sign"
             android:label="@string/title_activity_sign" >
+        </activity>
+        <activity
+            android:name=".HCAboutUsActivity"
+            android:label="@string/title_activity_hcabout_us" >
+        </activity>
+        <activity
+            android:name=".HCHistoryActivity"
+            android:label="@string/title_activity_hchistory" >
+        </activity>
+        <activity
+            android:name=".HCDetailActivity"
+            android:label="@string/title_activity_hcdetail" >
+        </activity>
+        <activity
+            android:name=".HCHomeActivity"
+            android:label="@string/title_activity_hchome" >
+           
+           
+        </activity>
+        <activity
+            android:name=".HCPaymentactivity"
+            android:label="@string/title_activity_hcpaymentactivity" >
+        </activity>
+        <activity
+            android:name=".HCPayActivity"
+            android:label="@string/title_activity_hcpay" >
+             
+        </activity>
+        <activity
+            android:name=".HCConfirmationActivity"
+            android:label="@string/title_activity_hcconfirmation" >
+           
         </activity>
     </application>
 

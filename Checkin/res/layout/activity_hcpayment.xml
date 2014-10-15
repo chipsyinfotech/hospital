@@ -152,14 +152,7 @@
             android:text="@string/priority"
             checkin:font_type="@integer/fnt_prior" />
 
-        <ImageView
-            android:id="@+id/img_div3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
      
-            android:layout_marginTop="@dimen/margin_s"
-            android:background="@drawable/divider_line"
-            android:contentDescription="@string/about" />
     </RelativeLayout>
 
     <com.mavericks.checkin.views.HCTextView

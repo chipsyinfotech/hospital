@@ -41,7 +41,20 @@ public class HCConstants {
 	public static final String PREF_ADDRESS = "pref_hospital_address";
 	public static final String PREF_HGROUP = "pref_hospital_group";
 	public static final String PREF_DIV_REG = "pref_isDevice_registered";
-
+	public static final String EXTRA_IMG = "extra_img";
+	public static final String EXTRA_HISTORY_LIST = "extra_history_list";
+	public static final String EXTRA_TIME = "extra_time";
+	public static final String EXTRA_DET_LIST = "extra_detail_list";
+	public static final String EXTRA_DATE = "extra_date";
+	public static final String EXTRA_TRID = "extra_trans_id";
+	public static final String EXTRA_PNAME = "extra_patient_name";
+	public static final String EXTRA_HNAME = "extra_hospital_name";
+	public static final String EXTRA_SPECIAL = "extra_specialization";
+	public static final String EXTRA_ADDRESS = "extra_address";
+	public static final String EXTRA_VDATE = "extra_visit_date";
+	public static final String EXTRA_TPAID = "extra_total_paid";
+	public static final String EXTRA_PASS = "extra_prior_pass";
+	public static final String EXTRA_BDATE = "extra_booking_date";
 	public static final String EXTRA_IS_REGISTERED = "extra_isRegistered";
 	public static final String EXTRA_CONTENT = "extra_content";
 	public static final String EXTRA_CONTENT_LIST = "extra_content_list";

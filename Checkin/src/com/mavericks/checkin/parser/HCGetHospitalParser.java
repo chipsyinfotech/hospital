@@ -1,6 +1,7 @@
 package com.mavericks.checkin.parser;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -8,8 +9,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.mavericks.checkin.holders.HCBaseHolder;
+import com.mavericks.checkin.holders.HCHistoryHolder;
 import com.mavericks.checkin.holders.HCHospitalHolder;
-
 
 public class HCGetHospitalParser extends HCBaseJsonParser {
 
@@ -20,11 +21,12 @@ public class HCGetHospitalParser extends HCBaseJsonParser {
 	public static final String HOSPITAL_ADDRESS = "hospital_address";
 	public static final String HOSPITAL_MOBILE = "hospital_mobile";
 	public static final String HOSPITAL_GROUP = "hospital_group";
-	HCHospitalHolder holder; 
-	 public HCGetHospitalParser() {
-	
+	ArrayList<HCHospitalHolder> mHolderList;
+
+	public HCGetHospitalParser() {
 
 	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -47,7 +49,7 @@ public class HCGetHospitalParser extends HCBaseJsonParser {
 
 					JSONObject mcontent = master.getJSONObject(i);
 
-					HCHospitalHolder holder=new HCHospitalHolder();
+					HCHospitalHolder holder = new HCHospitalHolder();
 
 					if (!mcontent.isNull(HOSPITAL_ID)
 							&& mcontent.has(HOSPITAL_ID)) {
@@ -70,50 +72,52 @@ public class HCGetHospitalParser extends HCBaseJsonParser {
 					if (!mcontent.isNull(HOSPITAL_GROUP)
 							&& mcontent.has(HOSPITAL_GROUP)) {
 						holder.setGroup(mcontent.getString(HOSPITAL_GROUP));
-					}		
+					}
+					mHolderList.add(holder);
 				}
-						
-			}
-	
-		}
-				}		/*
-			 * (non-Javadoc)
-			 * 
-			 * @see com.viacom18.spotlight.models.STAJsonDataModel#getModelsCount()
-			 */
-			@Override
-			public int getModelsCount() {
-				return 0;
-			}
 
-			/*
-			 * (non-Javadoc)
-			 * 
-			 * @see com.viacom18.spotlight.models.STAJsonDataModel#getDataHolderAt(int)
-			 */
-			@Override
-			public HCBaseHolder getDataHolderAt(int position) {
-				return null;
-			}
-
-			/*
-			 * (non-Javadoc)
-			 * 
-			 * @see com.viacom18.spotlight.models.STAJsonDataModel#getDataHolder()
-			 */
-			@Override
-			public HCBaseHolder getDataHolder() {
-				return holder;
-			}
-
-			/*
-			 * (non-Javadoc)
-			 * 
-			 * @see com.viacom18.spotlight.models.STAJsonDataModel#getDataList()
-			 */
-			@Override
-			public List<? extends HCBaseHolder> getDataList() {
-				return null;
 			}
 
 		}
+	} /*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.viacom18.spotlight.models.STAJsonDataModel#getModelsCount()
+	 */
+
+	@Override
+	public int getModelsCount() {
+		return 0;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.viacom18.spotlight.models.STAJsonDataModel#getDataHolderAt(int)
+	 */
+	@Override
+	public HCBaseHolder getDataHolderAt(int position) {
+		return null;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.viacom18.spotlight.models.STAJsonDataModel#getDataHolder()
+	 */
+	@Override
+	public HCBaseHolder getDataHolder() {
+		return null;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.viacom18.spotlight.models.STAJsonDataModel#getDataList()
+	 */
+	@Override
+	public List<? extends HCBaseHolder> getDataList() {
+		return mHolderList;
+	}
+
+}

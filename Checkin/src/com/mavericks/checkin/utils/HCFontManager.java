@@ -46,7 +46,8 @@ public class HCFontManager {
 	public static final int FNT_LOG = 17;
 	public static final int FNT_LOGS = 18;
 	public static final int FNT_SUG = 19;
-
+	public static final int FNT_BOOK = 20;
+	public static final int FNT_INFO = 21;
 
 	public enum Font {
 
@@ -115,13 +116,15 @@ public class HCFontManager {
 			return R.color.white;
 		case FNT_LOGS:
 			return R.color.sky_blue;
-
-
+		case FNT_BOOK:
+			return android.R.color.black;
 		case FNT_HM_NM:
 			return R.color.white;
 		case FNT_TEXT:
 			return R.color.dark_red;
 		case FNT_TEXTS:
+			return R.color.black;
+		case FNT_INFO:
 			return R.color.black;
 		case FNT_WELCOME:
 			return R.color.welcome;
@@ -135,6 +138,8 @@ public class HCFontManager {
 
 		case FNT_BTN:
 		case FNT_TEXT:
+			return Font.FNT_LIGHT;
+		case FNT_INFO:
 			return Font.FNT_LIGHT;
 		case FNT_DLG:
 		case FNT_BUTTON:
@@ -157,7 +162,9 @@ public class HCFontManager {
 		case FNT_LOG:
 			return Font.FNT_BOLD;
 		case FNT_LOGS:
-			return Font.FNT_BOLD;
+			return Font.FNT_REGULAR;
+		case FNT_BOOK:
+			return Font.FNT_REGULAR;
 		case FNT_FOUNDER:
 			return Font.FNT_BOLD;
 
@@ -186,7 +193,7 @@ public class HCFontManager {
 		case FNT_PRIOR:
 			return R.dimen.sz_sl;
 		case FNT_TEXTS:
-			return R.dimen.sz_sl;
+			return R.dimen.sz_sm;
 		case FNT_SUG:
 			return R.dimen.sz_sl;
 		case FNT_MENU:
@@ -209,6 +216,10 @@ public class HCFontManager {
 		case FNT_FOUNDER:
 			return R.dimen.sz_ss;
 		case FNT_TITLE:
+			return R.dimen.sz_sm;
+		case FNT_INFO:
+			return R.dimen.sz_ss;
+		case FNT_BOOK:
 			return R.dimen.sz_sm;
 
 		case FNT_WELCOME:

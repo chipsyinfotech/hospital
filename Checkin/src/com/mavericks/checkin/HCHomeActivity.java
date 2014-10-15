@@ -4,70 +4,50 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.mavericks.checkin.client.HCImageDownloader;
-import com.mavericks.checkin.client.HCSession;
-import com.mavericks.checkin.utils.HCConstants;
-import com.mavericks.checkin.utils.HCUtils;
+import com.mavericks.checkin.holders.HCHospitalHolder;
 
-/*public class HCHomeActivity extends HCBaseActionBarActivity implements OnClickListener{
+public class HCHomeActivity extends HCBaseActivity implements OnClickListener {
+	Button mBtnlocation;
+	Button mBtnhospital;
+	ImageView mImginfo;
+	HCHospitalHolder holder;
+	ArrayAdapter<String> mAdapter;
+	TextView mTxtproceed;
 
-	ImageView mImgAbt,mImgLifestyle,mImgHealth,mImgFav,mImgProfile;
-	TextView mTxtNm;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_abhome);
-		setUpActionBar(ACTION_HOME);		
-		setUpSlidingMenu();
-		initUi();
-	}
-
-	private void initUi() {
-		mTxtNm = (TextView) findViewById(R.id.txt_name);
-		mTxtNm.setText(ABSession.getInstance().getUsrNm(this));
-		
-		mImgAbt = (ImageView) findViewById(R.id.img_about);
-		mImgFav = (ImageView) findViewById(R.id.img_fav);
-		mImgHealth = (ImageView) findViewById(R.id.img_health);
-		mImgLifestyle = (ImageView) findViewById(R.id.img_lifestyle);
-		mImgProfile = (ImageView) findViewById(R.id.img_profile);
-		mImgAbt.setOnClickListener(this);
-		mImgFav.setOnClickListener(this);
-		mImgHealth.setOnClickListener(this);
-		mImgLifestyle.setOnClickListener(this);
-
-		HCUtils.Log(" ======== Img Url"+HCSession.getInstance().getPic(this));
-		HCImageDownloader.setCircularImg(this,mImgProfile, ABSession.getInstance().getPic(this),
-				HCConstants.IMG_PROFILE, R.drawable.profile_picture, false);
-
+		setContentView(R.layout.activity_home);
+		mAdapter = new ArrayAdapter<String>(this, R.layout.listiem_spinner);
+		mAdapter.setDropDownViewResource(R.layout.listiem_spinner);
+		mBtnlocation = (Button) findViewById(R.id.btn_location);
+		mBtnhospital = (Button) findViewById(R.id.btn_hospital);
+		mTxtproceed = (TextView) findViewById(R.id.text_proceed);
+		mImginfo = (ImageView) findViewById(R.id.img_info);
+		mImginfo.setOnClickListener(this);
+		mBtnlocation.setOnClickListener(this);
+		mBtnhospital.setOnClickListener(this);
+		mTxtproceed.setOnClickListener(this);
 	}
 
 	@Override
-	public void onClick(View view) {
-		Intent intent = null;
-		switch(view.getId()) {
-		case R.id.img_about:
-			
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.text_proceed:
+			startActivity(new Intent(HCHomeActivity.this,
+					HCRegistrationActivity.class));
+		
 			break;
-			
-		case R.id.img_fav:
-			
-			break;
-			
-		case R.id.img_health:
-			
-			break;
-			
-		case R.id.img_lifestyle:
-			intent = new Intent();
-			intent.setClass(HCHomeActivity.this, ABHealthAndBeautyActivity.class);
+
+		default:
 			break;
 		}
-		
-		if(intent != null)
-			startActivity(intent);
 	}
-}*/
+
+
+}
