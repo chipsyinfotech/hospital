@@ -26,9 +26,10 @@ import com.mavericks.checkin.utils.HCProgressUtils;
 import com.mavericks.checkin.utils.HCReturyUtils;
 
 public class HCHistoryActivity extends HCBaseActivity implements
-		OnItemClickListener, OnClickListener {
+		OnItemClickListener,OnClickListener {
 	HCUserAdapter mAdapter;
 	ListView list;
+	HCHistoryHolder holder;
 	TextView mTxt;
 	String userid = "1409810983";
 
@@ -37,7 +38,8 @@ public class HCHistoryActivity extends HCBaseActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_hchistory);
 		mAdapter = new HCUserAdapter(this);
-		list = (ListView) findViewById(R.id.list);
+	
+		list = (ListView) findViewById(R.id.list_view);
 		list.setAdapter(mAdapter);
 		list.setOnItemClickListener(this);
 		getHistory();

@@ -37,14 +37,11 @@ public class HCGetHospitalParser extends HCBaseJsonParser {
 	public void initialize(StringBuilder document) throws IOException,
 			JSONException {
 		super.initialize(document);
-
 		JSONObject obj = new JSONObject(document.toString());
 		if (obj.has(DATA)) {
 			JSONObject data = obj.getJSONObject(DATA);
-
 			if (data.has(HOSPITAL_MASTER)) {
 				JSONArray master = data.getJSONArray(HOSPITAL_MASTER);
-
 				for (int i = 0; i < master.length(); i++) {
 
 					JSONObject mcontent = master.getJSONObject(i);
