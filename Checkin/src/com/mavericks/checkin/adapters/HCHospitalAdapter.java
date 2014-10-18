@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
-
 import com.mavericks.checkin.R;
 import com.mavericks.checkin.holders.HCHospitalHolder;
 import com.mavericks.checkin.utils.HCUtils;

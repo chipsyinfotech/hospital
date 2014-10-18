@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -18,26 +19,24 @@ import com.mavericks.checkin.holders.HCHospitalHolder;
 
 public class HCHomeActivity extends HCBaseActivity implements OnClickListener,
 		OnItemClickListener {
-	Spinner mBtnlocation;
-	Spinner mBtnhospital;
+	Button mBtnlocation;
+	Button mBtnhospital;
 	ImageView mImginfo;
-	HCHospitalHolder holder;
 	TextView mTxtproceed;
-	HCHospitalAdapter mAdapter;
 	ArrayList<HCHospitalHolder> mholder;
+	ArrayAdapter<String> mAdapter;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-		mBtnlocation = (Spinner) findViewById(R.id.btn_location);
-		mBtnhospital = (Spinner) findViewById(R.id.btn_hospital);
+		mBtnlocation = (Button) findViewById(R.id.btn_location);
+		mBtnhospital = (Button) findViewById(R.id.btn_hospital);
 		mTxtproceed = (TextView) findViewById(R.id.text_proceed);
 		mImginfo = (ImageView) findViewById(R.id.img_info);
 		mImginfo.setOnClickListener(this);
 		mTxtproceed.setOnClickListener(this);
 	}
-
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -60,12 +59,11 @@ public class HCHomeActivity extends HCBaseActivity implements OnClickListener,
 		}
 	}
 
-	private void location() {	
+	private void location() {
 	}
 
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-		
 
 	}
 }

@@ -196,7 +196,7 @@
                 android:contentDescription="@string/about" />
 
             <LinearLayout
-                android:id="@+id/app_form"
+                android:id="@+id/lin_doctor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_ms"
@@ -209,8 +209,8 @@
                     android:contentDescription="@string/about"
                     android:src="@drawable/name_icon" />
 
-                <com.mavericks.checkin.views.HCEditText
-                    android:id="@+id/edt_doctor"
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/txt_doctor"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
@@ -286,7 +286,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/newvisit_form"
+            android:id="@+id/lin_visit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/lin_lay"
@@ -631,7 +631,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/revisit_form"
+            android:id="@+id/lin_revisit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/lin_lay"
@@ -659,14 +659,14 @@
                     android:orientation="horizontal" >
 
                     <ImageView
-                        android:id="@+id/img_rname"
+                        android:id="@+id/img_repname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/add"
                         android:src="@drawable/name_icon" />
 
                     <com.mavericks.checkin.views.HCEditText
-                        android:id="@+id/edt_rname"
+                        android:id="@+id/edt_repname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
@@ -677,7 +677,7 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/tab_rpname"
+                    android:id="@+id/tab_rname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_ms"
@@ -788,7 +788,7 @@
                 android:orientation="horizontal" >
 
                 <com.mavericks.checkin.views.HCTextView
-                    android:id="@+id/text_rcheckin"
+                    android:id="@+id/text_recheckin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"

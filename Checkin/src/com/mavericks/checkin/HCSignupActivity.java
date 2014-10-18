@@ -129,10 +129,6 @@ public class HCSignupActivity extends HCBaseActivity implements OnClickListener 
 						public void onComplete(int req_type, int status) {
 							hideProgressDialog();
 							if(status == HCConstants.ERROR_CODE_SUCCESS) {
-							
-								Toast.makeText(getApplicationContext(),
-										"Record successfully inserted",
-										Toast.LENGTH_LONG).show();
 								startActivity(new Intent(HCSignupActivity.this,HCSignInActivity.class));
 								overridePendingTransition(R.anim.slide_in_top_scr, 0);
 								HCSession.getInstance().storeSession(HCSignupActivity.this,
