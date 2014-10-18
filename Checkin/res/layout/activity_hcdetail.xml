@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:checkin="http://schemas.android.com/apk/res/com.mavericks.checkin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/margin_ms"
+    android:layout_marginRight="@dimen/margin_ms"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rel_la"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_ms"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/img_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/about"
+            android:src="@drawable/booking_icon" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/img_book"
+            android:text="@string/detail"
+            checkin:font_type="@integer/fnt_book" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_div"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_la"
+        android:layout_marginTop="@dimen/margin_ms"
+        android:background="@drawable/divider_line"
+        android:contentDescription="@string/about" />
+
+    <com.mavericks.checkin.views.HCTextView
+        android:id="@+id/text_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm_number"
+        android:layout_below="@+id/img_div"
+        checkin:font_type="@integer/fnt_texts" />
+
+    <com.mavericks.checkin.views.HCTextView
+        android:id="@+id/text_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_confirm"
+        android:layout_marginTop="@dimen/margin_s"
+        checkin:font_type="@integer/fnt_texts" />
+
+    <LinearLayout
+        android:id="@+id/lin_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_id"
+        android:layout_marginTop="@dimen/margin_ms"
+        
+        android:orientation="vertical" >
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_pname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_sm"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_hname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pink"
+    
+                 android:layout_marginTop="@dimen/margin_sm"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_sname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/margin_sm"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/margin_sm"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_vdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/margin_sm"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_tpaid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/margin_sm"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_priorpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/margin_sm"
+            checkin:font_type="@integer/fnt_texts" />
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_bdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/margin_sm"
+            checkin:font_type="@integer/fnt_texts" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_div1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lin_info"
+        android:layout_marginTop="@dimen/margin_ms"
+        android:background="@drawable/divider_line"
+        android:contentDescription="@string/about" />
+
+    <com.mavericks.checkin.views.HCTextView
+        android:id="@+id/text_got"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_div1"
+        android:layout_centerHorizontal="true"
+        android:text="@string/got"
+        checkin:font_type="@integer/fnt_log" />
+
+</RelativeLayout>

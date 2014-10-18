@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:checkin="http://schemas.android.com/apk/res/com.mavericks.checkin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu_background"
+    android:orientation="vertical"
+    tools:context="com.mavericks.checkin.HCHistoryActivity" >
+
+    <com.mavericks.checkin.views.HCTextView
+        android:id="@+id/text_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_ms"
+        android:layout_marginTop="@dimen/margin_mx"
+        android:text="@string/activity"
+        checkin:font_type="@integer/fnt_about" />
+
+    <ImageView
+        android:id="@+id/img_div"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_ms"
+        android:background="@drawable/divline"
+        android:contentDescription="@string/about" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_sm" >
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="wrap_content"
+             android:divider="@drawable/divline"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/retry_frame"
+            layout="@layout/view_retry"
+            android:visibility="invisible" />
+
+        <include
+            android:id="@+id/progressBar"
+            android:layout_width="@dimen/prg_wt"
+            android:layout_height="@dimen/prg_ht"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            layout="@layout/view_progress_bar" />
+    </RelativeLayout>
+
+</LinearLayout>

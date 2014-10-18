@@ -1,0 +1,345 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:checkin="http://schemas.android.com/apk/res/com.mavericks.checkin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none" >
+
+    <RelativeLayout
+        android:id="@+id/rel_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_ms"
+        android:orientation="vertical" >
+
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header_line"
+            android:gravity="center_horizontal"
+            android:text="@string/pay"
+            checkin:font_type="@integer/fnt_log" />
+
+        <RadioGroup
+            android:id="@+id/rad_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_payment"
+            android:layout_marginTop="@dimen/margin_ms"
+            android:background="@android:color/white"
+            android:orientation="horizontal" >
+
+            <com.mavericks.checkin.views.HCRadioButton
+                android:id="@+id/rad_pay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/paynow"
+                checkin:font_type="@integer/fnt_texts" />
+
+            <com.mavericks.checkin.views.HCRadioButton
+                android:id="@+id/rad_cash"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/cash"
+                checkin:font_type="@integer/fnt_texts" />
+        </RadioGroup>
+
+        <RelativeLayout
+            android:id="@+id/rel_pay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rad_payment" >
+
+            <RelativeLayout
+                android:id="@+id/rel_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_ms"
+                android:layout_marginRight="@dimen/margin_ms"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_lx"
+                    android:text="@string/register"
+                    checkin:font_type="@integer/fnt_texts" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_rupees"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/text_register"
+                    android:layout_alignParentRight="true"
+                    checkin:font_type="@integer/fnt_texts" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_consultant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_register"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_lx"
+                    android:text="@string/consult"
+                    checkin:font_type="@integer/fnt_texts" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_rupee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/text_consultant"
+                    android:layout_alignParentRight="true"
+                    checkin:font_type="@integer/fnt_texts" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_consultant"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_lx"
+                    android:text="@string/check"
+                    checkin:font_type="@integer/fnt_texts" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_convience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_check"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:text="@string/convience"
+                    checkin:font_type="@integer/fnt_texts" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_rup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/text_convience"
+                    android:layout_alignParentRight="true"
+                    checkin:font_type="@integer/fnt_texts" />
+
+                <ImageView
+                    android:id="@+id/img_div2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_convience"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:background="@drawable/divider_line"
+                    android:contentDescription="@string/about" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_div2"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:text="@string/amount"
+                    checkin:font_type="@integer/fnt_text" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_rupi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/text_amount"
+                    android:layout_alignParentRight="true"
+                    checkin:font_type="@integer/fnt_text" />
+
+                <CheckBox
+                    android:id="@+id/img_priority"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_rupi"
+                    android:layout_marginTop="@dimen/margin_ls"
+                    android:background="@drawable/check_button_non_press"
+                    android:button="@drawable/prior"
+                    android:contentDescription="@string/about" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_prior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_rupi"
+                    android:layout_marginTop="@dimen/margin_ls"
+                    android:layout_toRightOf="@+id/img_priority"
+                    android:text="@string/priority"
+                    checkin:font_type="@integer/fnt_prior" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_prior"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_toRightOf="@+id/img_priority"
+                    android:text="@string/add"
+                    checkin:font_type="@integer/fnt_texts" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_addrs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_prior"
+                    android:layout_marginLeft="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_toRightOf="@+id/text_add"
+                    android:text="@string/rupee"
+                    checkin:font_type="@integer/fnt_text" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_add"
+                    android:layout_marginTop="@dimen/margin_sm"
+                    android:text="@string/information"
+                    checkin:font_type="@integer/fnt_info" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_note"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_info"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:text="@string/note"
+                    checkin:font_type="@integer/fnt_texts" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_condition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_note"
+                    android:layout_marginTop="@dimen/margin_sm"
+                    android:text="@string/condition"
+                    checkin:font_type="@integer/fnt_info" />
+
+                <CheckBox
+                    android:id="@+id/img_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_condition"
+                    android:layout_marginTop="@dimen/margin_lx"
+                    android:background="@drawable/check_button_non_press"
+                    android:button="@drawable/prior"
+                    android:contentDescription="@string/about" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_term"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_condition"
+                    android:layout_marginLeft="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_lx"
+                    android:layout_toRightOf="@+id/img_check"
+                    android:text="@string/term"
+                    checkin:font_type="@integer/fnt_texts" />
+            </RelativeLayout>
+
+            <com.mavericks.checkin.views.HCTextView
+                android:id="@+id/text_proceed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/margin_mx"
+                android:background="@drawable/check"
+                android:text="@string/proceeded"
+                checkin:font_type="@integer/fnt_login" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_cash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rad_payment"
+            android:visibility="visible" >
+
+            <RelativeLayout
+                android:id="@+id/rel_cashinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_ms"
+                android:layout_marginRight="@dimen/margin_ms"
+                android:visibility="visible" >
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_paid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:text="@string/amount_pay"
+                    checkin:font_type="@integer/fnt_texts" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_charge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_paid"
+                    android:layout_marginTop="@dimen/margin_sm"
+                    android:text="@string/charges"
+                    checkin:font_type="@integer/fnt_text" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_notes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_charge"
+                    android:layout_marginTop="@dimen/margin_mx"
+                    android:text="@string/note"
+                    checkin:font_type="@integer/fnt_texts" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_information"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_notes"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:text="@string/makepay"
+                    checkin:font_type="@integer/fnt_texts" />
+
+                <CheckBox
+                    android:id="@+id/img_term"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_information"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:background="@drawable/check_button_non_press"
+                    android:button="@drawable/prior"
+                    android:contentDescription="@string/about" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_conditn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_information"
+                    android:layout_marginLeft="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:layout_toRightOf="@+id/img_term"
+                    android:text="@string/term"
+                    checkin:font_type="@integer/fnt_texts" />
+            </RelativeLayout>
+
+            <com.mavericks.checkin.views.HCTextView
+                android:id="@+id/text_proceeded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/rel_cashinfo"
+                android:layout_marginTop="@dimen/margin_xs"
+                android:background="@drawable/check"
+                android:text="@string/proceeded"
+                checkin:font_type="@integer/fnt_login" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

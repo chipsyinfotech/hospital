@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:checkin="http://schemas.android.com/apk/res/com.mavericks.checkin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu_background"
+    tools:context="com.mavericks.checkin.HCAboutUsActivity" >
+
+    <com.mavericks.checkin.views.HCTextView
+        android:id="@+id/text_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_ms"
+        android:text="@string/about"
+        checkin:font_type="@integer/fnt_about" />
+
+    <ImageView
+        android:id="@+id/img_div"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_about"
+        android:layout_marginTop="@dimen/margin_mx"
+        android:background="@drawable/divline"
+        android:contentDescription="@string/about" />
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_div"
+        android:layout_marginTop="@dimen/margin_lx"
+        android:contentDescription="@string/about"
+        android:src="@drawable/logo" />
+      <com.mavericks.checkin.views.HCTextView 
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_logo"
+        android:text="@string/text"
+        android:layout_marginTop="@dimen/margin_lx"
+        android:layout_marginLeft="@dimen/margin_mx"
+        android:layout_marginRight="@dimen/margin_mx"
+              checkin:font_type="@integer/fnt_sug" 
+        android:gravity="center"/>
+    
+     <ImageView
+        android:id="@+id/img_div1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        
+       android:layout_above="@+id/txt_sug"
+       android:layout_marginBottom="@dimen/margin_ms"
+        android:background="@drawable/divline"
+        android:contentDescription="@string/about" />
+    
+    <com.mavericks.checkin.views.HCTextView 
+        android:id="@+id/txt_sug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lin_account"
+        android:text="@string/suggest"
+        android:layout_marginBottom="@dimen/margin_lx"
+        android:layout_marginLeft="@dimen/margin_ms"
+        android:layout_marginRight="@dimen/margin_ms"
+              checkin:font_type="@integer/fnt_sug" 
+        android:gravity="center"/>
+
+     <LinearLayout
+         android:id="@+id/lin_account"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/margin_ms"
+        android:layout_marginRight="@dimen/margin_ms"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_lx"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+        <ImageView
+            android:id="@+id/img_fb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/hello_world"
+            android:src="@drawable/facebook_icon" />
+
+        <ImageView
+            android:id="@+id/img_twitt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/hello_world"
+            android:src="@drawable/twitter_icon" />
+
+        <ImageView
+            android:id="@+id/img_mail"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/hello_world"
+            android:src="@drawable/mail_icon" />
+        
+        <ImageView
+            android:id="@+id/img_call"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/hello_world"
+            android:src="@drawable/call_icon" />
+    </LinearLayout>
+
+</RelativeLayout>
