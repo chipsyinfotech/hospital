@@ -24,95 +24,49 @@
         android:contentDescription="@string/about"
         android:src="@drawable/logo" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_marginBottom="@dimen/margin_mx"
         android:layout_marginLeft="@dimen/margin_ls"
         android:layout_marginRight="@dimen/margin_ls"
-        android:gravity="bottom" >
+        android:gravity="bottom"
+        android:orientation="vertical" >
 
-        <LinearLayout
-            android:id="@+id/lin_location"
+        <Button
+            android:id="@+id/btn_sel_loc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_ms"
             android:background="@drawable/tabsl"
-            android:orientation="horizontal" >
+            android:drawableLeft="@drawable/location_icon"
+            android:drawableRight="@drawable/drop_down_icon"
+            android:gravity="center|left"
+            android:textColor="@android:color/black"
+            android:text="@string/sel_location" />
 
-            <ImageView
-                android:id="@+id/img_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/about"
-                android:src="@drawable/location_icon" />
-
-            <Button
-                android:id="@+id/btn_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_ss" />
-
-            <ImageView
-                android:id="@+id/img_drop"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginLeft="@dimen/margin_ls"
-                android:contentDescription="@string/about"
-                android:src="@drawable/drop_down_icon" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lin_hospital"
+        <Button
+            android:id="@+id/btn_sel_hos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/lin_location"
-            android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/margin_ms"
             android:background="@drawable/tabsl"
-            android:orientation="horizontal" >
+            android:drawableLeft="@drawable/select_hospital_icon"
+            android:drawableRight="@drawable/drop_down_icon"
+            android:gravity="center|left"
+             android:textColor="@android:color/black"
+            android:text="@string/hospital_prompt" />
+            
+            
 
-            <ImageView
-                android:id="@+id/img_hospital"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/about"
-                android:src="@drawable/select_hospital_icon" />
-
-            <Button
-                android:id="@+id/btn_hospital"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_ss" />
-
-            <ImageView
-                android:id="@+id/img_dropdown"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_ls"
-                android:contentDescription="@string/about"
-                android:src="@drawable/drop_down_icon" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lin_proceed"
+        <com.mavericks.checkin.views.HCTextView
+            android:id="@+id/text_proceed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/lin_hospital"
-            android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/margin_ms"
             android:background="@drawable/tabsl"
-            android:orientation="horizontal" >
-
-            <com.mavericks.checkin.views.HCTextView
-                android:id="@+id/text_proceed"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="@string/proceed"
-                checkin:font_type="@integer/fnt_texts" />
-        </LinearLayout>
-    </RelativeLayout>
-
-</LinearLayout>
+            android:gravity="center_horizontal"
+            android:text="@string/proceed"
+            checkin:font_type="@integer/fnt_texts" />
+    </LinearLayout>
+    </LinearLayout>
