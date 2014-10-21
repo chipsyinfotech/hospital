@@ -48,7 +48,6 @@ public class HCClient {
     public static final int REQ_TYPE_PUT = 3;
     private static HCClient mCheckinClient;
     private HCContentDownloader mContentDownloader = new HCContentDownloader();
-
     private ArrayList<FileDownloader> mTaskList = new ArrayList<FileDownloader>();
     FileDownloader mSmartUrlDwnldr;
    
@@ -350,7 +349,6 @@ public class HCClient {
     }
 
     // AsyncTasks invoking ResponseParsers.
-
     /**
      * AsyncTask for handling parsers.
      * 

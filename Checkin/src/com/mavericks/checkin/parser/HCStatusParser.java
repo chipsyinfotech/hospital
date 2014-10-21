@@ -12,27 +12,14 @@ import com.mavericks.checkin.utils.HCUtils;
 
 public class HCStatusParser extends HCBaseJsonParser {
 
-	public static final String KEY = "header";
-	public static final String TYPE = "Htype";
-	public static final String NAME = "Hname";
+	
 	public static final String SESSION = "session";
 	public static final String USER_ID = "user_id";
-	public static final String UR_NM = "user_name";
-	public static final String TR_ID = "transaction_id";
-	public static final String IMG = "image_file";
 	public static final String EMAIL = "email_address";
 	HCProfileHolder holder;
-
 	public HCStatusParser() {
 
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.viacom18.spotlight.models.STAJsonDataModel#initialize(java.lang.
-	 * StringBuilder)
-	 */
 	@Override
 	public void initialize(StringBuilder document) throws IOException,
 			JSONException {
@@ -45,8 +32,6 @@ public class HCStatusParser extends HCBaseJsonParser {
 				holder.setUser_id(obj.getString(USER_ID));
 			if (obj.has(EMAIL))
 				holder.setEmail(obj.getString(EMAIL));
-
-			HCUtils.Log(" ======== holder" + holder.getPic());
 		}
 
 	}

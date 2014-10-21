@@ -17,15 +17,15 @@ public class HCSession {
 		return mSession;
 	}
 
-	public void storeSession(Context c, HCProfileHolder profile) {
-		if (profile == null)
+	public void storeSession(Context c, HCProfileHolder holder) {
+		if (holder == null)
 			return;
 
-		HCUtils.editPrefString(HCConstants.PREF_PHONE, profile.getPhone(), c);
-		HCUtils.editPrefString(HCConstants.PREF_PIC, profile.getPic(), c);
-		HCUtils.editPrefString(HCConstants.PREF_USRID, profile.getUser_id(), c);
-		HCUtils.editPrefString(HCConstants.PREF_USRNAME, profile.getName(), c);
-		HCUtils.editPrefString(HCConstants.PREF_EMAIL, profile.getEmail(), c);
+		HCUtils.editPrefString(HCConstants.PREF_PHONE, holder.getPhone(), c);
+		HCUtils.editPrefString(HCConstants.PREF_PIC, holder.getPic(), c);
+		HCUtils.editPrefString(HCConstants.PREF_USRID, holder.getUser_id(), c);
+		HCUtils.editPrefString(HCConstants.PREF_USRNAME, holder.getName(), c);
+		HCUtils.editPrefString(HCConstants.PREF_EMAIL, holder.getEmail(), c);
 	}
 
 	

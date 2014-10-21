@@ -1,14 +1,19 @@
 package com.mavericks.checkin.parser;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.mavericks.checkin.holders.HCBaseHolder;
-import com.mavericks.checkin.holders.HCHospitalHolder;
+import com.mavericks.checkin.holders.HCLocationHolder;
+import com.mavericks.checkin.holders.HCSpecializationHolder;
+import com.mavericks.checkin.utils.HCUtils;
 
 public class HCGetSpecializationParser extends HCBaseJsonParser {
 	public static final String SESSION = "session";
@@ -19,7 +24,7 @@ public class HCGetSpecializationParser extends HCBaseJsonParser {
 	public static final String SPECIAL_NAME = "specialization_name";
 	public static final String DATE_DETAILS = "date_details";
 	public static final String DATE_COUNT = "date_count";
-	HCHospitalHolder holder;
+	ArrayList<HCSpecializationHolder> mHolderList;
 
 	public HCGetSpecializationParser() {
 
@@ -35,6 +40,7 @@ public class HCGetSpecializationParser extends HCBaseJsonParser {
 	public void initialize(StringBuilder document) throws IOException,
 			JSONException {
 		super.initialize(document);
+		mHolderList = new ArrayList<HCSpecializationHolder>();
 
 		JSONObject obj = new JSONObject(document.toString());
 		String hospital_id = null;
@@ -54,37 +60,27 @@ public class HCGetSpecializationParser extends HCBaseJsonParser {
 
 					JSONObject mcontent = detail.getJSONObject(i);
 
-					HCHospitalHolder holder = new HCHospitalHolder();
+					HCSpecializationHolder holder = new HCSpecializationHolder();
 
 					if (!mcontent.isNull(SPECIALIZATION)
 							&& mcontent.has(SPECIALIZATION)) {
-						holder.setId(mcontent.getString(SPECIALIZATION));
+						holder.setmHosSpecialdetail(mcontent
+								.getString(SPECIALIZATION));
 					}
 
 					if (!mcontent.isNull(SPECIAL_NAME)
 							&& mcontent.has(SPECIAL_NAME)) {
-						holder.setSp_name(mcontent.getString(SPECIAL_NAME));
+						holder.setmHosSpecializationname(mcontent
+								.getString(SPECIAL_NAME));
 					}
-
+					mHolderList.add(holder);
 				}
 			}
-			if (data.has(DATE_DETAILS)) {
-				JSONArray date = data.getJSONArray(DATE_DETAILS);
 
-				for (int i = 0; i < date.length(); i++) {
-
-					JSONObject count = date.getJSONObject(i);
-
-					HCHospitalHolder holder = new HCHospitalHolder();
-
-					if (!count.isNull(DATE_COUNT) && count.has(DATE_COUNT)) {
-						holder.setDate_count(count.getString(DATE_COUNT));
-					}
-
-				}
-			}
 		}
-	} /*
+	}
+
+	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see com.viacom18.spotlight.models.STAJsonDataModel#getModelsCount()
@@ -112,7 +108,7 @@ public class HCGetSpecializationParser extends HCBaseJsonParser {
 	 */
 	@Override
 	public HCBaseHolder getDataHolder() {
-		return holder;
+		return null;
 	}
 
 	/*
@@ -122,7 +118,7 @@ public class HCGetSpecializationParser extends HCBaseJsonParser {
 	 */
 	@Override
 	public List<? extends HCBaseHolder> getDataList() {
-		return null;
+		return mHolderList;
 	}
 
 }
