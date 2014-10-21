@@ -28,4 +28,5 @@
     android:paddingTop="@dimen/margin_sm"
     android:paddingBottom="@dimen/margin_sm"
     android:background="@android:color/white"
-  />
+    android:textColor="@color/navy"
+    android:textAlignment="inherit"/>

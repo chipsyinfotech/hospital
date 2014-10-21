@@ -590,3 +590,4 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		overridePendingTransition(0, android.R.anim.fade_out);
 	}
 
+}

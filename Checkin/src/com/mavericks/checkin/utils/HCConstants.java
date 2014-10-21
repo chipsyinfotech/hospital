@@ -55,6 +55,8 @@ public class HCConstants {
 	public static final String EXTRA_TPAID = "extra_total_paid";
 	public static final String EXTRA_PASS = "extra_prior_pass";
 	public static final String EXTRA_BDATE = "extra_booking_date";
+	public static final String EXTRA_HOSPITAL_LIST = "extra_hospital_list";
+	
 	public static final String EXTRA_IS_REGISTERED = "extra_isRegistered";
 	public static final String EXTRA_CONTENT = "extra_content";
 	public static final String EXTRA_CONTENT_LIST = "extra_content_list";
@@ -73,7 +75,7 @@ public class HCConstants {
 	public static final String PAR_PSWRD = "password";
 	public static final String PAR_MOB_NUMB = "mobile_number";
 	public static final String PAR_APP_KEY = "app_key";
-	public static final String PAR_SPECIAL_ID = "special_id";
+	public static final String PAR_SPECIAL_ID ="specialization_id";
 	public static final String PAR_VISIT_DATE= "visiting_date";
 	public static final String PAR_TIME_ID = "timing_id";
 	public static final String PAR_FNAME = "first_name";
