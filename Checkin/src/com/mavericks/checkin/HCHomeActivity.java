@@ -28,57 +28,59 @@ import com.mavericks.checkin.utils.HCRetryDialog;
 import com.mavericks.checkin.utils.HCRetryDialog.OnRetryClickListener;
 import com.mavericks.checkin.utils.HCUtils;
 
-public class HCHomeActivity extends HCBaseActivity implements OnClickListener
-		 {
+public class HCHomeActivity extends HCBaseActivity implements OnClickListener {
 	Button mBtnlocation;
 	Button mBtnhospital;
 	ImageView mImginfo;
 	TextView mTxtproceed;
+	ArrayList<HCLocationHolder> mHospitalList;
 	HCSpinnerAdapter mAdapter;
-	String Hospitalid;
-	Map<String, ArrayList<HCLocationHolder>> mHospList;
+	Map<String, ArrayList<HCLocationHolder>> mMapHospList;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
+
 		mBtnlocation = (Button) findViewById(R.id.btn_sel_loc);
 		mBtnhospital = (Button) findViewById(R.id.btn_sel_hos);
 		mTxtproceed = (TextView) findViewById(R.id.text_proceed);
 		mImginfo = (ImageView) findViewById(R.id.img_info);
-		
-		//set listenr
+
+		// set listenr
 		mImginfo.setOnClickListener(this);
 		mTxtproceed.setOnClickListener(this);
 		mBtnlocation.setOnClickListener(this);
 		mBtnhospital.setOnClickListener(this);
 		mBtnhospital.setEnabled(false);
-		
+
 		mAdapter = new HCSpinnerAdapter(this);
-		mHospList = new HashMap<String, ArrayList<HCLocationHolder>>();
-		
-		//fetch Location details from server
+		mHospitalList = new ArrayList<HCLocationHolder>();
+		mMapHospList = new HashMap<String, ArrayList<HCLocationHolder>>();
+
+		// fetch Location details from server
 		getLocation();
 	}
-	
+
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.text_proceed:
 			Intent intent = new Intent(HCHomeActivity.this,
 					HCRegistrationActivity.class);
+			intent.putExtra(HCConstants.EXTRA_CONTENT_LIST, mHospitalList);
 			startActivity(intent);
 			finish();
 			break;
 		case R.id.img_info:
-			Intent i = new Intent(HCHomeActivity.this, HCHistoryActivity.class);
-			startActivity(i);
+			intent = new Intent(HCHomeActivity.this, HCAboutUsActivity.class);
+			startActivity(intent);
 			finish();
 			break;
 		case R.id.btn_sel_loc:
 			showLocation();
 			break;
-			
+
 		case R.id.btn_sel_hos:
 			showHospital();
 			break;
@@ -92,9 +94,9 @@ public class HCHomeActivity extends HCBaseActivity implements OnClickListener
 	 */
 	private void getLocation() {
 		showProgressDialog("", false);
-		
+
 		final HCGetHospitalParser parser = new HCGetHospitalParser();
-		List<NameValuePair> formData = new ArrayList<NameValuePair>();	
+		List<NameValuePair> formData = new ArrayList<NameValuePair>();
 		HCClient.getInstance().request(this, HCServerUtils.REQ_GET_HOSPITAL,
 				null, null, formData, parser, new HCIRequestListener() {
 
@@ -102,71 +104,74 @@ public class HCHomeActivity extends HCBaseActivity implements OnClickListener
 					public void onComplete(int req_type, int status) {
 						hideProgressDialog();
 						if (status == HCConstants.ERROR_CODE_SUCCESS) {
-							mHospList = parser.getMapLocation();
+							mMapHospList = parser.getMapLocation();
+							mHospitalList = (ArrayList<HCLocationHolder>) parser
+									.getDataList();
 						} else {
 							// If we have data in database
-							HCRetryDialog dialog = new HCRetryDialog(HCHomeActivity.this,
+							HCRetryDialog dialog = new HCRetryDialog(
+									HCHomeActivity.this,
 									HCServerUtils.REQ_GET_HOSPITAL);
 							dialog.setOnRetryClickListener(new OnRetryClickListener() {
-								
+
 								@Override
 								public void onRetryClick(int requestType) {
 									getLocation();
 								}
 							});
-							dialog.show(HCHomeActivity.this.getSupportFragmentManager(), 
+							dialog.show(HCHomeActivity.this
+									.getSupportFragmentManager(),
 									HCHomeActivity.class.getSimpleName());
 						}
 					}
 				});
 	}
-	
+
 	/**
 	 * shows the list of Location
 	 */
 	private void showLocation() {
 		ArrayList<String> locationList = new ArrayList<String>();
-		for (String key : mHospList.keySet()) {
-		    locationList.add(key);
+		for (String key : mMapHospList.keySet()) {
+			locationList.add(key);
 		}
+
 		mAdapter.setData(locationList);
 		mAdapter.notifyDataSetChanged();
-		new AlertDialog.Builder(this)
-		  .setTitle("Select Location")
-		  .setAdapter(mAdapter, new DialogInterface.OnClickListener() {
+		new AlertDialog.Builder(this).setTitle("Select Location")
+				.setAdapter(mAdapter, new DialogInterface.OnClickListener() {
 
-		    @Override
-		    public void onClick(DialogInterface dialog, int position) {	
-		    	HCUtils.Log(" On Clickk : "+mAdapter.getItem(position).toString());
-			    mBtnlocation.setText(mAdapter.getItem(position).toString());
-			    mBtnhospital.setEnabled(true);
-			   
-			    dialog.dismiss();
-		    }
-		  }).create().show();
+					@Override
+					public void onClick(DialogInterface dialog, int position) {
+						HCUtils.Log(" On Clickk : "
+								+ mAdapter.getItem(position).toString());
+						mBtnlocation.setText(mAdapter.getItem(position)
+								.toString());
+						mBtnhospital.setEnabled(true);
+						dialog.dismiss();
+					}
+				}).create().show();
 	}
-	
+
 	/**
 	 * shows the list of Hospital
 	 */
 	private void showHospital() {
 
-		mAdapter.setData(mHospList.get(mBtnlocation.getText()));
+		mAdapter.setData(mMapHospList.get(mBtnlocation.getText()));
 		mAdapter.notifyDataSetChanged();
-		new AlertDialog.Builder(this)
-		  .setTitle("Select Hospital")
-		  .setAdapter(mAdapter, new DialogInterface.OnClickListener() {
 
-		   
-		    @Override
-		    public void onClick(DialogInterface dialog, int position) {
-		    	HCLocationHolder  hospital = (HCLocationHolder) mAdapter.getItem(position);
-			    mBtnhospital.setText(hospital.getmHosName());
-	 //  Bundle bundle = new Bundle();
-	//	   bundle.putParcelable(HCConstants.EXTRA_HOSPITAL_LIST,hospital);
-			    dialog.dismiss();
-		    }
-		  }).create().show();
-	}	
-	
+		new AlertDialog.Builder(this).setTitle("Select Hospital")
+				.setAdapter(mAdapter, new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int position) {
+						HCLocationHolder hospital = (HCLocationHolder) mAdapter
+								.getItem(position);
+						mBtnhospital.setText(hospital.getmHosName());
+						dialog.dismiss();
+					}
+				}).create().show();
+	}
+
 }

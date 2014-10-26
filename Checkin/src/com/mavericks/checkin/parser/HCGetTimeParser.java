@@ -19,6 +19,10 @@ public class HCGetTimeParser extends HCBaseJsonParser {
 	public static final String TIMING_ID =   "timing_id";
 	public static final String APPOINTMENT_TIME ="appointment_timings";
 	public static final String AVAILABILITY ="availability";
+	public static final String AMOUNT_DETAILS ="amount_details";
+	public static final String VISIT_TYPE ="visit_type";
+	public static final String GENERAL_AMOUNT = "general_amount";
+	
 	
 	ArrayList<HCTimeHolder> mHolderList;
 
@@ -73,6 +77,10 @@ public class HCGetTimeParser extends HCBaseJsonParser {
 					
 					mHolderList.add(holder);
 				}
+				
+//				if (data.has(TIMING_DETAILS)) {
+//					JSONArray detail = data.getJSONArray(TIMING_DETAILS);
+
 			}
 		}
 	}/*

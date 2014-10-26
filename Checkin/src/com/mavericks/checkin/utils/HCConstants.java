@@ -73,6 +73,7 @@ public class HCConstants {
 	public static final String PAR_USR_NM = "user_name";
 	public static final String PAR_EMAIL_ID = "email_address";
 	public static final String PAR_PSWRD = "password";
+	public static final String PAR_VISIT_TYPE = "visit_type";
 	public static final String PAR_MOB_NUMB = "mobile_number";
 	public static final String PAR_APP_KEY = "app_key";
 	public static final String PAR_SPECIAL_ID ="specialization_id";
@@ -81,6 +82,7 @@ public class HCConstants {
 	public static final String PAR_FNAME = "first_name";
 	public static final String PAR_MOTHER = "mother_name";
 	public static final String PAR_MARRIED = "married";
+	public static final String PAR_CASH_ON_ARRIVAL ="cash_on_arrival";
 	public static final String PAR_LNAME = "last_name";
 	public static final String PAR_HOSPITAL_ID= "hospital_id";
 	public static final String PAR_PASS= "priority_pass";
@@ -88,6 +90,9 @@ public class HCConstants {
 	public static final String PAR_FANAME= "father_name";
 	public static final String PAR_GENDER= "gender";
 	public static final String PAR_ADDRESS= "address";
+	public static final String PAR_PLACE= "place";
+	public static final String PAR_RELIGION= "religion";
+	public static final String PAR_OCCUPATION="occupation";
 	public static final String PAR_AGE= "age";
 	public static final String PAR_APPOINTMENT= "prior_appointment";
 	public static final String PAR_DNAME= "doctor_name";

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Checkin</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
-
     <!-- Home screen -->
     <string name="welcome">Welcome</string>
     <!-- Sign In -->
@@ -36,6 +34,7 @@
     <string name="hospital_info">HospitalCheck.in is a healthcare\n\u0020\u0020\u0020\u0020 platform to help patients</string>
     <string name="activity">ACTIVITIES</string>
     <string name="address">Address</string>
+    <string name="sel_location">Select Location</string>
     <string name="location">Location</string>
     <string name="patname">Patient Name</string>
     <string name="hname">Hospital Name</string>
@@ -166,26 +165,26 @@
         <item>KMC Udupi</item>
     </string-array>
 
-    <string name="special_prompt">Specialization</string>
+    <string name="special_prompt">Select specialization</string>
 
     <string-array name="special_arrays">
         <item>ET</item>
     </string-array>
 
-    <string name="date_prompt">Specialization</string>
+    <string name="date_prompt">Select date</string>
 
     <string-array name="date_arrays">
         <item>12-Sep-2014</item>
     </string-array>
-
-    <string name="doctor_prompt">Specialization</string>
+	<string name="docnm_prompt">Doctor name</string>
+    <string name="doctor_prompt">Select doctor</string>
 
     <string-array name="doctor_arrays">
         <item>Select Doctor</item>
         <item>Krishna Prasad</item>
     </string-array>
 
-    <string name="time_prompt">Specialization</string>
+    <string name="time_prompt">Select time</string>
 
     <string-array name="time_arrays">
         <item>Select Time</item>

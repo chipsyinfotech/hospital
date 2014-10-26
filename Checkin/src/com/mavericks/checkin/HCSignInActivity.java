@@ -45,7 +45,6 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 	TextView mTxtpaswrd;
 	String email;
 	String digit;
-	public static String flag="";
 	TextView mTxtsignup;
 
 	@Override
@@ -60,7 +59,7 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 		mTxtlogin.setOnClickListener(this);
 		mTxtpaswrd.setOnClickListener(this);
 		mTxtsignup.setOnClickListener(this);
-		
+
 	}
 
 	@Override
@@ -189,10 +188,7 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 					public void onComplete(int req_type, int status) {
 						hideProgressDialog();
 						if (status == HCConstants.ERROR_CODE_SUCCESS) {
-							Toast.makeText(getApplicationContext(),
-									"Login successfully completed",
-									Toast.LENGTH_LONG).show();
-							flag="1";
+
 							startActivity(new Intent(HCSignInActivity.this,
 									HCRegistrationActivity.class));
 							overridePendingTransition(R.anim.anim_from_middle,

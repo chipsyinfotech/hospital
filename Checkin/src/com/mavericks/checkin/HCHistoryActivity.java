@@ -31,14 +31,12 @@ public class HCHistoryActivity extends HCBaseActivity implements
 	ListView list;
 	HCHistoryHolder holder;
 	TextView mTxt;
-	String userid = "1409810983";
-
+	String userid = "";
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_hchistory);
 		mAdapter = new HCUserAdapter(this);
-	
 		list = (ListView) findViewById(R.id.list_view);
 		list.setAdapter(mAdapter);
 		list.setOnItemClickListener(this);
@@ -68,18 +66,15 @@ public class HCHistoryActivity extends HCBaseActivity implements
 							HCReturyUtils.showRetryFrame(
 									findViewById(R.id.root),
 									new OnClickListener() {
-
 										@Override
 										public void onClick(View arg0) {
 											getHistory();
 										}
-									}, HCServerUtils.REQ_GET_HISTORY);
+								}, HCServerUtils.REQ_GET_HISTORY);
 						}
 					}
 				});
-
 	}
-
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 			long arg3) {
@@ -89,9 +84,7 @@ public class HCHistoryActivity extends HCBaseActivity implements
 		intent.putExtra(HCConstants.EXTRA_HISTORY_LIST, holder);
 		startActivity(intent);
 		finish();
-
 	}
-
 	@Override
 	public void onClick(View v) {
 

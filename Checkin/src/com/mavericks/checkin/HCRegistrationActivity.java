@@ -15,12 +15,10 @@
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -46,11 +44,12 @@ import com.mavericks.checkin.holders.HCTimeHolder;
 import com.mavericks.checkin.parser.HCDateParser;
 import com.mavericks.checkin.parser.HCGetSpecializationParser;
 import com.mavericks.checkin.parser.HCGetTimeParser;
-
+import com.mavericks.checkin.parser.HCVisitParser;
 import com.mavericks.checkin.utils.HCAlertManager;
 import com.mavericks.checkin.utils.HCConstants;
 import com.mavericks.checkin.utils.HCRetryDialog;
 import com.mavericks.checkin.utils.HCRetryDialog.OnRetryClickListener;
+import com.mavericks.checkin.utils.HCUtils;
 
 public class HCRegistrationActivity extends HCBaseActivity implements
 		OnClickListener {
@@ -87,37 +86,54 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 	String married = null;
 	String appointment = null;
 	String userid = null;
-	String hospital_id = "1234";
-	String special_id = "101";
-	String time_id = "12";
+
 	String lname = null;
 	String mname = null;
-	String amount = null;
+	String mAmount = null;
+	String mVisit = null;
 	String gender = null;
-	String pass = "1";
+	String pass;
+	String cash;
+	String place;
+	String occupation;
+	String religion;
+
+	String hospitalnumber;
 	EditText mEdtremail;
 	TextView mTxtrecheck;
-	String hospital = "1001-140001";
+
 	HCSpinnerAdapter mAdapter;
-	String special = "101";
-	String visit = null;
+
 	HCLocationHolder mHolder;
 	ArrayList<HCSpecializationHolder> mHosspecialization;
-	
+	ArrayList<HCLocationHolder> mHospitalList;
 	ArrayList<HCTimeHolder> mHostime;
 	ArrayList<HCDateHolder> mHosdate;
+	String mHospitalId;
+	String mSpecializtionId;
+	String mVisitDate;
+	String mTime;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//		Bundle bundle = getIntent().getExtras();
-//		if (bundle.containsKey(HCConstants.EXTRA_HOSPITAL_LIST)) {
-//			mHolder = bundle.getParcelable(HCConstants.EXTRA_HISTORY_LIST);
-//		}
-
-		
-
+		Bundle bundle = getIntent().getExtras();
+		if (bundle.containsKey(HCConstants.EXTRA_CONTENT_LIST)) {
+			mHospitalList = bundle
+					.getParcelableArrayList(HCConstants.EXTRA_CONTENT_LIST);
+		}
 		setContentView(R.layout.activity_hcregistration);
+
+		// initialize the UI
+		initUI();
+
+		// Fetch
+	}
+
+	/**
+	 * initializes the UI
+	 */
+	private void initUI() {
 		mImgmenu = (ImageView) findViewById(R.id.img_menu);
 		mTxtlog = (TextView) findViewById(R.id.text_log);
 		mRadgroup = (RadioGroup) findViewById(R.id.radio_app);
@@ -127,7 +143,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		mImgdoctor = (ImageView) findViewById(R.id.tab_doctor);
 		mLinDoctor = (LinearLayout) findViewById(R.id.lin_doctor);
 		mBtnhospital = (Button) findViewById(R.id.btn_sel_hos);
-		//mBtnhospital.setText(mHolder.getmHosName());
+
 		mBtnspecial = (Button) findViewById(R.id.btn_sel_special);
 		mBtndate = (Button) findViewById(R.id.btn_sel_date);
 		mBtntime = (Button) findViewById(R.id.btn_sel_time);
@@ -152,7 +168,8 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		mLinrevisit = (LinearLayout) findViewById(R.id.lin_revisit);
 		mEdtdoctor = (EditText) findViewById(R.id.edt_doctor);
 		// set listener
-		// set listener
+
+		mBtnhospital.setOnClickListener(this);
 		mRadyes.setOnClickListener(this);
 		mRadno.setOnClickListener(this);
 		mRadvisit.setOnClickListener(this);
@@ -167,10 +184,33 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		mTxtlog.setOnClickListener(this);
 		mLinrevisit.setVisibility(View.GONE);
 		mAdapter = new HCSpinnerAdapter(this);
-		getSpecialization();
-		getTime();
-		getDate();
 
+		mBtndate.setEnabled(false);
+		mBtnspecial.setEnabled(false);
+		mBtntime.setEnabled(false);
+	}
+
+	private void resetUi(int id) {
+		if (id == mBtnhospital.getId()) {
+			mBtnspecial.setText(getString(R.string.special_prompt));
+			mBtndate.setText(getString(R.string.date_prompt));
+			mBtntime.setText(getString(R.string.time_prompt));
+
+			mSpecializtionId = null;
+			mVisitDate = null;
+
+			mBtndate.setEnabled(false);
+			mBtntime.setEnabled(false);
+		}
+
+		else if (id == mBtnspecial.getId()) {
+			mBtndate.setText(getString(R.string.date_prompt));
+			mBtntime.setText(getString(R.string.time_prompt));
+
+			mVisitDate = null;
+
+			mBtntime.setEnabled(false);
+		}
 	}
 
 	@Override
@@ -199,7 +239,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 			showTime();
 			break;
 		case R.id.btn_sel_hos:
-			
+			showHospital();
 			break;
 		case R.id.radio_visit:
 			mLinvisit.findViewById(R.id.lin_visit).setVisibility(View.VISIBLE);
@@ -212,8 +252,8 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 			break;
 		case R.id.text_checkin:
 			if (isFormNewValid())
-				// newvisit();
-				break;
+				newvisit();
+			break;
 		case R.id.text_log:
 
 			startActivity(new Intent(HCRegistrationActivity.this,
@@ -221,14 +261,13 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 			overridePendingTransition(R.anim.slide_in_top_scr, 0);
 		case R.id.text_recheckin:
 			if (isFormRevisitValid())
-				// revisit();
-				break;
+				newvisit();
+			break;
 		default:
 			break;
 		}
 
 	}
-
 
 	private void getSpecialization() {
 		showProgressDialog("", false);
@@ -236,7 +275,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		final HCGetSpecializationParser parser = new HCGetSpecializationParser();
 		List<NameValuePair> formData = new ArrayList<NameValuePair>();
 		formData.add(new BasicNameValuePair(HCConstants.PAR_HOSPITAL_ID,
-				hospital));
+				mHospitalId));
 		HCClient.getInstance().request(this,
 				HCServerUtils.REQ_GET_SPECIALIZATION, null, null, formData,
 				parser, new HCIRequestListener() {
@@ -247,7 +286,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 						if (status == HCConstants.ERROR_CODE_SUCCESS) {
 							mHosspecialization = (ArrayList<HCSpecializationHolder>) parser
 									.getDataList();
-
+							mBtnspecial.setEnabled(true);
 						} else {
 							// If we have data in database
 							HCRetryDialog dialog = new HCRetryDialog(
@@ -267,6 +306,34 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 					}
 				});
 	}
+
+	/**
+	 * shows the list of Hospitals
+	 */
+	private void showHospital() {
+
+		mAdapter.setData(mHospitalList);
+		mAdapter.notifyDataSetChanged();
+		new AlertDialog.Builder(this).setTitle("Select Hospital")
+				.setAdapter(mAdapter, new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int position) {
+						resetUi(mBtnhospital.getId());
+						HCLocationHolder location = (HCLocationHolder) mAdapter
+								.getItem(position);
+						mBtnhospital.setText(location.getmHosName());
+						mHospitalId = location.getmHosId();
+						getSpecialization();
+
+						dialog.dismiss();
+					}
+				}).create().show();
+	}
+
+	/**
+	 * shows list of specialization
+	 */
 	private void showSpecialization() {
 
 		mAdapter.setData(mHosspecialization);
@@ -276,24 +343,28 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 
 					@Override
 					public void onClick(DialogInterface dialog, int position) {
+						resetUi(mBtnspecial.getId());
 						HCSpecializationHolder special = (HCSpecializationHolder) mAdapter
 								.getItem(position);
 						mBtnspecial.setText(special.getmHosSpecializationname());
-
+						
+						
+						
+						mSpecializtionId = special.getmHosSpecialdetail();
+						getDate();
 						dialog.dismiss();
 					}
 				}).create().show();
 	}
 
-	
 	private void getDate() {
 		showProgressDialog("", false);
 
 		final HCDateParser parser = new HCDateParser();
 		List<NameValuePair> formData = new ArrayList<NameValuePair>();
 		formData.add(new BasicNameValuePair(HCConstants.PAR_HOSPITAL_ID,
-				hospital));
-	
+				mHospitalId));
+
 		HCClient.getInstance().request(this, HCServerUtils.REQ_GET_DATE, null,
 				null, formData, parser, new HCIRequestListener() {
 
@@ -303,7 +374,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 						if (status == HCConstants.ERROR_CODE_SUCCESS) {
 							mHosdate = (ArrayList<HCDateHolder>) parser
 									.getDataList();
-
+							mBtndate.setEnabled(true);
 						} else {
 							// If we have data in database
 							HCRetryDialog dialog = new HCRetryDialog(
@@ -324,9 +395,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 				});
 	}
 
-	
 	private void showDate() {
-
 		mAdapter.setData(mHosdate);
 		mAdapter.notifyDataSetChanged();
 		new AlertDialog.Builder(this).setTitle("Select Date")
@@ -337,21 +406,24 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 						HCDateHolder date = (HCDateHolder) mAdapter
 								.getItem(position);
 						mBtndate.setText(date.getDate());
-
+						mVisitDate = date.getDate();
+						getTime();
 						dialog.dismiss();
 					}
 				}).create().show();
 	}
-	
+
 	private void getTime() {
 		showProgressDialog("", false);
 
 		final HCGetTimeParser parser = new HCGetTimeParser();
 		List<NameValuePair> formData = new ArrayList<NameValuePair>();
 		formData.add(new BasicNameValuePair(HCConstants.PAR_HOSPITAL_ID,
-				hospital));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_SPECIAL_ID, special));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_VISIT_DATE, visit));
+				mHospitalId));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_SPECIAL_ID,
+				mSpecializtionId));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_VISIT_DATE,
+				mVisitDate));
 		HCClient.getInstance().request(this, HCServerUtils.REQ_GET_TIME, null,
 				null, formData, parser, new HCIRequestListener() {
 
@@ -361,7 +433,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 						if (status == HCConstants.ERROR_CODE_SUCCESS) {
 							mHostime = (ArrayList<HCTimeHolder>) parser
 									.getDataList();
-
+							mBtntime.setEnabled(true);
 						} else {
 							// If we have data in database
 							HCRetryDialog dialog = new HCRetryDialog(
@@ -381,8 +453,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 					}
 				});
 	}
-	
-	
+
 	private void showTime() {
 
 		mAdapter.setData(mHostime);
@@ -395,13 +466,13 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 						HCTimeHolder time = (HCTimeHolder) mAdapter
 								.getItem(position);
 						mBtntime.setText(time.getAppointtime());
-
+						mTime = time.getAppointtime();
+						
 						dialog.dismiss();
 					}
 				}).create().show();
 	}
-	
-	
+
 	private boolean isFormNewValid() {
 		int msg = 0;
 		boolean bValid = true;
@@ -487,102 +558,69 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 
 	}
 
-	// /* newvisit */
-	// private void newvisit() {
-	// final HCVisitParser parser = new HCVisitParser();
-	// List<NameValuePair> formData = new ArrayList<NameValuePair>();
-	// List<NameValuePair> urlfields = new ArrayList<NameValuePair>(1);
-	// urlfields.add(new BasicNameValuePair(HCConstants.PARAM_USERID, ""
-	// + HCSession.getInstance().getUser_id(this)));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_HOSPITAL_ID,
-	// hospital_id));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_SPECIAL_ID,
-	// special_id));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_VISIT_DATE, ""
-	// + mBtndate.getContext().toString()));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_TIME_ID, time_id));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_FNAME, ""
-	// + mEdtpname.getText().toString()));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_LNAME, lname));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_MOB_NUMB, ""
-	// + mEdtmobile.getText().toString()));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_FANAME, ""
-	// + mEdtfname.getText().toString()));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_MOTHER, mname));
-	//
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_MARRIED, married));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_AGE, ""
-	// + mEdtage.getText().toString()));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_GENDER, gender));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_ADDRESS, ""
-	// + mEdtaddress.getText().toString()));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_PASS, pass));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_TOTAL_AMOUNT,
-	// amount));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_APPOINTMENT,
-	// appointment));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_DNAME, ""
-	// + mTxtdoctor.getText().toString()));
-	// HCClient.getInstance().request(this, HCServerUtils.REQ_HOSPITAL_VISIT,
-	// null, formData, null, parser, new HCIRequestListener() {
-	//
-	// @Override
-	// public void onComplete(int req_type, int status) {
-	// hideProgressDialog();
-	// Intent intent = new Intent();
-	// if (!HCUtils.isPrefExist(HCConstants.PREF_USRID,
-	// HCRegistrationActivity.this))
-	// intent.setClass(HCRegistrationActivity.this,
-	// HCSignInActivity.class);
-	// else
-	// intent.setClass(HCRegistrationActivity.this,
-	// HCPayActivity.class);
-	// startActivity(intent);
-	// finish();
-	//
-	// }
-	// });
-	// }
-	//
-	// /* revisit */
-	// private void revisit() {
-	// final HCVisitParser parser = new HCVisitParser();
-	// List<NameValuePair> formData = new ArrayList<NameValuePair>();
-	// formData.add(new BasicNameValuePair(HCConstants.PARAM_USERID, ""
-	// + HCSession.getInstance().getUser_id(this)));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_SPECIAL_ID,
-	// special_id));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_VISIT_DATE, ""
-	// + mBtndate.getContext().toString()));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_TIME_ID, time_id));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_FNAME, ""
-	// + mEdtrepname.getText().toString()));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_LNAME, lname));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_MOB_NUMB, ""
-	// + mEdtremobile.getText().toString()));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_HNUMBER, ""
-	// + mEdtrehnumber.getText().toString()));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_HOSPITAL_ID,
-	// hospital_id));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_PASS, pass));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_TOTAL_AMOUNT,
-	// amount));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_APPOINTMENT,
-	// appointment));
-	// formData.add(new BasicNameValuePair(HCConstants.PAR_DNAME, ""
-	// + mTxtdoctor.getText().toString()));
-	// HCClient.getInstance().request(this,
-	// HCServerUtils.REQ_HOSPITAL_REVISIT, null, formData, null,
-	// parser, new HCIRequestListener() {
-	// @Override
-	// public void onComplete(int req_type, int status) {
-	// hideProgressDialog();
-	// Intent intent = new Intent(HCRegistrationActivity.this,
-	// HCPayActivity.class);
-	// startActivity(intent);
-	// }
-	// });
-	// }
+	/* newvisit */
+	private void newvisit() {
+		
+		
+		
+		final HCVisitParser parser = new HCVisitParser();
+		List<NameValuePair> formData = new ArrayList<NameValuePair>();
+		formData.add(new BasicNameValuePair(HCConstants.PARAM_USERID, userid));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_SPECIAL_ID,
+				mSpecializtionId));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_VISIT_DATE,
+				mVisitDate));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_TIME_ID, mTime));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_FNAME, ""
+				+ mEdtpname.getText().toString()));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_LNAME, lname));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_MOB_NUMB, ""
+				+ mEdtmobile.getText().toString()));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_HOSPITAL_ID,
+				mHospitalId));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_PASS, pass));
+
+		formData.add(new BasicNameValuePair(HCConstants.PAR_TOTAL_AMOUNT,
+				mAmount));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_VISIT_TYPE, mVisit));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_CASH_ON_ARRIVAL,
+				cash));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_DNAME, ""
+				+ mEdtdoctor.getText().toString()));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_HNUMBER,
+				hospitalnumber));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_FANAME, ""
+				+ mEdtfname.getText().toString()));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_MOTHER, mname));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_AGE, ""
+				+ mEdtage.getText().toString()));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_GENDER, gender));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_ADDRESS, ""
+				+ mEdtaddress.getText().toString()));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_PLACE, place));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_RELIGION, religion));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_OCCUPATION,
+				occupation));
+		formData.add(new BasicNameValuePair(HCConstants.PAR_MARRIED, married));
+
+		formData.add(new BasicNameValuePair(HCConstants.PAR_APPOINTMENT,
+				appointment));
+
+		HCClient.getInstance().request(this, HCServerUtils.REQ_HOSPITAL_VISIT,
+				null, null, formData, parser, new HCIRequestListener() {
+
+					@Override
+					public void onComplete(int req_type, int status) {
+						hideProgressDialog();
+						Intent intent = new Intent();
+						intent.setClass(HCRegistrationActivity.this,
+								HCPayActivity.class);
+						startActivity(intent);
+						finish();
+
+					}
+				});
+	}
 
 	@Override
 	public void onBackPressed() {

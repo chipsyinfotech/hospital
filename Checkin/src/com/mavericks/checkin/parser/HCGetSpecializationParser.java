@@ -20,7 +20,7 @@ public class HCGetSpecializationParser extends HCBaseJsonParser {
 	public static final String DATA = "data";
 	public static final String HOSPITAL_ID = "hospital_id";
 	public static final String SPECIAL_DETAIL = "specilization_details";
-	public static final String SPECIALIZATION = "specialization";
+	public static final String SPECIALIZATION = "specialization ";
 	public static final String SPECIAL_NAME = "specialization_name";
 	public static final String DATE_DETAILS = "date_details";
 	public static final String DATE_COUNT = "date_count";
@@ -75,8 +75,12 @@ public class HCGetSpecializationParser extends HCBaseJsonParser {
 					}
 					mHolderList.add(holder);
 				}
+				
+				
 			}
 
+			
+			
 		}
 	}
 

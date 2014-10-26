@@ -65,9 +65,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_ms"
-                    android:background="@drawable/tabsl"
+                    android:background="@android:color/transparent"
                     android:drawableLeft="@drawable/select_hospital_icon"
-                    android:drawableRight="@drawable/drop_down_icon"
                     android:gravity="center|left"
                     android:text="@string/hospital_prompt"
                     android:textColor="@android:color/black" />
@@ -77,24 +76,21 @@
                 android:id="@+id/tab_select"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ms"
                 android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_sm"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:orientation="horizontal" >
 
                 <Button
                     android:id="@+id/btn_sel_special"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_ms"
-                    android:background="@drawable/tabsl"
+                    android:background="@android:color/transparent"
                     android:drawableLeft="@drawable/specialization_icon"
-                    android:drawableRight="@drawable/drop_down_icon"
                     android:gravity="center|left"
                     android:text="@string/special_prompt"
                     android:textColor="@android:color/black" />
@@ -104,7 +100,30 @@
                 android:id="@+id/tab_special"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ms"
+                android:background="@drawable/tab_line"
+                android:contentDescription="@string/about" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btn_sel_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:background="@android:color/transparent"
+                    android:drawableLeft="@drawable/date_icon"
+                    android:gravity="center|left"
+                    android:text="@string/date_prompt"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/tab_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
@@ -115,23 +134,20 @@
                 android:orientation="horizontal" >
 
                 <Button
-                    android:id="@+id/btn_sel_date"
+                    android:id="@+id/btn_sel_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_ms"
-                    android:background="@drawable/tabsl"
-                    android:drawableLeft="@drawable/date_icon"
-                    android:drawableRight="@drawable/drop_down_icon"
+                    android:background="@android:color/transparent"
+                    android:drawableLeft="@drawable/time_icon"
                     android:gravity="center|left"
-                    android:text="@string/date_prompt"
+                    android:text="@string/time_prompt"
                     android:textColor="@android:color/black" />
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/tab_date"
+                android:id="@+id/tab_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ms"
                 android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 
@@ -175,14 +191,6 @@
                     checkin:font_type="@integer/fnt_btn" />
             </RadioGroup>
 
-            <ImageView
-                android:id="@+id/tab_radio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ms"
-                android:background="@drawable/tab_line"
-                android:contentDescription="@string/about" />
-
             <LinearLayout
                 android:id="@+id/lin_doctor"
                 android:layout_width="match_parent"
@@ -190,53 +198,20 @@
                 android:layout_marginTop="@dimen/margin_ms"
                 android:orientation="horizontal" >
 
-                <ImageView
-                    android:id="@+id/img_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/about"
-                    android:src="@drawable/name_icon" />
-
                 <com.mavericks.checkin.views.HCEditText
                     android:id="@+id/edt_doctor"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margin_ms"
-                    android:background="@android:color/transparent" />
+                    android:layout_height="wrap_content"                    
+                    android:background="@android:color/transparent"
+                    android:drawableLeft="@drawable/time_icon"
+                      checkin:font_type="@integer/fnt_edit_small"
+                    android:hint="@string/docnm_prompt" />
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/tab_doctor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ms"
-                android:background="@drawable/tab_line"
-                android:contentDescription="@string/about" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ms"
-                android:orientation="horizontal" >
-
-                <Button
-                    android:id="@+id/btn_sel_time"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_ms"
-                    android:background="@drawable/tabsl"
-                    android:drawableLeft="@drawable/time_icon"
-                    android:drawableRight="@drawable/drop_down_icon"
-                    android:gravity="center|left"
-                    android:text="@string/time_prompt"
-                    android:textColor="@android:color/black" />
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/tab_time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ms"
                 android:background="@drawable/tab_line"
                 android:contentDescription="@string/about" />
 

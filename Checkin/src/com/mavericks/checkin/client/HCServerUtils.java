@@ -27,25 +27,20 @@ public class HCServerUtils {
 	public static final String PATH_HOSPITAL_HISTORY = "/user_histry.php";
 	public static final String PATH_HOSPITAL_REG = "/user_register.php";
 	public static final String PATH_FORGOT_PSWRD = "/forgot_password.php";
-	public static final String PATH_HOSPITAL_VISIT = "/newvisit_submit_record.php";
-	public static final String PATH_HOSPITAL_REVISIT = "/revisit_submit_record.php";
+	public static final String PATH_HOSPITAL_VISIT = "/visit_submition.php";
 	public static final String PATH_HOSPITAL_TIME = "/get_all_timing.php";
 	public static final String PATH_HOSPITAL_DATE = "/get_all_date.php";
-
 	public static final int REQ_LOGIN = 100;
-
 	public static final int REQ_HOSPITAL_LOGIN = 101;
 	public static final int REQ_HOSPITAL_REG = 102;
 	public static final int REQ_FORGOT_PASS = 103;
 	public static final int REQ_HOSPITAL_VISIT = 104;
-	public static final int REQ_HOSPITAL_REVISIT = 105;
 	public static final int REQ_GET_HOSPITAL = 106;
 	public static final int REQ_GET_HISTORY = 107;
 	public static final int REQ_GET_SPECIALIZATION = 108;
 	public static final int REQ_GET_TIME = 109;
 	public static final int REQ_GET_DATE = 110;
-	
-	
+
 	private static String getDomailUrl(int type) {
 
 		String url = "http://chipsy.in/hospital/apkfiles";
@@ -64,7 +59,6 @@ public class HCServerUtils {
 		case REQ_GET_SPECIALIZATION:
 			path = PATH_GET_SPECIALIZATION;
 			break;
-			
 
 		case REQ_HOSPITAL_LOGIN:
 			path = PATH_HOSPITAL_LOGIN;
@@ -75,9 +69,7 @@ public class HCServerUtils {
 		case REQ_HOSPITAL_VISIT:
 			path = PATH_HOSPITAL_VISIT;
 			break;
-		case REQ_HOSPITAL_REVISIT:
-			path = PATH_HOSPITAL_REVISIT;
-			break;
+
 		case REQ_GET_HOSPITAL:
 			path = PATH_GET_HOSPITAL;
 			break;
@@ -129,12 +121,7 @@ public class HCServerUtils {
 		case REQ_GET_DATE:
 			reqType = HCClient.REQ_TYPE_GET;
 			break;
-			
-			
-		case REQ_HOSPITAL_REVISIT:
-			reqType = HCClient.REQ_TYPE_POST;
-			break;
-	
+
 		}
 
 		return reqType;

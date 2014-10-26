@@ -1,7 +1,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:checkin="http://schemas.android.com/apk/res/com.mavericks.checkin"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:fillViewport="true"
     android:scrollbars="none" >
 
@@ -53,7 +53,7 @@
         <RelativeLayout
             android:id="@+id/rel_pay"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/rad_payment" >
 
             <RelativeLayout
@@ -62,6 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_ms"
                 android:layout_marginRight="@dimen/margin_ms"
+                android:layout_marginTop="@dimen/margin_ms"
                 android:gravity="center"
                 android:orientation="horizontal" >
 
@@ -70,7 +71,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
-                    android:layout_marginTop="@dimen/margin_lx"
                     android:text="@string/register"
                     checkin:font_type="@integer/fnt_texts" />
 
@@ -88,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/text_register"
                     android:layout_marginLeft="@dimen/margin_ms"
-                    android:layout_marginTop="@dimen/margin_lx"
+                    android:layout_marginTop="@dimen/margin_mx"
                     android:text="@string/consult"
                     checkin:font_type="@integer/fnt_texts" />
 
@@ -106,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/text_consultant"
                     android:layout_marginLeft="@dimen/margin_ms"
-                    android:layout_marginTop="@dimen/margin_lx"
+                    android:layout_marginTop="@dimen/margin_mx"
                     android:text="@string/check"
                     checkin:font_type="@integer/fnt_texts" />
 
@@ -245,24 +245,30 @@
                     checkin:font_type="@integer/fnt_texts" />
             </RelativeLayout>
 
-            <com.mavericks.checkin.views.HCTextView
-                android:id="@+id/text_proceed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginBottom="@dimen/margin_mx"
-                android:background="@drawable/check"
-                android:text="@string/proceeded"
-                checkin:font_type="@integer/fnt_login" />
+           <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edit_height_mmm"
+                android:layout_below="@+id/rel_info"
+                android:orientation="horizontal" >
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_proceed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/margin_ms"
+                    android:background="@drawable/check"
+                    android:text="@string/proceeded"
+                    checkin:font_type="@integer/fnt_login" />
+            </RelativeLayout>
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/rel_cash"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/rad_payment"
-            android:visibility="visible" >
+            android:layout_below="@+id/rad_payment" >
 
             <RelativeLayout
                 android:id="@+id/rel_cashinfo"
@@ -270,13 +276,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_ms"
                 android:layout_marginRight="@dimen/margin_ms"
-                android:visibility="visible" >
+                android:layout_marginTop="@dimen/margin_ms" >
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_paid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_ms"
                     android:text="@string/amount_pay"
                     checkin:font_type="@integer/fnt_texts" />
 
@@ -329,16 +334,23 @@
                     checkin:font_type="@integer/fnt_texts" />
             </RelativeLayout>
 
-            <com.mavericks.checkin.views.HCTextView
-                android:id="@+id/text_proceeded"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+          <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edit_height_mmm"
                 android:layout_below="@+id/rel_cashinfo"
-                android:layout_marginTop="@dimen/margin_xs"
-                android:background="@drawable/check"
-                android:text="@string/proceeded"
-                checkin:font_type="@integer/fnt_login" />
+                android:orientation="horizontal" >
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_proceeded"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/margin_ms"
+                    android:background="@drawable/check"
+                    android:text="@string/proceeded"
+                    checkin:font_type="@integer/fnt_login" />
+            </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>
 
