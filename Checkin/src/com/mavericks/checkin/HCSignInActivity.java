@@ -32,6 +32,7 @@ import com.mavericks.checkin.client.HCClient;
 import com.mavericks.checkin.client.HCIRequestListener;
 import com.mavericks.checkin.client.HCServerUtils;
 import com.mavericks.checkin.client.HCSession;
+import com.mavericks.checkin.holders.HCNameValuePair;
 import com.mavericks.checkin.holders.HCProfileHolder;
 import com.mavericks.checkin.parser.HCForgotParser;
 import com.mavericks.checkin.parser.HCStatusParser;
@@ -144,8 +145,8 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 	private void ForgotPassword() {
 		showProgressDialog(null, false);
 		final HCForgotParser parser = new HCForgotParser();
-		List<NameValuePair> formData = new ArrayList<NameValuePair>();
-		formData.add(new BasicNameValuePair(HCConstants.PAR_EMAIL_ID, ""
+		List<HCNameValuePair> formData = new ArrayList<HCNameValuePair>();
+		formData.add(new HCNameValuePair(HCConstants.PAR_EMAIL_ID, ""
 				+ mEdtemail.getText().toString()));
 
 		HCClient.getInstance().request(this, HCServerUtils.REQ_FORGOT_PASS,
@@ -176,10 +177,10 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 		showProgressDialog(null, false);
 		final HCStatusParser parser = new HCStatusParser();
 
-		List<NameValuePair> formData = new ArrayList<NameValuePair>();
-		formData.add(new BasicNameValuePair(HCConstants.PAR_EMAIL_ID, ""
+		List<HCNameValuePair> formData = new ArrayList<HCNameValuePair>();
+		formData.add(new HCNameValuePair(HCConstants.PAR_EMAIL_ID, ""
 				+ mEdtemail.getText().toString()));
-		formData.add(new BasicNameValuePair(HCConstants.PAR_PSWRD, ""
+		formData.add(new HCNameValuePair(HCConstants.PAR_PSWRD, ""
 				+ mEdtdigit.getText().toString()));
 		HCClient.getInstance().request(this, HCServerUtils.REQ_HOSPITAL_LOGIN,
 				null, formData, null, parser, new HCIRequestListener() {

@@ -19,29 +19,26 @@ package com.mavericks.checkin.fragments;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
 
 import com.mavericks.checkin.HCDetailActivity;
-import com.mavericks.checkin.HCHistoryActivity;
 import com.mavericks.checkin.R;
 import com.mavericks.checkin.adapters.HCUserAdapter;
 import com.mavericks.checkin.client.HCClient;
 import com.mavericks.checkin.client.HCIRequestListener;
 import com.mavericks.checkin.client.HCServerUtils;
 import com.mavericks.checkin.holders.HCHistoryHolder;
+import com.mavericks.checkin.holders.HCNameValuePair;
 import com.mavericks.checkin.parser.HCHistoryParser;
 import com.mavericks.checkin.utils.HCConstants;
 import com.mavericks.checkin.utils.HCProgressUtils;
@@ -77,8 +74,8 @@ OnItemClickListener,OnClickListener{
 		HCProgressUtils.showProgressBar(getActivity(), root.findViewById(R.id.root),
 				R.id.progressBar);
 		final HCHistoryParser parser = new HCHistoryParser();
-		List<NameValuePair> formData = new ArrayList<NameValuePair>();
-		formData.add(new BasicNameValuePair(HCConstants.PARAM_USERID, ""));
+		List<HCNameValuePair> formData = new ArrayList<HCNameValuePair>();
+		formData.add(new HCNameValuePair(HCConstants.PARAM_USERID, ""));
 		HCClient.getInstance().request(getActivity(), HCServerUtils.REQ_GET_HISTORY,
 				null, null, formData, parser, new HCIRequestListener() {
 

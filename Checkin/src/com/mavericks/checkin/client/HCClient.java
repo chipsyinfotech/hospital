@@ -24,6 +24,7 @@ import java.util.List;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URLEncodedUtils;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 
 import android.content.Context;
@@ -31,6 +32,7 @@ import android.os.AsyncTask;
 
 import com.mavericks.checkin.R;
 import com.mavericks.checkin.client.HCContentDownloader.ServerNotAccessible;
+import com.mavericks.checkin.holders.HCNameValuePair;
 import com.mavericks.checkin.parser.HCBaseJsonParser;
 import com.mavericks.checkin.utils.HCAsyncTaskUtils;
 import com.mavericks.checkin.utils.HCConstants;
@@ -68,8 +70,8 @@ public class HCClient {
 
 
     public void request(final Context context, int ReqType,
-	    List<NameValuePair> urlFields, List<NameValuePair> formData,
-	    List<NameValuePair> optionalData, final HCBaseJsonParser dataModel,
+	    List<HCNameValuePair> urlFields, List<HCNameValuePair> formData,
+	    List<HCNameValuePair> optionalData, final HCBaseJsonParser dataModel,
 	    final HCIRequestListener IRequestListener) {
 	
 	process(context, ReqType, urlFields, formData, optionalData, dataModel,
@@ -77,8 +79,8 @@ public class HCClient {
     }
 
     public void process(final Context context, int ReqType,
-	    List<NameValuePair> urlFields, List<NameValuePair> formData,
-	    List<NameValuePair> optional, final HCBaseJsonParser dataModel,
+	    List<HCNameValuePair> urlFields, List<HCNameValuePair> formData,
+	    List<HCNameValuePair> optional, final HCBaseJsonParser dataModel,
 	    final HCIRequestListener IRequestListener) {
 
 	if (!HCUtils.isInternetOn(context)) {
@@ -118,8 +120,8 @@ public class HCClient {
     /****************************************************************/
     
     public void request(final Context context, int ReqType, String url,
-	    List<NameValuePair> urlFields, List<NameValuePair> formData,
-	    List<NameValuePair> optionalData, final HCBaseJsonParser dataModel,
+	    List<HCNameValuePair> urlFields, List<HCNameValuePair> formData,
+	    List<HCNameValuePair> optionalData, final HCBaseJsonParser dataModel,
 	    final HCIRequestListener IRequestListener) {
 	
 	process(context, ReqType, urlFields, formData, optionalData, dataModel,
@@ -127,8 +129,8 @@ public class HCClient {
     }
 
     public void process(final Context context, int ReqType,String url,
-	    List<NameValuePair> urlFields, List<NameValuePair> formData,
-	    List<NameValuePair> optional, final HCBaseJsonParser dataModel,
+	    List<HCNameValuePair> urlFields, List<HCNameValuePair> formData,
+	    List<HCNameValuePair> optional, final HCBaseJsonParser dataModel,
 	    final HCIRequestListener IRequestListener) {
 
 	if (!HCUtils.isInternetOn(context)) {
@@ -186,7 +188,7 @@ public class HCClient {
      * @param dataModel
      */
     private void downloadContents(final Context context, String mUrl,
-	    List<NameValuePair> formData, final int ReqType,
+	    List<HCNameValuePair> formData, final int ReqType,
 	    final HCIRequestListener hUMIRequestListener,
 	    final HCBaseJsonParser dataModel) {
 	// Downloads the contents from the server
@@ -235,12 +237,12 @@ public class HCClient {
 	}
     }
 
-    private String getUrlPathForGet(List<NameValuePair> urlFields) {
+    private String getUrlPathForGet(List<HCNameValuePair> urlFields) {
 	String path = "";
 
 	if (urlFields != null) {
 
-	    for (NameValuePair pair : urlFields) {
+	    for (HCNameValuePair pair : urlFields) {
 		path = path + "/" + pair.getValue();
 	    }
 	}
@@ -257,8 +259,8 @@ public class HCClient {
 	IDownloadListener mDownloadListener;
 	int mReqType;
 	boolean serverInaccessible = false;
-	List<NameValuePair> mForm_data;
-	public FileDownloader(String url, List<NameValuePair> form_data,
+	List<HCNameValuePair> mForm_data;
+	public FileDownloader(String url, List<HCNameValuePair> form_data,
 		int reqType, IDownloadListener listener) {
 	    mUrl = url;
 	    mDownloadListener = listener;

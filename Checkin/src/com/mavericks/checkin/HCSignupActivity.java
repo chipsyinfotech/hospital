@@ -4,9 +4,6 @@ package com.mavericks.checkin;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,6 +18,7 @@ import com.mavericks.checkin.client.HCClient;
 import com.mavericks.checkin.client.HCIRequestListener;
 import com.mavericks.checkin.client.HCServerUtils;
 import com.mavericks.checkin.client.HCSession;
+import com.mavericks.checkin.holders.HCNameValuePair;
 import com.mavericks.checkin.holders.HCProfileHolder;
 import com.mavericks.checkin.parser.HCStatusParser;
 import com.mavericks.checkin.utils.HCAlertManager;
@@ -113,12 +111,12 @@ public class HCSignupActivity extends HCBaseActivity implements OnClickListener 
 			final HCStatusParser parser = new HCStatusParser();
 
 			
-			List<NameValuePair> formData = new ArrayList<NameValuePair>();
-			formData.add(new BasicNameValuePair(HCConstants.PAR_EMAIL_ID, ""+mEdtemail.getText().toString()));		
-			formData.add(new BasicNameValuePair(HCConstants.PAR_LOGIN_TYPE, "hospital"));
-			formData.add(new BasicNameValuePair(HCConstants.PAR_PSWRD, ""+mEdtdigit.getText().toString()));
+			List<HCNameValuePair> formData = new ArrayList<HCNameValuePair>();
+			formData.add(new HCNameValuePair(HCConstants.PAR_EMAIL_ID, ""+mEdtemail.getText().toString()));		
+			formData.add(new HCNameValuePair(HCConstants.PAR_LOGIN_TYPE, "hospital"));
+			formData.add(new HCNameValuePair(HCConstants.PAR_PSWRD, ""+mEdtdigit.getText().toString()));
 			if(isRegisterd())
-				formData.add(new BasicNameValuePair(HCConstants.PAR_APP_KEY, ""+GCMRegistrar.getRegistrationId(this)));
+				formData.add(new HCNameValuePair(HCConstants.PAR_APP_KEY, ""+GCMRegistrar.getRegistrationId(this)));
 			
 			
 			HCClient.getInstance().request(this, HCServerUtils.REQ_HOSPITAL_REG,

@@ -201,11 +201,11 @@
                 <com.mavericks.checkin.views.HCEditText
                     android:id="@+id/edt_doctor"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"                    
+                    android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:drawableLeft="@drawable/time_icon"
-                      checkin:font_type="@integer/fnt_edit_small"
-                    android:hint="@string/docnm_prompt" />
+                    android:hint="@string/docnm_prompt"
+                    checkin:font_type="@integer/fnt_edit_small" />
             </LinearLayout>
 
             <ImageView
@@ -568,6 +568,109 @@
                     android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/img_religion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/about"
+                        android:src="@drawable/user_icon" />
+
+                    <Spinner
+                        android:id="@+id/spinner_religion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_ms"
+                        android:background="@android:color/transparent"
+                        android:entries="@array/religion_arrays"
+                        android:prompt="@string/religion_prompt" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/tab_religion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:background="@drawable/tab_line"
+                    android:contentDescription="@string/about" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/img_occupation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/about"
+                        android:src="@drawable/user_icon" />
+
+                    <com.mavericks.checkin.views.HCEditText
+                        android:id="@+id/edt_occupation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_ms"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/occupation"
+                        checkin:font_type="@integer/fnt_edit_small" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/tab_occupation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:background="@drawable/tab_line"
+                    android:contentDescription="@string/about" />
+
+                <CheckBox
+                    android:id="@+id/check_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:background="@drawable/check_button_non_press"
+                    android:button="@drawable/prior"
+                    android:contentDescription="@string/about" />
+                 <LinearLayout
+                     android:id="@+id/lin_marrige"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/img_married"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/about"
+                        android:src="@drawable/user_icon" />
+
+                    <com.mavericks.checkin.views.HCEditText
+                        android:id="@+id/edt_married"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_ms"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/names"
+                        checkin:font_type="@integer/fnt_edit_small" />
+                    
+                </LinearLayout>
+                 <ImageView
+                    android:id="@+id/tab_married"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:background="@drawable/tab_line"
+                    android:contentDescription="@string/about" />
+                
             </LinearLayout>
 
             <RelativeLayout
@@ -583,7 +686,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginBottom="@dimen/margin_ms"
                     android:background="@drawable/check"
-                    android:text="@string/checkin"
+                    android:text="@string/done"
                     checkin:font_type="@integer/fnt_login" />
             </RelativeLayout>
         </LinearLayout>
@@ -753,7 +856,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginBottom="@dimen/margin_ms"
                     android:background="@drawable/check"
-                    android:text="@string/checkin"
+                    android:text="@string/done"
                     checkin:font_type="@integer/fnt_login" />
             </RelativeLayout>
         </LinearLayout>

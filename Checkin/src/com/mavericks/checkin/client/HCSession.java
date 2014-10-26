@@ -56,6 +56,10 @@ public class HCSession {
 	public String getUsrNm(Context c) {
 		return HCUtils.getPrefString(HCConstants.PREF_USRNAME, "", c);
 	}
+	
+	public boolean isLoggedIn(Context c, String name) {
+		return HCUtils.isPrefExist(name, c);
+	}
 
 	public void clearSession(Context c) {
 		

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Checkin</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
@@ -22,6 +23,7 @@
     <string name="transaction">Your transaction\ncompleted successfully</string>
     <string name="digit">4 Digit secret pin</string>
     <string name="forpaswrd">Forgot Password</string>
+    <string name="occupation">Occupation</string>
     <string name="hospital">HOSPITAL CHECK.IN</string>
     <string name="select">Select Hospital</string>
     <string name="special">Specialization</string>
@@ -165,6 +167,16 @@
         <item>KMC Udupi</item>
     </string-array>
 
+    <string name="religion_prompt">-Select-</string>
+    <string-array name="religion_arrays">
+        <item>Hindu</item>
+        <item>Muslims</item>
+        <item>Christans</item>
+        <item>Sikhs</item>
+        <item>Jains</item>
+        <item>Others</item>
+    </string-array>
+<string name="names">Wife/Husband Name</string>
     <string name="special_prompt">Select specialization</string>
 
     <string-array name="special_arrays">
@@ -176,7 +188,8 @@
     <string-array name="date_arrays">
         <item>12-Sep-2014</item>
     </string-array>
-	<string name="docnm_prompt">Doctor name</string>
+
+    <string name="docnm_prompt">Doctor name</string>
     <string name="doctor_prompt">Select doctor</string>
 
     <string-array name="doctor_arrays">

@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.http.NameValuePair;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -22,6 +20,7 @@ import com.mavericks.checkin.client.HCClient;
 import com.mavericks.checkin.client.HCIRequestListener;
 import com.mavericks.checkin.client.HCServerUtils;
 import com.mavericks.checkin.holders.HCLocationHolder;
+import com.mavericks.checkin.holders.HCNameValuePair;
 import com.mavericks.checkin.parser.HCGetHospitalParser;
 import com.mavericks.checkin.utils.HCConstants;
 import com.mavericks.checkin.utils.HCRetryDialog;
@@ -96,7 +95,7 @@ public class HCHomeActivity extends HCBaseActivity implements OnClickListener {
 		showProgressDialog("", false);
 
 		final HCGetHospitalParser parser = new HCGetHospitalParser();
-		List<NameValuePair> formData = new ArrayList<NameValuePair>();
+		List<HCNameValuePair> formData = new ArrayList<HCNameValuePair>();
 		HCClient.getInstance().request(this, HCServerUtils.REQ_GET_HOSPITAL,
 				null, null, formData, parser, new HCIRequestListener() {
 

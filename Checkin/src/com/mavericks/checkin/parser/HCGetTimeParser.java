@@ -15,15 +15,19 @@ public class HCGetTimeParser extends HCBaseJsonParser {
 	public static final String SESSION = "session";
 	public static final String DATA = "data";
 	public static final String HOSPITAL_ID = "hospital_id";
-	public static final String TIMING_DETAILS =  "timing_details";
-	public static final String TIMING_ID =   "timing_id";
-	public static final String APPOINTMENT_TIME ="appointment_timings";
-	public static final String AVAILABILITY ="availability";
-	public static final String AMOUNT_DETAILS ="amount_details";
-	public static final String VISIT_TYPE ="visit_type";
+	public static final String TIMING_DETAILS = "timing_details";
+	public static final String TIMING_ID = "timing_id";
+	public static final String APPOINTMENT_TIME = "appointment_timings";
+	public static final String AVAILABILITY = "availability";
+	public static final String AMOUNT_DETAILS = "amount_details";
+	public static final String VISIT_TYPE = "visit_type";
 	public static final String GENERAL_AMOUNT = "general_amount";
-	
-	
+	public static final String CONSULT_CHARGE = "consultation_charges";
+	public static final String INTERNET_CHARGE = "checkin_and_internet_charges";
+	public static final String DISCOUNT = "discount";
+	public static final String TOTAL_AMOUNT =  "total_amount";
+	public static final String TOTAL_PASS =  "total_amount_priorpass";
+
 	ArrayList<HCTimeHolder> mHolderList;
 
 	public HCGetTimeParser() {
@@ -78,16 +82,90 @@ public class HCGetTimeParser extends HCBaseJsonParser {
 					mHolderList.add(holder);
 				}
 				
-//				if (data.has(TIMING_DETAILS)) {
-//					JSONArray detail = data.getJSONArray(TIMING_DETAILS);
+				if (data.has(AMOUNT_DETAILS)) {
+					JSONArray amount = data.getJSONArray(AMOUNT_DETAILS);
+					for (int i = 0; i < detail.length(); i++) {
 
+						JSONObject mcontent = amount.getJSONObject(i);
+
+						HCTimeHolder holder = new HCTimeHolder();
+
+						if (!mcontent.isNull(VISIT_TYPE)
+								&& mcontent.has(VISIT_TYPE)) {
+							holder.setNewvisit_type(mcontent.getString(VISIT_TYPE));
+						}
+
+						if (!mcontent.isNull(GENERAL_AMOUNT)
+								&& mcontent.has(GENERAL_AMOUNT)) {
+							holder.setNewvisit_general_amount(mcontent.getString(GENERAL_AMOUNT));
+						}
+						if (!mcontent.isNull(CONSULT_CHARGE)
+								&& mcontent.has(CONSULT_CHARGE)) {
+							holder.setNewvisit_consulation_charges(mcontent.getString(CONSULT_CHARGE));
+						}
+						if (!mcontent.isNull(INTERNET_CHARGE)
+								&& mcontent.has(INTERNET_CHARGE)) {
+							holder.setNewvisit_internet_charges(mcontent.getString(INTERNET_CHARGE));
+						}
+						if (!mcontent.isNull(DISCOUNT)
+								&& mcontent.has(DISCOUNT)) {
+							holder.setNewvisit_discount(mcontent.getString(DISCOUNT));
+						}
+						if (!mcontent.isNull(TOTAL_AMOUNT)
+								&& mcontent.has(TOTAL_AMOUNT)) {
+							holder.setNewvisit_total_amount(mcontent.getString(TOTAL_AMOUNT));
+						}
+						if (!mcontent.isNull(TOTAL_PASS)
+								&& mcontent.has(TOTAL_PASS)) {
+							holder.setNewvisit_total_pass(mcontent.getString(TOTAL_PASS));
+						}
+						
 			}
+					for (int i = 1; i < detail.length(); i++) {
+
+						JSONObject mcontent = amount.getJSONObject(i);
+
+						HCTimeHolder holder = new HCTimeHolder();
+
+						if (!mcontent.isNull(VISIT_TYPE)
+								&& mcontent.has(VISIT_TYPE)) {
+							holder.setRevisit_type(mcontent.getString(VISIT_TYPE));
+						}
+
+						if (!mcontent.isNull(GENERAL_AMOUNT)
+								&& mcontent.has(GENERAL_AMOUNT)) {
+							holder.setRevisit_general_amount(mcontent.getString(GENERAL_AMOUNT));
+						}
+						if (!mcontent.isNull(CONSULT_CHARGE)
+								&& mcontent.has(CONSULT_CHARGE)) {
+							holder.setRevisit_consulation_charges(mcontent.getString(CONSULT_CHARGE));
+						}
+						if (!mcontent.isNull(INTERNET_CHARGE)
+								&& mcontent.has(INTERNET_CHARGE)) {
+							holder.setRevisit_internet_charges(mcontent.getString(INTERNET_CHARGE));
+						}
+						if (!mcontent.isNull(DISCOUNT)
+								&& mcontent.has(DISCOUNT)) {
+							holder.setRevisit_discount(mcontent.getString(DISCOUNT));
+						}
+						if (!mcontent.isNull(TOTAL_AMOUNT)
+								&& mcontent.has(TOTAL_AMOUNT)) {
+							holder.setRevisit_total_amount(mcontent.getString(TOTAL_AMOUNT));
+						}
+						if (!mcontent.isNull(TOTAL_PASS)
+								&& mcontent.has(TOTAL_PASS)) {
+							holder.setRevisit_total_pass(mcontent.getString(TOTAL_PASS));
+						}
+			}
+				}
+		}
 		}
 	}/*
 	 * (non-Javadoc)
 	 * 
 	 * @see com.viacom18.spotlight.models.STAJsonDataModel#getModelsCount()
 	 */
+
 
 	@Override
 	public int getModelsCount() {

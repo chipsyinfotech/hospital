@@ -20,6 +20,7 @@ import com.mavericks.checkin.client.HCClient;
 import com.mavericks.checkin.client.HCIRequestListener;
 import com.mavericks.checkin.client.HCServerUtils;
 import com.mavericks.checkin.holders.HCHistoryHolder;
+import com.mavericks.checkin.holders.HCNameValuePair;
 import com.mavericks.checkin.parser.HCHistoryParser;
 import com.mavericks.checkin.utils.HCConstants;
 import com.mavericks.checkin.utils.HCProgressUtils;
@@ -48,8 +49,8 @@ public class HCHistoryActivity extends HCBaseActivity implements
 		HCProgressUtils.showProgressBar(this, findViewById(R.id.root),
 				R.id.progressBar);
 		final HCHistoryParser parser = new HCHistoryParser();
-		List<NameValuePair> formData = new ArrayList<NameValuePair>();
-		formData.add(new BasicNameValuePair(HCConstants.PARAM_USERID, userid));
+		List<HCNameValuePair> formData = new ArrayList<HCNameValuePair>();
+		formData.add(new HCNameValuePair(HCConstants.PARAM_USERID, userid));
 		HCClient.getInstance().request(this, HCServerUtils.REQ_GET_HISTORY,
 				null, null, formData, parser, new HCIRequestListener() {
 

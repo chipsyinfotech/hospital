@@ -53,6 +53,7 @@ import org.apache.http.protocol.HTTP;
 
 import com.mavericks.checkin.HCCheckinAppplication;
 import com.mavericks.checkin.R;
+import com.mavericks.checkin.holders.HCNameValuePair;
 import com.mavericks.checkin.utils.HCConstants;
 import com.mavericks.checkin.utils.HCUtils;
 
@@ -136,7 +137,7 @@ public class HCContentDownloader {
 	}
 
 	private BufferedHttpEntity requestPost(String url,
-			List<NameValuePair> form_data, boolean retry)
+			List<HCNameValuePair> form_data, boolean retry)
 			throws ClientProtocolException, IOException, ServerNotAccessible {
 
 		try {
@@ -161,7 +162,7 @@ public class HCContentDownloader {
 	}
 
 	private BufferedHttpEntity requestPut(String url,
-			List<NameValuePair> form_data, boolean retry)
+			List<HCNameValuePair> form_data, boolean retry)
 			throws ClientProtocolException, IOException, ServerNotAccessible {
 
 		try {
@@ -193,7 +194,7 @@ public class HCContentDownloader {
 	 * @throws ServerNotAccessible
 	 */
 	public InputStream getInputStreamPOST(String url,
-			List<NameValuePair> form_data) throws ServerNotAccessible {
+			List<HCNameValuePair> form_data) throws ServerNotAccessible {
 
 		BufferedHttpEntity bufferedEntity = null;
 		InputStream is = null;
@@ -251,7 +252,7 @@ public class HCContentDownloader {
 	}
 
 	public InputStream getInputStreamPUT(String url,
-			List<NameValuePair> form_data) throws ServerNotAccessible {
+			List<HCNameValuePair> form_data) throws ServerNotAccessible {
 
 		BufferedHttpEntity bufferedEntity = null;
 		InputStream is = null;
@@ -311,11 +312,11 @@ public class HCContentDownloader {
 		return reqEntity;
 	}
 
-	private boolean isFileUpload(List<NameValuePair> form_data) {
+	private boolean isFileUpload(List<HCNameValuePair> form_data) {
 		boolean isFileUpload = false;
 		if (form_data != null) {
 
-			for (NameValuePair pair : form_data) {
+			for (HCNameValuePair pair : form_data) {
 				if (pair.getName().equalsIgnoreCase(
 						HCConstants.MULTIPART_FILE_KEY))
 					isFileUpload = true;
@@ -335,7 +336,7 @@ public class HCContentDownloader {
 	}
 
 	// Generic post request generator adding the headers.
-	private HttpPost getPostRequest(String url, List<NameValuePair> form_data) {
+	private HttpPost getPostRequest(String url, List<HCNameValuePair> form_data) {
 
 		HttpPost post = new HttpPost(url);
 		post.setHeader("Accept", "application/json");
@@ -369,7 +370,7 @@ public class HCContentDownloader {
 		return post;
 	}
 
-	private HttpPut getPutRequest(String url, List<NameValuePair> form_data) {
+	private HttpPut getPutRequest(String url, List<HCNameValuePair> form_data) {
 
 		HttpPut put = new HttpPut(url);
 
