@@ -24,6 +24,7 @@
     <string name="digit">4 Digit secret pin</string>
     <string name="forpaswrd">Forgot Password</string>
     <string name="occupation">Occupation</string>
+    <string name="marry"> Are you Married?</string>
     <string name="hospital">HOSPITAL CHECK.IN</string>
     <string name="select">Select Hospital</string>
     <string name="special">Specialization</string>
@@ -53,19 +54,21 @@
     <string name="checkin">CHECK IN</string>
     <string name="confirm_number">Your confirmation number is</string>
     <string name="make_payment">MAKE PAYMENT</string>
-    <string name="suggest">Feel free to give your valuable suggestions &amp; your enquiries</string>
+    <string name="suggest">Feel free to give your valuable\nsuggestions &amp; your enquiries</string>
     <string name="date">Date</string>
     <string name="appointment">Have you already taken prior appointment?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="log">Login</string>
-    <string name="text">We thought a web-checkin would do the job even for a hospital.After all time, convenience, resources are important to hospitals and patients equally.</string>
+    <string name="text">We thought a web-checkin would\n do the job even for a hospital.\nAfter all time, convenience,\n resources are important to\nhospitals and patients equally.</string>
     <string name="pname">Name</string>
+    <string name="mother"> Mother name</string>
     <string name="fname">Father\u0027s Name</string>
     <string name="age">Age</string>
     <string name="gender">Gender</string>
     <string name="proceeded">PROCEED</string>
     <string name="male">Male</string>
+    <string name="lname">Last Name</string>
     <string name="term">Terms and Conditions</string>
     <string name="female">Female</string>
     <string name="hnumber">Hospital Number</string>
@@ -78,10 +81,12 @@
     <string name="rupee">Rs.100</string>
     <string name="rup">Rs.200</string>
     <string name="check">HospitalCheck.in</string>
-    <string name="convience">Convience Charges:</string>
+    <string name="convience">Hospital Checkin\nConvience Charges:</string>
+    <string name="internet">Internet Handling Charges:</string>
     <string name="amount">Total amount to be paid:</string>
     <string name="priority">Do you need priority pass??</string>
     <string name="add">add</string>
+    <string name="discount">Discount:</string>
     <string name="proceed">Proceed</string>
     <string name="email">Email Address</string>
     <string name="enter">Please Enter 4 Digit Pin</string>
@@ -168,7 +173,9 @@
     </string-array>
 
     <string name="religion_prompt">-Select-</string>
+
     <string-array name="religion_arrays">
+         <item>-Select-</item>
         <item>Hindu</item>
         <item>Muslims</item>
         <item>Christans</item>
@@ -176,7 +183,8 @@
         <item>Jains</item>
         <item>Others</item>
     </string-array>
-<string name="names">Wife/Husband Name</string>
+
+    <string name="names">Wife/Husband Name</string>
     <string name="special_prompt">Select specialization</string>
 
     <string-array name="special_arrays">
@@ -218,5 +226,6 @@
     <string name="title_activity_hcpaymentactivity">HCPaymentactivity</string>
     <string name="title_activity_hcpay">HCPayActivity</string>
     <string name="title_activity_hcconfirmation">HCConfirmationActivity</string>
+    <string name="title_activity_hcpaym">HCPaymActivity</string>
 
 </resources>

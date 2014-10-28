@@ -1,6 +1,9 @@
 package com.mavericks.checkin.holders;
 
-public class HCTimeHolder extends HCBaseHolder {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class HCTimeHolder extends HCBaseHolder implements Parcelable{
 	String time_id; 
 	String appointtime;
 	String availability;
@@ -18,6 +21,17 @@ public class HCTimeHolder extends HCBaseHolder {
 	String revisit_discount;
 	String revisit_total_amount;
 	String revisit_total_pass;
+	
+	
+	
+	 public HCTimeHolder() {
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	public HCTimeHolder(Parcel in) {
+		readFromParcel(in);
+	}
 	public String getTime_id() {
 		return time_id;
 	}
@@ -120,6 +134,66 @@ public class HCTimeHolder extends HCBaseHolder {
 	public void setRevisit_total_pass(String revisit_total_pass) {
 		this.revisit_total_pass = revisit_total_pass;
 	}
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeString(time_id);
+		dest.writeString(appointtime);
+		dest.writeString(availability);
+		dest.writeString(newvisit_type);
+		dest.writeString(newvisit_general_amount);
+		dest.writeString(newvisit_consulation_charges);
+		dest.writeString(newvisit_internet_charges);
+		dest.writeString(newvisit_discount);
+		dest.writeString(newvisit_total_amount);
+		dest.writeString(newvisit_total_pass);
+		dest.writeString(revisit_type);
+		dest.writeString(revisit_general_amount);
+		dest.writeString(revisit_consulation_charges);
+		dest.writeString(revisit_internet_charges);
+		dest.writeString(revisit_discount);
+		dest.writeString(revisit_total_amount);
+		dest.writeString(revisit_total_pass);
+
+	
+	
+		// dest.writeLong(favTime);
+	}
+
+	public void readFromParcel(Parcel in) {
+		time_id = in.readString();
+		appointtime = in.readString();
+		availability = in.readString();
+		newvisit_type = in.readString();
+		newvisit_general_amount = in.readString();
+		newvisit_consulation_charges = in.readString();
+		newvisit_internet_charges = in.readString();
+		newvisit_discount = in.readString();
+		newvisit_total_amount = in.readString();
+		newvisit_total_pass = in.readString();
+		revisit_type = in.readString();
+		revisit_general_amount = in.readString();
+		revisit_consulation_charges = in.readString();
+		revisit_internet_charges = in.readString();
+		revisit_discount = in.readString();
+		revisit_total_amount = in.readString();
+		revisit_total_pass = in.readString();
+	}
+	public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+		@Override
+		public HCTimeHolder createFromParcel(Parcel in) {
+			return new HCTimeHolder(in);
+		}
+
+		@Override
+		public Object[] newArray(int size) {
+			return new HCTimeHolder[size];
+		}
+	};
 	
 
 }

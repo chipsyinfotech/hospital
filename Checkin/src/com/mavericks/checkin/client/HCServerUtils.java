@@ -24,7 +24,7 @@ public class HCServerUtils {
 	public static final String PATH_GET_HOSPITAL = "/all_hospital_details.php";
 	public static final String PATH_GET_SPECIALIZATION = "/get_all_specilization.php";
 	public static final String PATH_HOSPITAL_LOGIN = "/user_login.php";
-	public static final String PATH_HOSPITAL_HISTORY = "/user_histry.php";
+	public static final String PATH_HOSPITAL_HISTORY = "/user_history.php";
 	public static final String PATH_HOSPITAL_REG = "/user_register.php";
 	public static final String PATH_FORGOT_PSWRD = "/forgot_password.php";
 	public static final String PATH_HOSPITAL_VISIT = "/visit_submition.php";

@@ -27,7 +27,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_payment"
             android:layout_marginTop="@dimen/margin_ms"
-            android:background="@android:color/white"
             android:orientation="horizontal" >
 
             <com.mavericks.checkin.views.HCRadioButton
@@ -35,8 +34,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/pay"
+                android:button="@android:color/transparent"
                 android:checked="true"
-                android:gravity="center"
                 android:text="@string/paynow"
                 checkin:font_type="@integer/fnt_texts" />
 
@@ -45,7 +45,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:background="@drawable/cash"
+                android:button="@android:color/transparent"
                 android:text="@string/cash"
                 checkin:font_type="@integer/fnt_texts" />
         </RadioGroup>
@@ -75,7 +76,7 @@
                     checkin:font_type="@integer/fnt_texts" />
 
                 <com.mavericks.checkin.views.HCTextView
-                    android:id="@+id/text_rupees"
+                    android:id="@+id/text_regicharge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/text_register"
@@ -93,7 +94,7 @@
                     checkin:font_type="@integer/fnt_texts" />
 
                 <com.mavericks.checkin.views.HCTextView
-                    android:id="@+id/text_rupee"
+                    android:id="@+id/text_consltcharge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/text_consultant"
@@ -101,27 +102,17 @@
                     checkin:font_type="@integer/fnt_texts" />
 
                 <com.mavericks.checkin.views.HCTextView
-                    android:id="@+id/text_check"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/text_consultant"
-                    android:layout_marginLeft="@dimen/margin_ms"
-                    android:layout_marginTop="@dimen/margin_mx"
-                    android:text="@string/check"
-                    checkin:font_type="@integer/fnt_texts" />
-
-                <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_convience"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/text_check"
+                    android:layout_below="@+id/text_consultant"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_s"
                     android:text="@string/convience"
                     checkin:font_type="@integer/fnt_texts" />
 
                 <com.mavericks.checkin.views.HCTextView
-                    android:id="@+id/text_rup"
+                    android:id="@+id/text_convncharge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/text_convience"
@@ -245,7 +236,7 @@
                     checkin:font_type="@integer/fnt_texts" />
             </RelativeLayout>
 
-           <RelativeLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/edit_height_mmm"
                 android:layout_below="@+id/rel_info"
@@ -334,7 +325,7 @@
                     checkin:font_type="@integer/fnt_texts" />
             </RelativeLayout>
 
-          <RelativeLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/edit_height_mmm"
                 android:layout_below="@+id/rel_cashinfo"

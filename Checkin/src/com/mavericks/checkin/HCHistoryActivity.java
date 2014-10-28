@@ -19,6 +19,7 @@ import com.mavericks.checkin.adapters.HCUserAdapter;
 import com.mavericks.checkin.client.HCClient;
 import com.mavericks.checkin.client.HCIRequestListener;
 import com.mavericks.checkin.client.HCServerUtils;
+import com.mavericks.checkin.client.HCSession;
 import com.mavericks.checkin.holders.HCHistoryHolder;
 import com.mavericks.checkin.holders.HCNameValuePair;
 import com.mavericks.checkin.parser.HCHistoryParser;
@@ -27,12 +28,13 @@ import com.mavericks.checkin.utils.HCProgressUtils;
 import com.mavericks.checkin.utils.HCReturyUtils;
 
 public class HCHistoryActivity extends HCBaseActivity implements
-		OnItemClickListener,OnClickListener {
+		OnItemClickListener, OnClickListener {
 	HCUserAdapter mAdapter;
 	ListView list;
 	HCHistoryHolder holder;
 	TextView mTxt;
 	String userid = "";
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -50,9 +52,10 @@ public class HCHistoryActivity extends HCBaseActivity implements
 				R.id.progressBar);
 		final HCHistoryParser parser = new HCHistoryParser();
 		List<HCNameValuePair> formData = new ArrayList<HCNameValuePair>();
-		formData.add(new HCNameValuePair(HCConstants.PARAM_USERID, userid));
+		formData.add(new HCNameValuePair(HCConstants.PARAM_USERID, ""
+				+ HCSession.getInstance().getUser_id(this)));
 		HCClient.getInstance().request(this, HCServerUtils.REQ_GET_HISTORY,
-				null, null, formData, parser, new HCIRequestListener() {
+				null, formData, null, parser, new HCIRequestListener() {
 
 					@Override
 					public void onComplete(int req_type, int status) {
@@ -71,11 +74,12 @@ public class HCHistoryActivity extends HCBaseActivity implements
 										public void onClick(View arg0) {
 											getHistory();
 										}
-								}, HCServerUtils.REQ_GET_HISTORY);
+									}, HCServerUtils.REQ_GET_HISTORY);
 						}
 					}
 				});
 	}
+
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 			long arg3) {
@@ -86,6 +90,7 @@ public class HCHistoryActivity extends HCBaseActivity implements
 		startActivity(intent);
 		finish();
 	}
+
 	@Override
 	public void onClick(View v) {
 

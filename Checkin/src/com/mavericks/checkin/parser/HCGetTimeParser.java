@@ -25,9 +25,8 @@ public class HCGetTimeParser extends HCBaseJsonParser {
 	public static final String CONSULT_CHARGE = "consultation_charges";
 	public static final String INTERNET_CHARGE = "checkin_and_internet_charges";
 	public static final String DISCOUNT = "discount";
-	public static final String TOTAL_AMOUNT =  "total_amount";
-	public static final String TOTAL_PASS =  "total_amount_priorpass";
-
+	public static final String TOTAL_AMOUNT = "total_amount";
+	public static final String TOTAL_PASS = "total_amount_priorpass";
 	ArrayList<HCTimeHolder> mHolderList;
 
 	public HCGetTimeParser() {
@@ -65,107 +64,127 @@ public class HCGetTimeParser extends HCBaseJsonParser {
 
 					HCTimeHolder holder = new HCTimeHolder();
 
-					if (!mcontent.isNull(TIMING_ID)
-							&& mcontent.has(TIMING_ID)) {
+					if (!mcontent.isNull(TIMING_ID) && mcontent.has(TIMING_ID)) {
 						holder.setTime_id(mcontent.getString(TIMING_ID));
 					}
 
 					if (!mcontent.isNull(APPOINTMENT_TIME)
 							&& mcontent.has(APPOINTMENT_TIME)) {
-						holder.setAppointtime(mcontent.getString(APPOINTMENT_TIME));
+						holder.setAppointtime(mcontent
+								.getString(APPOINTMENT_TIME));
 					}
 					if (!mcontent.isNull(AVAILABILITY)
 							&& mcontent.has(AVAILABILITY)) {
 						holder.setAvailability(mcontent.getString(AVAILABILITY));
 					}
-					
+
 					mHolderList.add(holder);
 				}
-				
+
 				if (data.has(AMOUNT_DETAILS)) {
 					JSONArray amount = data.getJSONArray(AMOUNT_DETAILS);
-					for (int i = 0; i < detail.length(); i++) {
+					for (int i = 0; i < amount.length(); i++) {
+						if (i == 0) {
 
-						JSONObject mcontent = amount.getJSONObject(i);
+							JSONObject mcontent = amount.getJSONObject(i);
 
-						HCTimeHolder holder = new HCTimeHolder();
+							HCTimeHolder holder = new HCTimeHolder();
 
-						if (!mcontent.isNull(VISIT_TYPE)
-								&& mcontent.has(VISIT_TYPE)) {
-							holder.setNewvisit_type(mcontent.getString(VISIT_TYPE));
-						}
+							if (!mcontent.isNull(VISIT_TYPE)
+									&& mcontent.has(VISIT_TYPE)) {
+								holder.setNewvisit_type(mcontent
+										.getString(VISIT_TYPE));
+							}
 
-						if (!mcontent.isNull(GENERAL_AMOUNT)
-								&& mcontent.has(GENERAL_AMOUNT)) {
-							holder.setNewvisit_general_amount(mcontent.getString(GENERAL_AMOUNT));
-						}
-						if (!mcontent.isNull(CONSULT_CHARGE)
-								&& mcontent.has(CONSULT_CHARGE)) {
-							holder.setNewvisit_consulation_charges(mcontent.getString(CONSULT_CHARGE));
-						}
-						if (!mcontent.isNull(INTERNET_CHARGE)
-								&& mcontent.has(INTERNET_CHARGE)) {
-							holder.setNewvisit_internet_charges(mcontent.getString(INTERNET_CHARGE));
-						}
-						if (!mcontent.isNull(DISCOUNT)
-								&& mcontent.has(DISCOUNT)) {
-							holder.setNewvisit_discount(mcontent.getString(DISCOUNT));
-						}
-						if (!mcontent.isNull(TOTAL_AMOUNT)
-								&& mcontent.has(TOTAL_AMOUNT)) {
-							holder.setNewvisit_total_amount(mcontent.getString(TOTAL_AMOUNT));
-						}
-						if (!mcontent.isNull(TOTAL_PASS)
-								&& mcontent.has(TOTAL_PASS)) {
-							holder.setNewvisit_total_pass(mcontent.getString(TOTAL_PASS));
-						}
-						
-			}
-					for (int i = 1; i < detail.length(); i++) {
+							if (!mcontent.isNull(GENERAL_AMOUNT)
+									&& mcontent.has(GENERAL_AMOUNT)) {
+								holder.setNewvisit_general_amount(mcontent
+										.getString(GENERAL_AMOUNT));
+							}
+							if (!mcontent.isNull(CONSULT_CHARGE)
+									&& mcontent.has(CONSULT_CHARGE)) {
+								holder.setNewvisit_consulation_charges(mcontent
+										.getString(CONSULT_CHARGE));
+							}
+							if (!mcontent.isNull(INTERNET_CHARGE)
+									&& mcontent.has(INTERNET_CHARGE)) {
+								holder.setNewvisit_internet_charges(mcontent
+										.getString(INTERNET_CHARGE));
+							}
+							if (!mcontent.isNull(DISCOUNT)
+									&& mcontent.has(DISCOUNT)) {
+								holder.setNewvisit_discount(mcontent
+										.getString(DISCOUNT));
+							}
+							if (!mcontent.isNull(TOTAL_AMOUNT)
+									&& mcontent.has(TOTAL_AMOUNT)) {
+								holder.setNewvisit_total_amount(mcontent
+										.getString(TOTAL_AMOUNT));
+							}
+							if (!mcontent.isNull(TOTAL_PASS)
+									&& mcontent.has(TOTAL_PASS)) {
+								holder.setNewvisit_total_pass(mcontent
+										.getString(TOTAL_PASS));
+							}
+							mHolderList.add(holder);
 
-						JSONObject mcontent = amount.getJSONObject(i);
+						} else if (i == 1) {
 
-						HCTimeHolder holder = new HCTimeHolder();
+							{
 
-						if (!mcontent.isNull(VISIT_TYPE)
-								&& mcontent.has(VISIT_TYPE)) {
-							holder.setRevisit_type(mcontent.getString(VISIT_TYPE));
-						}
+								JSONObject mcontent = amount.getJSONObject(i);
 
-						if (!mcontent.isNull(GENERAL_AMOUNT)
-								&& mcontent.has(GENERAL_AMOUNT)) {
-							holder.setRevisit_general_amount(mcontent.getString(GENERAL_AMOUNT));
+								HCTimeHolder holder = new HCTimeHolder();
+
+								if (!mcontent.isNull(VISIT_TYPE)
+										&& mcontent.has(VISIT_TYPE)) {
+									holder.setRevisit_type(mcontent
+											.getString(VISIT_TYPE));
+								}
+
+								if (!mcontent.isNull(GENERAL_AMOUNT)
+										&& mcontent.has(GENERAL_AMOUNT)) {
+									holder.setRevisit_general_amount(mcontent
+											.getString(GENERAL_AMOUNT));
+								}
+								if (!mcontent.isNull(CONSULT_CHARGE)
+										&& mcontent.has(CONSULT_CHARGE)) {
+									holder.setRevisit_consulation_charges(mcontent
+											.getString(CONSULT_CHARGE));
+								}
+								if (!mcontent.isNull(INTERNET_CHARGE)
+										&& mcontent.has(INTERNET_CHARGE)) {
+									holder.setRevisit_internet_charges(mcontent
+											.getString(INTERNET_CHARGE));
+								}
+								if (!mcontent.isNull(DISCOUNT)
+										&& mcontent.has(DISCOUNT)) {
+									holder.setRevisit_discount(mcontent
+											.getString(DISCOUNT));
+								}
+								if (!mcontent.isNull(TOTAL_AMOUNT)
+										&& mcontent.has(TOTAL_AMOUNT)) {
+									holder.setRevisit_total_amount(mcontent
+											.getString(TOTAL_AMOUNT));
+								}
+								if (!mcontent.isNull(TOTAL_PASS)
+										&& mcontent.has(TOTAL_PASS)) {
+									holder.setRevisit_total_pass(mcontent
+											.getString(TOTAL_PASS));
+								}
+								mHolderList.add(holder);
+							}
 						}
-						if (!mcontent.isNull(CONSULT_CHARGE)
-								&& mcontent.has(CONSULT_CHARGE)) {
-							holder.setRevisit_consulation_charges(mcontent.getString(CONSULT_CHARGE));
-						}
-						if (!mcontent.isNull(INTERNET_CHARGE)
-								&& mcontent.has(INTERNET_CHARGE)) {
-							holder.setRevisit_internet_charges(mcontent.getString(INTERNET_CHARGE));
-						}
-						if (!mcontent.isNull(DISCOUNT)
-								&& mcontent.has(DISCOUNT)) {
-							holder.setRevisit_discount(mcontent.getString(DISCOUNT));
-						}
-						if (!mcontent.isNull(TOTAL_AMOUNT)
-								&& mcontent.has(TOTAL_AMOUNT)) {
-							holder.setRevisit_total_amount(mcontent.getString(TOTAL_AMOUNT));
-						}
-						if (!mcontent.isNull(TOTAL_PASS)
-								&& mcontent.has(TOTAL_PASS)) {
-							holder.setRevisit_total_pass(mcontent.getString(TOTAL_PASS));
-						}
-			}
+					}
 				}
+			}
 		}
-		}
+
 	}/*
 	 * (non-Javadoc)
 	 * 
 	 * @see com.viacom18.spotlight.models.STAJsonDataModel#getModelsCount()
 	 */
-
 
 	@Override
 	public int getModelsCount() {

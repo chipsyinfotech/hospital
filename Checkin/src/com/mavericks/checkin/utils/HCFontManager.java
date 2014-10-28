@@ -48,6 +48,7 @@ public class HCFontManager {
 	public static final int FNT_SUG = 19;
 	public static final int FNT_BOOK = 20;
 	public static final int FNT_INFO = 21;
+	public static final int FNT_DISCOUNT = 22;
 
 	public enum Font {
 
@@ -106,6 +107,8 @@ public class HCFontManager {
 			return R.color.white;
 
 		case FNT_MENU:
+		case FNT_DISCOUNT:
+			return R.color.light_green;
 		case FNT_TITLE:
 			return R.color.white;
 		case FNT_LOGIN:
@@ -152,6 +155,8 @@ public class HCFontManager {
 			return Font.FNT_REGULAR;
 		case FNT_TEXTS:
 			return Font.FNT_REGULAR;
+		case FNT_DISCOUNT:
+			return Font.FNT_REGULAR;
 		case FNT_SUG:
 			return Font.FNT_REGULAR;
 		case FNT_ABOUT:
@@ -193,6 +198,8 @@ public class HCFontManager {
 		case FNT_PRIOR:
 			return R.dimen.sz_sl;
 		case FNT_TEXTS:
+			return R.dimen.sz_sm;
+		case FNT_DISCOUNT:
 			return R.dimen.sz_sm;
 		case FNT_SUG:
 			return R.dimen.sz_sl;

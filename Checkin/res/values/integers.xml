@@ -37,6 +37,7 @@
          <integer name="fnt_sug">19</integer>
          <integer name="fnt_book">20</integer>
            <integer name="fnt_info">21</integer>
+           <integer name="fnt_discount">22</integer>
       
 
 </resources>
