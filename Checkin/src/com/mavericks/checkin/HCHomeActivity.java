@@ -32,6 +32,7 @@ public class HCHomeActivity extends HCBaseActivity implements OnClickListener {
 	Button mBtnhospital;
 	ImageView mImginfo;
 	TextView mTxtproceed;
+	TextView mTxtread;
 	ArrayList<HCLocationHolder> mHospitalList;
 	HCSpinnerAdapter mAdapter;
 	Map<String, ArrayList<HCLocationHolder>> mMapHospList;
@@ -45,14 +46,14 @@ public class HCHomeActivity extends HCBaseActivity implements OnClickListener {
 		mBtnhospital = (Button) findViewById(R.id.btn_sel_hos);
 		mTxtproceed = (TextView) findViewById(R.id.text_proceed);
 		mImginfo = (ImageView) findViewById(R.id.img_info);
-
+		mTxtread = (TextView) findViewById(R.id.txt_read);
 		// set listenr
 		mImginfo.setOnClickListener(this);
 		mTxtproceed.setOnClickListener(this);
 		mBtnlocation.setOnClickListener(this);
 		mBtnhospital.setOnClickListener(this);
 		mBtnhospital.setEnabled(false);
-
+		mTxtread.setOnClickListener(this);
 		mAdapter = new HCSpinnerAdapter(this);
 		mHospitalList = new ArrayList<HCLocationHolder>();
 		mMapHospList = new HashMap<String, ArrayList<HCLocationHolder>>();
@@ -79,7 +80,11 @@ public class HCHomeActivity extends HCBaseActivity implements OnClickListener {
 		case R.id.btn_sel_loc:
 			showLocation();
 			break;
-
+		case R.id.txt_read:
+			intent = new Intent(HCHomeActivity.this, HCTermActivity.class);
+			startActivity(intent);
+			finish();
+			break;
 		case R.id.btn_sel_hos:
 			showHospital();
 			break;

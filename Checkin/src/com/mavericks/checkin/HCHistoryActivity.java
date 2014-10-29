@@ -96,4 +96,11 @@ public class HCHistoryActivity extends HCBaseActivity implements
 
 	}
 
+	@Override
+	public void onBackPressed() {
+
+		super.onBackPressed();
+
+		overridePendingTransition(0, android.R.anim.fade_out);
+	}
 }

@@ -34,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_s"
             android:text="@string/ok"
+            android:background="@android:color/transparent"
             android:layout_marginBottom="@dimen/margin_s"
             checkin:font_type="@integer/fnt_btn" />
     </LinearLayout>

@@ -17,7 +17,7 @@ public class HCSplashActivity extends Activity {
 		                /* Create an Intent that will start the Menu-Activity. */
 		                Intent mainIntent = new Intent(HCSplashActivity.this,HCHomeActivity.class);
 		                startActivity(mainIntent);
-		                overridePendingTransition(R.anim.anim_to_middle, 0);
+		           
 		                finish();
 		            }
 		        }, SPLASH_DISPLAY_LENGTH);

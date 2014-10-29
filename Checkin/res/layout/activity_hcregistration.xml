@@ -24,6 +24,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="@dimen/margin_s"
                 android:contentDescription="@string/about"
+                android:paddingLeft="@dimen/margin_s"
+                android:paddingTop="@dimen/margin_s"
                 android:src="@drawable/menu_icon" />
 
             <ImageView
@@ -31,8 +33,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/margin_s"
                 android:contentDescription="@string/about"
+                android:paddingTop="@dimen/margin_sm"
                 android:src="@drawable/hospial_logo" />
 
             <com.mavericks.checkin.views.HCTextView
@@ -41,6 +43,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="@dimen/margin_sm"
+                android:paddingRight="@dimen/margin_s"
+                android:paddingTop="@dimen/margin_s"
                 android:text="@string/log"
                 checkin:font_type="@integer/fnt_logs" />
         </RelativeLayout>
@@ -60,7 +64,7 @@
                 android:layout_marginTop="@dimen/margin_ms"
                 android:orientation="horizontal" >
 
-                <Button
+                <com.mavericks.checkin.views.HCButton
                     android:id="@+id/btn_sel_hos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -69,7 +73,8 @@
                     android:drawableLeft="@drawable/select_hospital_icon"
                     android:gravity="center|left"
                     android:text="@string/hospital_prompt"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    checkin:font_type="@integer/fnt_info" />
             </LinearLayout>
 
             <ImageView
@@ -85,15 +90,18 @@
                 android:layout_marginTop="@dimen/margin_ms"
                 android:orientation="horizontal" >
 
-                <Button
+                <com.mavericks.checkin.views.HCButton
                     android:id="@+id/btn_sel_special"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@android:color/transparent"
+                    
                     android:drawableLeft="@drawable/specialization_icon"
                     android:gravity="center|left"
                     android:text="@string/special_prompt"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    checkin:font_type="@integer/fnt_info" />
             </LinearLayout>
 
             <ImageView
@@ -108,16 +116,17 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <Button
+                <com.mavericks.checkin.views.HCButton
                     android:id="@+id/btn_sel_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_ms"
                     android:background="@android:color/transparent"
-                    android:drawableLeft="@drawable/date_icon"
+                    android:drawableLeft="@drawable/select_date_icon"
                     android:gravity="center|left"
                     android:text="@string/date_prompt"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    checkin:font_type="@integer/fnt_info" />
             </LinearLayout>
 
             <ImageView
@@ -133,15 +142,17 @@
                 android:layout_marginTop="@dimen/margin_ms"
                 android:orientation="horizontal" >
 
-                <Button
+                <com.mavericks.checkin.views.HCButton
                     android:id="@+id/btn_sel_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:background="@android:color/transparent"
-                    android:drawableLeft="@drawable/time_icon"
+                    android:drawableLeft="@drawable/select_time_icon"
                     android:gravity="center|left"
                     android:text="@string/time_prompt"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    checkin:font_type="@integer/fnt_info" />
             </LinearLayout>
 
             <ImageView
@@ -449,38 +460,6 @@
                     android:orientation="horizontal" >
 
                     <ImageView
-                        android:id="@+id/img_hospital"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/about"
-                        android:src="@drawable/select_hospital_icon" />
-
-                    <com.mavericks.checkin.views.HCEditText
-                        android:id="@+id/edt_hnumber"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/margin_ms"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/hnumber"
-                        android:inputType="phone"
-                        checkin:font_type="@integer/fnt_edit_small" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/tab_hnumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_ms"
-                    android:background="@drawable/tab_line"
-                    android:contentDescription="@string/about" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_ms"
-                    android:orientation="horizontal" >
-
-                    <ImageView
                         android:id="@+id/img_call"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -621,7 +600,8 @@
                         android:layout_marginLeft="@dimen/margin_ms"
                         android:background="@android:color/transparent"
                         android:entries="@array/religion_arrays"
-                        android:prompt="@string/religion_prompt" />
+                        android:prompt="@string/religion_prompt"
+                        android:textColor="@android:color/black" />
                 </LinearLayout>
 
                 <ImageView

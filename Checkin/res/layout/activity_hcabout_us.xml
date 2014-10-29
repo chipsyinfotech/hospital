@@ -31,7 +31,7 @@
         android:layout_below="@+id/img_div"
         android:layout_marginTop="@dimen/margin_lx"
         android:contentDescription="@string/about"
-        android:src="@drawable/logo" />
+        android:src="@drawable/hos_logo" />
 
     <com.mavericks.checkin.views.HCTextView
         android:id="@+id/txt"
@@ -82,7 +82,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:contentDescription="@string/hello_world"
+            android:contentDescription="@string/about"
             android:src="@drawable/facebook_icon" />
 
         <ImageView
@@ -90,7 +90,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:contentDescription="@string/hello_world"
+            android:contentDescription="@string/about"
             android:src="@drawable/twitter_icon" />
 
         <ImageView
@@ -98,7 +98,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:contentDescription="@string/hello_world"
+            android:contentDescription="@string/about"
             android:src="@drawable/mail_icon" />
 
         <ImageView
@@ -106,7 +106,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:contentDescription="@string/hello_world"
+            android:contentDescription="@string/about"
             android:src="@drawable/call_icon" />
     </LinearLayout>
 

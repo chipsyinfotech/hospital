@@ -39,6 +39,7 @@
             android:layout_marginTop="@dimen/margin_ms"
             android:text="@string/hos_info" />
            <com.mavericks.checkin.views.HCTextView
+               android:id="@+id/txt_read"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
              android:gravity="center_horizontal"
@@ -57,7 +58,7 @@
 
       
 
-        <Button
+        <com.mavericks.checkin.views.HCButton
             android:id="@+id/btn_sel_loc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,9 +68,10 @@
             android:drawableRight="@drawable/drop_down_icon"
             android:gravity="center|left"
             android:text="@string/sel_location"
+             checkin:font_type="@integer/fnt_info"
             android:textColor="@android:color/black" />
 
-        <Button
+        <com.mavericks.checkin.views.HCButton
             android:id="@+id/btn_sel_hos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,6 +81,7 @@
             android:drawableRight="@drawable/drop_down_icon"
             android:gravity="center|left"
             android:text="@string/hospital_prompt"
+            checkin:font_type="@integer/fnt_info"
             android:textColor="@android:color/black" />
 
         <com.mavericks.checkin.views.HCTextView

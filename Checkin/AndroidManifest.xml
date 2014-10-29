@@ -31,11 +31,19 @@
         <activity
             android:name=".HCSplashActivity"
             android:label="@string/title_activity_hcsplash" >
+         <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category
+                    android:name="android.intent.category.LAUNCHER"
+                    android:label="@string/app_name" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".HCRegistrationActivity"
             android:label="@string/title_activity_hcregistration"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name=".HCPaymentActivity"
@@ -48,13 +56,13 @@
         <activity
             android:name=".HCSignInActivity"
             android:label="@string/title_activity_hcsign_in"
-            android:theme="@style/AppTheme" >
-            
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name=".HCSignupActivity"
-            android:label="@string/title_activity_hcsignup" >
-          
+            android:label="@string/title_activity_hcsignup"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name=".HCPopUpActivity"
@@ -75,7 +83,6 @@
         <activity
             android:name=".HCAboutUsActivity"
             android:label="@string/title_activity_hcabout_us" >
-            
         </activity>
         <activity
             android:name=".HCHistoryActivity"
@@ -88,28 +95,23 @@
         <activity
             android:name=".HCHomeActivity"
             android:label="@string/title_activity_hchome" >
-               
         </activity>
         <activity
             android:name=".HCPayActivity"
             android:label="@string/title_activity_hcpay" >
-         
+               
         </activity>
         <activity
             android:name=".HCConfirmationActivity"
             android:label="@string/title_activity_hcconfirmation" >
-         <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category
-                    android:name="android.intent.category.LAUNCHER"
-                    android:label="@string/app_name" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".HCPaymActivity"
             android:label="@string/title_activity_hcpaym" >
-                 
+        </activity>
+        <activity
+            android:name=".HCTermActivity"
+            android:label="@string/title_activity_hcterm" >
         </activity>
     </application>
 

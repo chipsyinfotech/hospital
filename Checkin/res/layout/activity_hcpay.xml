@@ -27,7 +27,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_payment"
             android:layout_marginTop="@dimen/margin_ms"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/margin_ss"
+            android:paddingLeft="@dimen/margin_ms"
+            android:paddingRight="@dimen/margin_ms"
+            android:paddingTop="@dimen/margin_ss" >
 
             <com.mavericks.checkin.views.HCRadioButton
                 android:id="@+id/rad_pay"
@@ -37,8 +41,10 @@
                 android:background="@drawable/pay"
                 android:button="@android:color/transparent"
                 android:checked="true"
+                android:gravity="center"
                 android:text="@string/paynow"
-                checkin:font_type="@integer/fnt_texts" />
+                android:textColor="@color/blue"
+                checkin:font_type="@integer/fnt_tab" />
 
             <com.mavericks.checkin.views.HCRadioButton
                 android:id="@+id/rad_cash"
@@ -47,8 +53,10 @@
                 android:layout_weight="1"
                 android:background="@drawable/cash"
                 android:button="@android:color/transparent"
+                android:gravity="center"
                 android:text="@string/cash"
-                checkin:font_type="@integer/fnt_texts" />
+                android:textColor="@color/blue"
+                checkin:font_type="@integer/fnt_tab" />
         </RadioGroup>
 
         <RelativeLayout
@@ -73,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:text="@string/register"
-                    checkin:font_type="@integer/fnt_texts" />
+                    checkin:font_type="@integer/fnt_info" />
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_regicharge"
@@ -81,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/text_register"
                     android:layout_alignParentRight="true"
-                    checkin:font_type="@integer/fnt_texts" />
+                    checkin:font_type="@integer/fnt_info" />
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_consultant"
@@ -91,7 +99,7 @@
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_mx"
                     android:text="@string/consult"
-                    checkin:font_type="@integer/fnt_texts" />
+                    checkin:font_type="@integer/fnt_info" />
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_consltcharge"
@@ -99,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/text_consultant"
                     android:layout_alignParentRight="true"
-                    checkin:font_type="@integer/fnt_texts" />
+                    checkin:font_type="@integer/fnt_info" />
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_convience"
@@ -107,9 +115,9 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/text_consultant"
                     android:layout_marginLeft="@dimen/margin_ms"
-                    android:layout_marginTop="@dimen/margin_s"
+                    android:layout_marginTop="@dimen/margin_ms"
                     android:text="@string/convience"
-                    checkin:font_type="@integer/fnt_texts" />
+                    checkin:font_type="@integer/fnt_info" />
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_convncharge"
@@ -117,13 +125,58 @@
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/text_convience"
                     android:layout_alignParentRight="true"
+                    checkin:font_type="@integer/fnt_info" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_internet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_convience"
+                    android:layout_marginLeft="@dimen/margin_ms"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:text="@string/internet"
+                    checkin:font_type="@integer/fnt_info" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_intercharge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/text_internet"
+                    android:layout_alignParentRight="true"
                     checkin:font_type="@integer/fnt_texts" />
 
                 <ImageView
                     android:id="@+id/img_div2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/text_convience"
+                    android:layout_below="@+id/text_internet"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:background="@drawable/divider_line"
+                    android:contentDescription="@string/about" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_div2"
+                         android:layout_marginTop="@dimen/margin_ms"
+                       android:layout_marginLeft="@dimen/margin_ms"
+                    android:text="@string/discount"
+                    checkin:font_type="@integer/fnt_discount" />
+
+                <com.mavericks.checkin.views.HCTextView
+                    android:id="@+id/text_discountcharge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/text_discount"
+                    android:layout_alignParentRight="true"
+                    checkin:font_type="@integer/fnt_discount" />
+
+                <ImageView
+                    android:id="@+id/img_div3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_discount"
                     android:layout_marginTop="@dimen/margin_ms"
                     android:background="@drawable/divider_line"
                     android:contentDescription="@string/about" />
@@ -132,14 +185,14 @@
                     android:id="@+id/text_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/img_div2"
+                    android:layout_below="@+id/img_div3"
                     android:layout_marginLeft="@dimen/margin_ms"
                     android:layout_marginTop="@dimen/margin_ms"
                     android:text="@string/amount"
                     checkin:font_type="@integer/fnt_text" />
 
                 <com.mavericks.checkin.views.HCTextView
-                    android:id="@+id/text_rupi"
+                    android:id="@+id/text_amountcharge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/text_amount"
@@ -150,7 +203,7 @@
                     android:id="@+id/img_priority"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/text_rupi"
+                    android:layout_below="@+id/text_amountcharge"
                     android:layout_marginTop="@dimen/margin_ls"
                     android:background="@drawable/check_button_non_press"
                     android:button="@drawable/prior"
@@ -160,7 +213,7 @@
                     android:id="@+id/text_prior"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/text_rupi"
+                    android:layout_below="@+id/text_amountcharge"
                     android:layout_marginTop="@dimen/margin_ls"
                     android:layout_toRightOf="@+id/img_priority"
                     android:text="@string/priority"
@@ -174,7 +227,7 @@
                     android:layout_marginTop="@dimen/margin_s"
                     android:layout_toRightOf="@+id/img_priority"
                     android:text="@string/add"
-                    checkin:font_type="@integer/fnt_texts" />
+                    checkin:font_type="@integer/fnt_info" />
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_addrs"
@@ -203,7 +256,7 @@
                     android:layout_below="@+id/text_info"
                     android:layout_marginTop="@dimen/margin_ms"
                     android:text="@string/note"
-                    checkin:font_type="@integer/fnt_texts" />
+                    checkin:font_type="@integer/fnt_info" />
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_condition"
@@ -233,7 +286,7 @@
                     android:layout_marginTop="@dimen/margin_lx"
                     android:layout_toRightOf="@+id/img_check"
                     android:text="@string/term"
-                    checkin:font_type="@integer/fnt_texts" />
+                    checkin:font_type="@integer/fnt_info" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -292,7 +345,7 @@
                     android:layout_below="@+id/text_charge"
                     android:layout_marginTop="@dimen/margin_mx"
                     android:text="@string/note"
-                    checkin:font_type="@integer/fnt_texts" />
+                    checkin:font_type="@integer/fnt_info" />
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_information"
@@ -301,7 +354,7 @@
                     android:layout_below="@+id/text_notes"
                     android:layout_marginTop="@dimen/margin_ms"
                     android:text="@string/makepay"
-                    checkin:font_type="@integer/fnt_texts" />
+                    checkin:font_type="@integer/fnt_info" />
 
                 <CheckBox
                     android:id="@+id/img_term"
@@ -322,7 +375,7 @@
                     android:layout_marginTop="@dimen/margin_ms"
                     android:layout_toRightOf="@+id/img_term"
                     android:text="@string/term"
-                    checkin:font_type="@integer/fnt_texts" />
+                    checkin:font_type="@integer/fnt_info" />
             </RelativeLayout>
 
             <RelativeLayout

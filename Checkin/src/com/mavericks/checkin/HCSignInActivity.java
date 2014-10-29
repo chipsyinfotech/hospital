@@ -91,19 +91,16 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 
 		if (mEdtemail.getText().toString().trim().length() == 0) {
 			msg = R.string.err_email;
-			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
-					.show();
+
 			bValid = false;
 		} else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(
 				mEdtemail.getText().toString()).matches()) {
 			msg = R.string.err_invalidemail;
-			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
-					.show();
+
 			mEdtemail.setText("");
 			bValid = false;
 		}
-		if (msg != 0)
-			HCAlertManager.showAlertWithOneBtn(this, getString(msg), null);
+		HCAlertManager.showAlertWithOneBtn(this, getString(msg), null);
 		return bValid;
 	}
 
@@ -115,26 +112,22 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 		boolean bValid = true;
 		if (mEdtemail.getText().toString().trim().length() == 0) {
 			msg = R.string.err_email;
-			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
-					.show();
+
 			bValid = false;
 		} else if (mEdtdigit.getText().toString().trim().length() == 0) {
 			msg = R.string.err_digit;
-			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
-					.show();
+
 			bValid = false;
 
 		} else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(
 				mEdtemail.getText().toString()).matches()) {
 			msg = R.string.err_invalidemail;
-			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG)
-					.show();
+
 			mEdtemail.setText("");
 			bValid = false;
 
 		}
-		if (msg != 0)
-			HCAlertManager.showAlertWithOneBtn(this, getString(msg), null);
+		HCAlertManager.showAlertWithOneBtn(this, getString(msg), null);
 		return bValid;
 
 	}
@@ -161,12 +154,7 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 							HCAlertManager.showAlertWithOneBtn(
 									HCSignInActivity.this,
 									getString(R.string.forgot), null);
-						} else {
-							HCAlertManager.showAlertWithOneBtn(
-									HCSignInActivity.this,
-									parser.getStatusMessage(), null);
 						}
-
 					}
 				});
 
@@ -198,13 +186,9 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 									HCSignInActivity.this,
 									(HCProfileHolder) parser.getDataHolder());
 							finish();
-						} else {
-							HCAlertManager.showAlertWithOneBtn(
-									HCSignInActivity.this,
-									parser.getStatusMessage(), null);
 						}
-
 					}
+
 				});
 
 	}

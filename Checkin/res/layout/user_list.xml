@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
           android:layout_marginLeft="@dimen/margin_ms"
         android:layout_marginTop="@dimen/margin_ss"
-        android:contentDescription="@string/hello_world" />
+        android:contentDescription="@string/about" />
 
     <LinearLayout
         android:layout_width="match_parent"

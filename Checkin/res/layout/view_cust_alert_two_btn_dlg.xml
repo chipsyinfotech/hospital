@@ -35,6 +35,7 @@
             android:id="@+id/btn_negative"
             android:layout_width="@dimen/btn_w_ms"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:layout_marginTop="@dimen/margin_s"
             android:text="@string/cancel"
             checkin:font_type="@integer/fnt_btn" />
@@ -47,6 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_s"
             android:text="@string/ok"
+               android:background="@android:color/transparent"
             checkin:font_type="@integer/fnt_btn" />
     </LinearLayout>
 

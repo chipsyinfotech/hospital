@@ -38,7 +38,9 @@
          <integer name="fnt_book">20</integer>
            <integer name="fnt_info">21</integer>
            <integer name="fnt_discount">22</integer>
-      
+           <integer name="fnt_discount">22</integer>
+      	<integer name="fnt_tab">23</integer>
+      	<integer name="fnt_condition">24</integer>
 
 </resources>
 
