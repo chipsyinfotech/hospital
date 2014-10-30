@@ -31,7 +31,7 @@
         <activity
             android:name=".HCSplashActivity"
             android:label="@string/title_activity_hcsplash" >
-         <intent-filter>
+          <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category
@@ -44,6 +44,7 @@
             android:label="@string/title_activity_hcregistration"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden" >
+               
         </activity>
         <activity
             android:name=".HCPaymentActivity"
@@ -99,7 +100,6 @@
         <activity
             android:name=".HCPayActivity"
             android:label="@string/title_activity_hcpay" >
-               
         </activity>
         <activity
             android:name=".HCConfirmationActivity"
@@ -112,6 +112,11 @@
         <activity
             android:name=".HCTermActivity"
             android:label="@string/title_activity_hcterm" >
+        </activity>
+        <activity
+            android:name=".Sampleactivity"
+            android:label="@string/title_activity_sampleactivity" >
+           
         </activity>
     </application>
 

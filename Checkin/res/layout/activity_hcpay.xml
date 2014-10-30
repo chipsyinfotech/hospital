@@ -44,7 +44,7 @@
                 android:gravity="center"
                 android:text="@string/paynow"
                 android:textColor="@color/blue"
-                checkin:font_type="@integer/fnt_tab" />
+                checkin:font_type="@integer/fnt_info" />
 
             <com.mavericks.checkin.views.HCRadioButton
                 android:id="@+id/rad_cash"
@@ -56,7 +56,7 @@
                 android:gravity="center"
                 android:text="@string/cash"
                 android:textColor="@color/blue"
-                checkin:font_type="@integer/fnt_tab" />
+                checkin:font_type="@integer/fnt_info" />
         </RadioGroup>
 
         <RelativeLayout
@@ -143,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/text_internet"
                     android:layout_alignParentRight="true"
-                    checkin:font_type="@integer/fnt_texts" />
+                    checkin:font_type="@integer/fnt_info" />
 
                 <ImageView
                     android:id="@+id/img_div2"
@@ -327,7 +327,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/amount_pay"
-                    checkin:font_type="@integer/fnt_texts" />
+                    checkin:font_type="@integer/fnt_info" />
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_charge"

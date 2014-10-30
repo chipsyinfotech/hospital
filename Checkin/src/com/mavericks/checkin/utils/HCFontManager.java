@@ -51,6 +51,7 @@ public class HCFontManager {
 	public static final int FNT_DISCOUNT = 22;
 	public static final int FNT_TAB = 23;
 	public static final int FNT_CONDITION = 24;
+	public static final int FNT_HOSPITAL = 25;
 
 	public enum Font {
 
@@ -124,6 +125,8 @@ public class HCFontManager {
 			return R.color.white;
 		case FNT_LOGS:
 			return R.color.sky_blue;
+		case FNT_HOSPITAL:
+			return R.color.sky_blue;
 		case FNT_BOOK:
 			return android.R.color.black;
 		case FNT_HM_NM:
@@ -169,6 +172,8 @@ public class HCFontManager {
 
 		case FNT_LOGIN:
 			return Font.FNT_BOLD;
+		case FNT_HOSPITAL:
+			return Font.FNT_REGULAR;
 		case FNT_LOG:
 			return Font.FNT_BOLD;
 		case FNT_TAB:
@@ -202,13 +207,15 @@ public class HCFontManager {
 		case FNT_BUTTON:
 			return R.dimen.sz_ms;
 		case FNT_TEXT:
-			return R.dimen.sz_sm;
+			return R.dimen.sz_ss;
 		case FNT_PRIOR:
-			return R.dimen.sz_sl;
+			return R.dimen.sz_ss;
 		case FNT_TEXTS:
-			return R.dimen.sz_sm;
+			return R.dimen.sz_ss;
+		case FNT_HOSPITAL:
+			return R.dimen.sz_ss;
 		case FNT_DISCOUNT:
-			return R.dimen.sz_sm;
+			return R.dimen.sz_ss;
 		case FNT_SUG:
 			return R.dimen.sz_ss;
 		case FNT_MENU:

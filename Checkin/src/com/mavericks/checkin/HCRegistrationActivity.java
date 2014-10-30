@@ -22,6 +22,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -59,6 +60,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 	Button mBtnhospital;
 	Button mBtnspecial;;
 	Button mBtndate;;
+	Button mBtnreligion;;
 	RadioGroup mRadgroup;
 	RadioButton mRadyes;
 	RadioButton mRadno;
@@ -69,9 +71,9 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 	CheckBox mCheckbox;
 	RadioGroup mRadVisrevis;
 	RadioButton mRadvisit;
+	TextView mTxthospital;
 	RadioButton mRadrevisit;
 	EditText mEdtdoctor;
-	ImageView mImgmenu;
 	EditText mEdtoccupation;
 	Spinner mspinreligion;
 	LinearLayout mLinDoctor;
@@ -97,7 +99,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 	ImageView mImgmarriage;
 	String lname = null;
 	String mname = null;
-
+	ImageView mImgmenu;
 	String mAmount = null;
 	String mVisit = null;
 	String gender = null;
@@ -110,7 +112,6 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 	String hospitalnumber;
 	EditText mEdtremail;
 	TextView mTxtrecheck;
-
 	HCSpinnerAdapter mAdapter;
 	HCTimeHolder mTimeHolder;
 	// HCAmountHolder mAmountHolder;
@@ -123,6 +124,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 	String mSpecializtionId;
 	String mVisitDate;
 	String mTime;
+	ArrayAdapter<String> Adapter;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -144,11 +146,11 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 	 * initializes the UI
 	 */
 	private void initUI() {
-		
+
 		mTxtlog = (TextView) findViewById(R.id.text_log);
 		mRadgroup = (RadioGroup) findViewById(R.id.radio_app);
 		mRadyes = (RadioButton) findViewById(R.id.radio_yes);
-		mImgmenu=(ImageView)findViewById(R.id.img_menu);
+
 		mRadno = (RadioButton) findViewById(R.id.radio_no);
 		mImgdoctor = (ImageView) findViewById(R.id.tab_doctor);
 		mLinDoctor = (LinearLayout) findViewById(R.id.lin_doctor);
@@ -160,7 +162,8 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		mEdtfname = (EditText) findViewById(R.id.edt_fname);
 		mEdtmother = (EditText) findViewById(R.id.edt_mname);
 		mEdtage = (EditText) findViewById(R.id.edt_age);
-	
+		mTxthospital = (TextView) findViewById(R.id.text_hospital);
+		mImgmenu = (ImageView) findViewById(R.id.img_menu);
 		mEdtmobile = (EditText) findViewById(R.id.edt_mobile);
 		mEdtmarried = (EditText) findViewById(R.id.edt_married);
 		mEdtemail = (EditText) findViewById(R.id.edt_email);
@@ -191,7 +194,9 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		mRadvisit.setOnClickListener(this);
 		mBtndate.setOnClickListener(this);
 		mBtntime.setOnClickListener(this);
-	mImgmenu.setOnClickListener(this);
+		mBtnreligion.setOnClickListener(this);
+		mTxthospital.setOnClickListener(this);
+		mImgmenu.setOnClickListener(this);
 		mBtnspecial.setOnClickListener(this);
 		mRadrevisit.setOnClickListener(this);
 		mTxtnewcheck.setOnClickListener(this);
@@ -274,15 +279,17 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 			showDate();
 
 			break;
-		
+		case R.id.img_menu:
+			startActivity(new Intent(HCRegistrationActivity.this,
+					HCHistoryActivity.class));
+			overridePendingTransition(R.anim.anim_slide_in_left, 0);
+			break;
+
 		case R.id.btn_sel_time:
 			showTime();
 			break;
 		case R.id.btn_sel_hos:
 			showHospital();
-			break;
-		case R.id.img_menu:
-		history();
 			break;
 		case R.id.radio_visit:
 			mLinvisit.findViewById(R.id.lin_visit).setVisibility(View.VISIBLE);
@@ -314,6 +321,12 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 			}
 
 			break;
+		case R.id.text_hospital:
+			startActivity(new Intent(HCRegistrationActivity.this,
+					HCHomeActivity.class));
+			overridePendingTransition(R.anim.anim_slide_in_left, 0);
+			break;
+
 		case R.id.text_log:
 
 			startActivity(new Intent(HCRegistrationActivity.this,
@@ -760,14 +773,11 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		startActivity(intent);
 
 	}
-private void history()
-{
-	startActivity(new Intent(HCRegistrationActivity.this, HCHistoryActivity.class));
-	overridePendingTransition(R.anim.anim_slide_in_left, 0);
-}
+
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
+
 		overridePendingTransition(0, android.R.anim.fade_out);
 	}
 

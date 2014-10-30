@@ -92,7 +92,7 @@
             android:background="@drawable/tabsl"
             android:gravity="center_horizontal"
             android:text="@string/proceed"
-            checkin:font_type="@integer/fnt_texts" />
+            checkin:font_type="@integer/fnt_info" />
     </LinearLayout>
 
 </LinearLayout>

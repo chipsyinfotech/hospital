@@ -73,6 +73,7 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 
 		case R.id.text_signup:
 			signup();
+			break;
 		case R.id.text_login:
 
 			if (isFormValid())

@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:text="@string/confirm_number"
         android:layout_below="@+id/img_div"
-        checkin:font_type="@integer/fnt_texts" />
+        checkin:font_type="@integer/fnt_info" />
 
     <com.mavericks.checkin.views.HCTextView
         android:id="@+id/text_id"
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_confirm"
         android:layout_marginTop="@dimen/margin_s"
-        checkin:font_type="@integer/fnt_texts" />
+        checkin:font_type="@integer/fnt_info" />
 
     <LinearLayout
         android:id="@+id/lin_info"
@@ -73,7 +73,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_marginTop="@dimen/margin_sm"
-            checkin:font_type="@integer/fnt_texts" />
+            checkin:font_type="@integer/fnt_info" />
 
         <com.mavericks.checkin.views.HCTextView
             android:id="@+id/text_hname"
@@ -83,7 +83,7 @@
             android:textColor="@color/pink"
     
                  android:layout_marginTop="@dimen/margin_sm"
-            checkin:font_type="@integer/fnt_texts" />
+            checkin:font_type="@integer/fnt_info" />
 
         <com.mavericks.checkin.views.HCTextView
             android:id="@+id/text_sname"
@@ -91,7 +91,7 @@
               android:layout_height="0dp"
             android:layout_weight="1"
                  android:layout_marginTop="@dimen/margin_sm"
-            checkin:font_type="@integer/fnt_texts" />
+            checkin:font_type="@integer/fnt_info" />
 
         <com.mavericks.checkin.views.HCTextView
             android:id="@+id/text_address"
@@ -99,7 +99,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
                  android:layout_marginTop="@dimen/margin_sm"
-            checkin:font_type="@integer/fnt_texts" />
+            checkin:font_type="@integer/fnt_info" />
 
         <com.mavericks.checkin.views.HCTextView
             android:id="@+id/text_vdate"
@@ -107,7 +107,7 @@
          android:layout_height="0dp"
             android:layout_weight="1"
                  android:layout_marginTop="@dimen/margin_sm"
-            checkin:font_type="@integer/fnt_texts" />
+            checkin:font_type="@integer/fnt_info" />
 
         <com.mavericks.checkin.views.HCTextView
             android:id="@+id/text_tpaid"
@@ -115,7 +115,7 @@
              android:layout_height="0dp"
             android:layout_weight="1"
                  android:layout_marginTop="@dimen/margin_sm"
-            checkin:font_type="@integer/fnt_texts" />
+            checkin:font_type="@integer/fnt_info" />
 
         <com.mavericks.checkin.views.HCTextView
             android:id="@+id/text_priorpass"
@@ -123,7 +123,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
                  android:layout_marginTop="@dimen/margin_sm"
-            checkin:font_type="@integer/fnt_texts" />
+            checkin:font_type="@integer/fnt_info" />
 
         <com.mavericks.checkin.views.HCTextView
             android:id="@+id/text_bdate"
@@ -131,7 +131,7 @@
            android:layout_height="0dp"
             android:layout_weight="1"
                  android:layout_marginTop="@dimen/margin_sm"
-            checkin:font_type="@integer/fnt_texts" />
+            checkin:font_type="@integer/fnt_info" />
         <ImageView
         android:id="@+id/img_div1"
         android:layout_width="match_parent"
