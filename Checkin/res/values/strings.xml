@@ -61,8 +61,8 @@
     <string name="no">No</string>
     <string name="log">Login</string>
     <string name="text">We thought a web-checkin would do the job even for a hospital.After all time, convenience, resources are important to hospitals and patients equally.</string>
-    <string name="pname">Name</string>
-    <string name="mother"> Mother name</string>
+    <string name="pname"> First Name</string>
+    <string name="mother"> Mother\u0027s name</string>
     <string name="fname">Father\u0027s Name</string>
     <string name="age">Age</string>
     <string name="gender">Gender</string>
@@ -116,6 +116,8 @@
     <string name="err_doctor">Please select doctor name</string>
     <string name="err_special">Please select specialization</string>
     <string name="err_name">Please enter your name</string>
+    <string name="err_firstname">Please enter your first name</string>
+    <string name="err_lastname">Please enter your last name</string>
     <string name="err_fname">Please enter your father name</string>
     <string name="err_age">Please enter your age</string>
     <string name="detail">Booking Details</string>
@@ -124,6 +126,7 @@
     <string name="err_address">Please enter your address</string>
     <string name="err_location">Please enter  your location</string>
     <string name="err_date">Please select date</string>
+    <string name="err_occupation">Please enter your occupation</string>
     <string name="err_time">Please select time</string>
     <string name="err_confrmdigit">Please Re enter 4 digit pin</string>
     <string name="err_pswrd">Please enter your password</string>

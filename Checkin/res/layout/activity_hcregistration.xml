@@ -298,12 +298,30 @@
                         android:src="@drawable/name_icon" />
 
                     <com.mavericks.checkin.views.HCEditText
-                        android:id="@+id/edt_pname"
-                        android:layout_width="match_parent"
+                        android:id="@+id/edt_pfname"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
                         android:background="@android:color/transparent"
                         android:hint="@string/pname"
+                        android:inputType="text"
+                        checkin:font_type="@integer/fnt_edit_small" />
+
+                    <ImageView
+                        android:id="@+id/img_lname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_ls"
+                        android:contentDescription="@string/add"
+                        android:src="@drawable/name_icon" />
+
+                    <com.mavericks.checkin.views.HCEditText
+                        android:id="@+id/edt_lname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_ms"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/lname"
                         android:inputType="text"
                         checkin:font_type="@integer/fnt_edit_small" />
                 </LinearLayout>
@@ -501,38 +519,6 @@
                     android:orientation="horizontal" >
 
                     <ImageView
-                        android:id="@+id/img_email"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/about"
-                        android:src="@drawable/email_icon" />
-
-                    <com.mavericks.checkin.views.HCEditText
-                        android:id="@+id/edt_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/margin_ms"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/hemail"
-                        android:inputType="textEmailAddress"
-                        checkin:font_type="@integer/fnt_edit_small" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/tab_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_ms"
-                    android:background="@drawable/tab_line"
-                    android:contentDescription="@string/about" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_ms"
-                    android:orientation="horizontal" >
-
-                    <ImageView
                         android:id="@+id/img_address"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -557,6 +543,7 @@
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
 
+                
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -579,15 +566,6 @@
                         android:hint="@string/location"
                         checkin:font_type="@integer/fnt_edit_small" />
                 </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/tab_location"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_ms"
-                    android:background="@drawable/tab_line"
-                    android:contentDescription="@string/about" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -606,6 +584,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
+                        android:background="@color/white"
                         android:entries="@array/religion_arrays"
                         android:popupBackground="@color/sky_blue"
                         android:prompt="@string/religion_prompt"
@@ -764,12 +743,30 @@
                         android:src="@drawable/name_icon" />
 
                     <com.mavericks.checkin.views.HCEditText
-                        android:id="@+id/edt_repname"
-                        android:layout_width="match_parent"
+                        android:id="@+id/edt_refname"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
                         android:background="@android:color/transparent"
                         android:hint="@string/pname"
+                        android:inputType="text"
+                        checkin:font_type="@integer/fnt_edit_small" />
+
+                    <ImageView
+                        android:id="@+id/img_relname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_ls"
+                        android:contentDescription="@string/add"
+                        android:src="@drawable/name_icon" />
+
+                    <com.mavericks.checkin.views.HCEditText
+                        android:id="@+id/edt_relname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_ms"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/lname"
                         android:inputType="text"
                         checkin:font_type="@integer/fnt_edit_small" />
                 </LinearLayout>
@@ -841,38 +838,6 @@
 
                 <ImageView
                     android:id="@+id/tab_rmobile"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_ms"
-                    android:background="@drawable/tab_line"
-                    android:contentDescription="@string/about" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_ms"
-                    android:orientation="horizontal" >
-
-                    <ImageView
-                        android:id="@+id/img_remail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/about"
-                        android:src="@drawable/email_icon" />
-
-                    <com.mavericks.checkin.views.HCEditText
-                        android:id="@+id/edt_remail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/margin_ms"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/hemail"
-                        android:inputType="textEmailAddress"
-                        checkin:font_type="@integer/fnt_edit_small" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/tab_remail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_ms"

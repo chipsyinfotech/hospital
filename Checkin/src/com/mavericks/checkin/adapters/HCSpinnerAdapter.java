@@ -90,8 +90,9 @@ public class HCSpinnerAdapter extends BaseAdapter {
 					.getmHosSpecializationname());
 		}
 		else if (dataHolder instanceof HCTimeHolder) {
-			viewholder.mTxtData.setText(((HCTimeHolder) dataHolder)
-					.getAppointtime());
+			viewholder.mTxtData.setText((((HCTimeHolder) dataHolder)
+					.getAppointtime())+" "+"(Available "+((HCTimeHolder) dataHolder)
+					.getAvailability()+")");
 		}
 		else if (dataHolder instanceof HCDateHolder) {
 			viewholder.mTxtData.setText(((HCDateHolder) dataHolder)

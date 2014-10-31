@@ -52,6 +52,7 @@ public class HCFontManager {
 	public static final int FNT_TAB = 23;
 	public static final int FNT_CONDITION = 24;
 	public static final int FNT_HOSPITAL = 25;
+	public static final int FNT_RETRY = 26;
 
 	public enum Font {
 
@@ -111,6 +112,8 @@ public class HCFontManager {
 		case FNT_TAB:
 			return 0;
 		case FNT_MENU:
+		case FNT_RETRY:
+			return R.color.white;
 		case FNT_DISCOUNT:
 			return R.color.light_green;
 		case FNT_TITLE:
@@ -160,6 +163,8 @@ public class HCFontManager {
 		case FNT_EDIT_LARGE:
 		case FNT_EDIT_SMALL:
 		case FNT_MENU:
+			return Font.FNT_REGULAR;
+		case FNT_RETRY:
 			return Font.FNT_REGULAR;
 		case FNT_TEXTS:
 			return Font.FNT_REGULAR;
@@ -221,6 +226,8 @@ public class HCFontManager {
 		case FNT_MENU:
 			return R.dimen.sz_sl;
 		case FNT_DLG:
+			return R.dimen.sz_sm;
+		case FNT_RETRY:
 			return R.dimen.sz_sm;
 		case FNT_LOGIN:
 			return R.dimen.sz_ms;

@@ -76,8 +76,8 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 			break;
 		case R.id.text_login:
 
-			if (isFormValid())
-				login();
+			 if(isFormValid())
+			login();
 
 			break;
 		default:
@@ -181,12 +181,10 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 
 							startActivity(new Intent(HCSignInActivity.this,
 									HCRegistrationActivity.class));
-							overridePendingTransition(R.anim.anim_from_middle,
-									0);
+
 							HCSession.getInstance().storeSession(
 									HCSignInActivity.this,
 									(HCProfileHolder) parser.getDataHolder());
-							finish();
 						}
 					}
 

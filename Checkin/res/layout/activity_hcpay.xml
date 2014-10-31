@@ -139,7 +139,7 @@
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_intercharge"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/text_internet"
                     android:layout_alignParentRight="true"
@@ -166,7 +166,7 @@
 
                 <com.mavericks.checkin.views.HCTextView
                     android:id="@+id/text_discountcharge"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/text_discount"
                     android:layout_alignParentRight="true"
@@ -312,6 +312,7 @@
             android:id="@+id/rel_cash"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:visibility="gone"
             android:layout_below="@+id/rad_payment" >
 
             <RelativeLayout

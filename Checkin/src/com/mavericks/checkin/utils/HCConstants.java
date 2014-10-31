@@ -54,6 +54,7 @@ public class HCConstants {
 	public static final String EXTRA_VDATE = "extra_visit_date";
 	public static final String EXTRA_TPAID = "extra_total_paid";
 	public static final String EXTRA_PASS = "extra_prior_pass";
+	public static final String EXTRA_IS_NW_VISIT = "extra_is_nw_visit";
 	public static final String EXTRA_BDATE = "extra_booking_date";
 	public static final String EXTRA_HOSPITAL_LIST = "extra_hospital_list";
 	
