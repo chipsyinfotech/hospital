@@ -18,7 +18,7 @@ import com.mavericks.checkin.holders.HCTimeHolder;
 import com.mavericks.checkin.utils.HCUtils;
 
 public class HCSpinnerAdapter extends BaseAdapter {
-
+//
 	public static final int TYPE_HOSPITAL = 100;
 	public static final int TYPE_LOCATION = 101;
 	public static final int TYPE_TIME = 102;
