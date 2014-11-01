@@ -50,22 +50,22 @@
      <dimen name="margin_add">150dp</dimen>
 
     <!-- font sizes -->
-    <dimen name="sz_ss">16dp</dimen>
-    <dimen name="sz_sm">24dp</dimen>
-    <dimen name="sz_sl">26dp</dimen>
+    <dimen name="sz_ss">14dp</dimen>
+    <dimen name="sz_sm">16dp</dimen>
+    <dimen name="sz_sl">18dp</dimen>
     <dimen name="sz_sx">20dp</dimen>
-    <dimen name="sz_ms">30dp</dimen>
-    <dimen name="sz_mm">32dp</dimen>
-    <dimen name="sz_ml">34dp</dimen>
-    <dimen name="sz_mx">36dp</dimen>
-    <dimen name="sz_ls">38dp</dimen>
-    <dimen name="sz_lm">40dp</dimen>
-    <dimen name="sz_ll">42dp</dimen>
-    <dimen name="sz_lx">44dp</dimen>
-    <dimen name="sz_xs">46dp</dimen>
-    <dimen name="sz_xm">48dp</dimen>
-    <dimen name="sz_xl">50dp</dimen>
-    <dimen name="sz_xx">52dp</dimen>
+    <dimen name="sz_ms">22dp</dimen>
+    <dimen name="sz_mm">24dp</dimen>
+    <dimen name="sz_ml">26dp</dimen>
+    <dimen name="sz_mx">28dp</dimen>
+    <dimen name="sz_ls">30dp</dimen>
+    <dimen name="sz_lm">32dp</dimen>
+    <dimen name="sz_ll">34dp</dimen>
+    <dimen name="sz_lx">36dp</dimen>
+    <dimen name="sz_xs">38dp</dimen>
+    <dimen name="sz_xm">40dp</dimen>
+    <dimen name="sz_xl">42dp</dimen>
+    <dimen name="sz_xx">44dp</dimen>
     <dimen name="margin_hx">75dp</dimen>
 
 </resources>

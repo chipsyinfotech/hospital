@@ -28,6 +28,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gcm.GCMRegistrar;
 import com.mavericks.checkin.client.HCClient;
 import com.mavericks.checkin.client.HCIRequestListener;
 import com.mavericks.checkin.client.HCServerUtils;
@@ -40,8 +41,8 @@ import com.mavericks.checkin.utils.HCAlertManager;
 import com.mavericks.checkin.utils.HCConstants;
 
 public class HCSignInActivity extends HCBaseActivity implements OnClickListener {
-	EditText mEdtemail;
-	EditText mEdtdigit;
+	EditText mEdtmail;
+	EditText mEddigit;
 	TextView mTxtlogin;
 	TextView mTxtpaswrd;
 	String email;
@@ -52,8 +53,8 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_hcsign_in);
-		mEdtemail = (EditText) findViewById(R.id.edt_email);
-		mEdtdigit = (EditText) findViewById(R.id.edt_digit);
+		mEdtmail = (EditText) findViewById(R.id.edt_email);
+		mEddigit = (EditText) findViewById(R.id.edt_digit);
 		mTxtpaswrd = (TextView) findViewById(R.id.text_password);
 		mTxtsignup = (TextView) findViewById(R.id.text_signup);
 		mTxtlogin = (TextView) findViewById(R.id.text_login);
@@ -75,9 +76,8 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 			signup();
 			break;
 		case R.id.text_login:
-
-			 if(isFormValid())
-			login();
+			if (isFormValid())
+				login();
 
 			break;
 		default:
@@ -86,51 +86,49 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 
 	}
 
+	private boolean isFormValid() {
+
+		boolean bValid = true;
+		int msg = 0;
+		if (mEdtmail.getText().toString().trim().length() == 0) {
+			msg = R.string.err_email;
+
+			bValid = false;
+		} else if (mEddigit.getText().toString().trim().length() == 0) {
+			msg = R.string.err_digit;
+
+			bValid = false;
+		} else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(
+				mEdtmail.getText().toString()).matches()) {
+			msg = R.string.err_invalidemail;
+
+			mEdtmail.setText("");
+			bValid = false;
+
+		}
+		if (msg != 0)
+			HCAlertManager.showAlertWithOneBtn(this, getString(msg), null);
+		return bValid;
+
+	}
+
 	private boolean isForgotValid() {
 		int msg = 0;
 		boolean bValid = true;
 
-		if (mEdtemail.getText().toString().trim().length() == 0) {
+		if (mEdtmail.getText().toString().trim().length() == 0) {
 			msg = R.string.err_email;
 
 			bValid = false;
 		} else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(
-				mEdtemail.getText().toString()).matches()) {
+				mEdtmail.getText().toString()).matches()) {
 			msg = R.string.err_invalidemail;
 
-			mEdtemail.setText("");
+			mEdtmail.setText("");
 			bValid = false;
 		}
 		HCAlertManager.showAlertWithOneBtn(this, getString(msg), null);
 		return bValid;
-	}
-
-	private boolean isFormValid() {
-		email = mEdtemail.getText().toString();
-		digit = mEdtdigit.getText().toString();
-
-		int msg = 0;
-		boolean bValid = true;
-		if (mEdtemail.getText().toString().trim().length() == 0) {
-			msg = R.string.err_email;
-
-			bValid = false;
-		} else if (mEdtdigit.getText().toString().trim().length() == 0) {
-			msg = R.string.err_digit;
-
-			bValid = false;
-
-		} else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(
-				mEdtemail.getText().toString()).matches()) {
-			msg = R.string.err_invalidemail;
-
-			mEdtemail.setText("");
-			bValid = false;
-
-		}
-		HCAlertManager.showAlertWithOneBtn(this, getString(msg), null);
-		return bValid;
-
 	}
 
 	/**
@@ -141,7 +139,7 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 		final HCForgotParser parser = new HCForgotParser();
 		List<HCNameValuePair> formData = new ArrayList<HCNameValuePair>();
 		formData.add(new HCNameValuePair(HCConstants.PAR_EMAIL_ID, ""
-				+ mEdtemail.getText().toString()));
+				+ mEdtmail.getText().toString()));
 
 		HCClient.getInstance().request(this, HCServerUtils.REQ_FORGOT_PASS,
 				null, formData, null, parser, new HCIRequestListener() {
@@ -168,9 +166,9 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 
 		List<HCNameValuePair> formData = new ArrayList<HCNameValuePair>();
 		formData.add(new HCNameValuePair(HCConstants.PAR_EMAIL_ID, ""
-				+ mEdtemail.getText().toString()));
+				+ mEdtmail.getText().toString()));
 		formData.add(new HCNameValuePair(HCConstants.PAR_PSWRD, ""
-				+ mEdtdigit.getText().toString()));
+				+ mEddigit.getText().toString()));
 		HCClient.getInstance().request(this, HCServerUtils.REQ_HOSPITAL_LOGIN,
 				null, formData, null, parser, new HCIRequestListener() {
 
@@ -178,18 +176,19 @@ public class HCSignInActivity extends HCBaseActivity implements OnClickListener 
 					public void onComplete(int req_type, int status) {
 						hideProgressDialog();
 						if (status == HCConstants.ERROR_CODE_SUCCESS) {
-
 							startActivity(new Intent(HCSignInActivity.this,
 									HCRegistrationActivity.class));
-
+							overridePendingTransition(R.anim.slide_in_top_scr,
+									0);
 							HCSession.getInstance().storeSession(
 									HCSignInActivity.this,
 									(HCProfileHolder) parser.getDataHolder());
+							setResult(RESULT_OK);
+							finish();
 						}
+
 					}
-
 				});
-
 	}
 
 	private void signup() {

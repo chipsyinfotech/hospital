@@ -16,6 +16,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import android.R.string;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -52,6 +53,7 @@ import com.mavericks.checkin.utils.HCAlertManager;
 import com.mavericks.checkin.utils.HCConstants;
 import com.mavericks.checkin.utils.HCRetryDialog;
 import com.mavericks.checkin.utils.HCRetryDialog.OnRetryClickListener;
+
 //import com.mavericks.checkin.holders.HCAmountHolder;
 
 public class HCRegistrationActivity extends HCBaseActivity implements
@@ -77,14 +79,13 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 	RadioButton mRadrevisit;
 	EditText mEdtdoctor;
 	EditText mEdtoccupation;
-	Spinner mspinreligion;
 	LinearLayout mLinDoctor;
 	EditText mEdtnewfname;
 	EditText mEdtfname;
 	EditText mEdtage;
 	EditText mEdthnumber;
 	EditText mEdtmobile;
-	EditText mEdtemail;
+
 	EditText mEdtaddress;
 	EditText mEdtmarried;
 	EditText mEdtlocation;
@@ -99,27 +100,19 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 	String userid = null;
 	LinearLayout mLinmarriage;
 	ImageView mImgmarriage;
-	String lname = null;
-	String mname = null;
+	Spinner religion;
 	ImageView mImgmenu;
 	String mAmount = null;
 	String mVisit = null;
-	String gender = null;
-	String pass;
-	String cash;
-	String place;
-	String occupation = "abc";
-	String religion = "mm";
-	String total_amount;
-	String hospitalnumber;
-	EditText mEdtremail;
+
 	TextView mTxtrecheck;
 	HCSpinnerAdapter mAdapter;
 	HCTimeHolder mTimeHolder;
-	 HCAmountHolder mAmountHolder;
+	HCAmountHolder mAmountHolder;
 	HCLocationHolder mHolder;
 	EditText mEdtnewlname;
 	EditText mEdtrelname;
+	ArrayAdapter<String> adapter;
 	ArrayList<HCSpecializationHolder> mHosspecialization;
 	ArrayList<HCLocationHolder> mHospitalList;
 	ArrayList<HCTimeHolder> mHostime;
@@ -128,7 +121,8 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 	String mSpecializtionId;
 	String mVisitDate;
 	String mTime;
-	ArrayAdapter<String> Adapter;
+	private String[] relig = { "Hindu", "Muslims","Christans", "Sikhs", "Others" };
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -151,19 +145,24 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 	private void initUI() {
 
 		mTxtlog = (TextView) findViewById(R.id.text_log);
+		adapter = new ArrayAdapter<String>(this, R.layout.listitem_spinner,
+				relig);
+		adapter.setDropDownViewResource(R.layout.listitem_spinner);
 		mRadgroup = (RadioGroup) findViewById(R.id.radio_app);
 		mRadyes = (RadioButton) findViewById(R.id.radio_yes);
-
+		mEdtlocation = (EditText) findViewById(R.id.edt_location);
 		mRadno = (RadioButton) findViewById(R.id.radio_no);
 		mImgdoctor = (ImageView) findViewById(R.id.tab_doctor);
 		mLinDoctor = (LinearLayout) findViewById(R.id.lin_doctor);
+		religion = (Spinner) findViewById(R.id.spinner_religion);
 		mBtnhospital = (Button) findViewById(R.id.btn_sel_hos);
+		religion.setAdapter(adapter);
 		mBtnspecial = (Button) findViewById(R.id.btn_sel_special);
 		mBtndate = (Button) findViewById(R.id.btn_sel_date);
 		mBtntime = (Button) findViewById(R.id.btn_sel_time);
-		mRadmale=(RadioButton)findViewById(R.id.radio_male);
-		mRadfemale=(RadioButton)findViewById(R.id.radio_female);
-		mEdtnewfname = (EditText) findViewById(R.id.edt_pfname);
+		mRadmale = (RadioButton) findViewById(R.id.radio_male);
+		mRadfemale = (RadioButton) findViewById(R.id.radio_female);
+		mEdtnewfname = (EditText) findViewById(R.id.edt_pname);
 		mEdtnewlname = (EditText) findViewById(R.id.edt_lname);
 		mEdtfname = (EditText) findViewById(R.id.edt_fname);
 		mEdtmother = (EditText) findViewById(R.id.edt_mname);
@@ -172,12 +171,10 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		mImgmenu = (ImageView) findViewById(R.id.img_menu);
 		mEdtmobile = (EditText) findViewById(R.id.edt_mobile);
 		mEdtmarried = (EditText) findViewById(R.id.edt_married);
-		mEdtemail = (EditText) findViewById(R.id.edt_email);
 		mCheckbox = (CheckBox) findViewById(R.id.check_box);
 		mEdtoccupation = (EditText) findViewById(R.id.edt_occupation);
-		mspinreligion = (Spinner) findViewById(R.id.spinner_religion);
 		mEdtaddress = (EditText) findViewById(R.id.edt_address);
-	
+
 		mTxtnewcheck = (TextView) findViewById(R.id.text_checkin);
 		mEdtrefname = (EditText) findViewById(R.id.edt_refname);
 		mEdtrelname = (EditText) findViewById(R.id.edt_relname);
@@ -555,7 +552,8 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 					public void onClick(DialogInterface dialog, int position) {
 						HCTimeHolder time = (HCTimeHolder) mAdapter
 								.getItem(position);
-						mBtntime.setText(time.getAppointtime()+" "+ "(Availabile " +time.getAvailability()+")");
+						mBtntime.setText(time.getAppointtime() + " "
+								+ "(Availabile " + time.getAvailability() + ")");
 						mTime = time.getTime_id();
 						mTimeHolder = (HCTimeHolder) mAdapter.getItem(position);
 						findViewById(R.id.text_recheckin).setEnabled(true);
@@ -571,24 +569,18 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		if (mEdtnewfname.getText().toString().trim().length() == 0) {
 			msg = R.string.err_firstname;
 			bValid = false;
-		}
-		else if (mEdtnewlname.getText().toString().trim().length() == 0) {
+		} else if (mEdtnewlname.getText().toString().trim().length() == 0) {
 			msg = R.string.err_lastname;
 			bValid = false;
-		}else if (mEdtfname.getText().toString().trim().length() == 0) {
+		}
+		if (mEdtfname.getText().toString().trim().length() == 0) {
 			msg = R.string.err_fname;
 			bValid = false;
 		} else if (mEdtage.getText().toString().trim().length() == 0) {
 			msg = R.string.err_age;
 			bValid = false;
-		} else if (mEdthnumber.getText().toString().trim().length() == 0) {
-			msg = R.string.err_hnumber;
-			bValid = false;
 		} else if (mEdtmobile.getText().toString().trim().length() == 0) {
 			msg = R.string.err_mobile;
-			bValid = false;
-		} else if (mEdtemail.getText().toString().trim().length() == 0) {
-			msg = R.string.err_email;
 			bValid = false;
 		} else if (mEdtaddress.getText().toString().trim().length() == 0) {
 			msg = R.string.err_address;
@@ -596,15 +588,8 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		} else if (mEdtlocation.getText().toString().trim().length() == 0) {
 			msg = R.string.err_location;
 			bValid = false;
-		}
-			 else if (mEdtoccupation.getText().toString().trim().length() == 0) {
-					msg = R.string.err_occupation;
-					bValid = false;
-				}
-		else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(
-				mEdtemail.getText().toString()).matches()) {
-			msg = R.string.err_invalidemail;
-			mEdtemail.setText("");
+		} else if (mEdtoccupation.getText().toString().trim().length() == 0) {
+			msg = R.string.err_occupation;
 			bValid = false;
 		} else if (mEdtmobile.getText().toString().trim().length() < 10) {
 			msg = R.string.err_invalidphone;
@@ -623,8 +608,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		if (mEdtrefname.getText().toString().trim().length() == 0) {
 			msg = R.string.err_firstname;
 			bValid = false;
-		}
-		else if (mEdtrelname.getText().toString().trim().length() == 0) {
+		} else if (mEdtrelname.getText().toString().trim().length() == 0) {
 			msg = R.string.err_lastname;
 			bValid = false;
 		}
@@ -632,20 +616,9 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 		else if (mEdtrehnumber.getText().toString().trim().length() == 0) {
 			msg = R.string.err_hnumber;
 			bValid = false;
-		} else if (mEdtremobile.getText().toString().trim().length() == 0) {
-			msg = R.string.err_mobile;
-			bValid = false;
-		} else if (mEdtremail.getText().toString().trim().length() == 0) {
-			msg = R.string.err_email;
-			bValid = false;
 		}
 
-		else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(
-				mEdtremail.getText().toString()).matches()) {
-			msg = R.string.err_invalidemail;
-			mEdtremail.setText("");
-			bValid = false;
-		} else if (mEdtremobile.getText().toString().trim().length() < 10) {
+		else if (mEdtremobile.getText().toString().trim().length() < 10) {
 			msg = R.string.err_invalidphone;
 			mEdtremobile.setText("");
 			bValid = false;
@@ -666,7 +639,7 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 	/* newvisit */
 	private void newvisit() {
 		String visittype = "1";
-		String gender="Male";
+		String gender = "Male";
 		String prioritypass = "1";
 		if (mRadvisit.isChecked())
 
@@ -681,12 +654,12 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 
 		else if (mRadno.isChecked())
 			prioritypass = "0";
-		
+
 		if (mRadmale.isChecked())
-			prioritypass = "Male";
+			gender = "Male";
 
 		else if (mRadfemale.isChecked())
-			prioritypass = "Female";
+			gender = "Female";
 
 		ArrayList<HCNameValuePair> formData = new ArrayList<HCNameValuePair>();
 
@@ -707,9 +680,8 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 				mHospitalId));
 		formData.add(new HCNameValuePair(HCConstants.PAR_PASS, prioritypass));
 
-		 formData.add(new HCNameValuePair(HCConstants.PAR_TOTAL_AMOUNT,
-		 mAmountHolder
-		 .getNewvisit_total_amount()));
+		formData.add(new HCNameValuePair(HCConstants.PAR_TOTAL_AMOUNT,
+				mAmountHolder.getNewvisit_total_amount()));
 		formData.add(new HCNameValuePair(HCConstants.PAR_VISIT_TYPE, visittype));
 
 		formData.add(new HCNameValuePair(HCConstants.PAR_DNAME, ""
@@ -725,22 +697,21 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 				+ mEdtaddress.getText().toString()));
 		formData.add(new HCNameValuePair(HCConstants.PAR_PLACE, ""
 				+ mEdtlocation.getText().toString()));
-		formData.add(new HCNameValuePair(HCConstants.PAR_RELIGION, ""
-				+ mspinreligion.getContext().toString()));
+
 		formData.add(new HCNameValuePair(HCConstants.PAR_OCCUPATION, ""
 				+ mEdtoccupation.getText().toString()));
 
 		formData.add(new HCNameValuePair(HCConstants.PAR_MARRIED, ""
 				+ mEdtmarried.getText().toString()));
 
-//		Bundle extra = new Bundle();
-//		extra.putSerializable(HCConstants.EXTRA_CONTENT, formData);
+		// Bundle extra = new Bundle();
+		// extra.putSerializable(HCConstants.EXTRA_CONTENT, formData);
 
 		Intent intent = new Intent(getBaseContext(), HCPayActivity.class);
-//		intent.putExtra(HCConstants.EXTRA_PASS, extra);
+		// intent.putExtra(HCConstants.EXTRA_PASS, extra);
 		intent.putParcelableArrayListExtra(HCConstants.EXTRA_PASS, formData);
 		intent.putExtra(HCConstants.EXTRA_IS_NW_VISIT, true);
-		 intent.putExtra(HCConstants.EXTRA_TIME, mAmountHolder);
+		intent.putExtra(HCConstants.EXTRA_TIME, mAmountHolder);
 		startActivity(intent);
 
 	}
@@ -783,18 +754,17 @@ public class HCRegistrationActivity extends HCBaseActivity implements
 				mHospitalId));
 		formData.add(new HCNameValuePair(HCConstants.PAR_PASS, prioritypass));
 
-		 formData.add(new HCNameValuePair(HCConstants.PAR_TOTAL_AMOUNT,
-		 mAmountHolder
-		 .getRevisit_total_amount()));
+		formData.add(new HCNameValuePair(HCConstants.PAR_TOTAL_AMOUNT,
+				mAmountHolder.getRevisit_total_amount()));
 		formData.add(new HCNameValuePair(HCConstants.PAR_VISIT_TYPE, visittype));
-		formData.add(new HCNameValuePair(HCConstants.PAR_CASH_ON_ARRIVAL, cash));
+
 		formData.add(new HCNameValuePair(HCConstants.PAR_DNAME, ""
 				+ mEdtdoctor.getText().toString()));
-		formData.add(new HCNameValuePair(HCConstants.PAR_HNUMBER,
-				hospitalnumber));
+		formData.add(new HCNameValuePair(HCConstants.PAR_HNUMBER, ""
+				+ mEdtrehnumber.getText().toString()));
 
-//		Bundle extra = new Bundle();
-//		extra.putSerializable(HCConstants.EXTRA_CONTENT, formData);
+		// Bundle extra = new Bundle();
+		// extra.putSerializable(HCConstants.EXTRA_CONTENT, formData);
 
 		Intent intent = new Intent(getBaseContext(), HCPayActivity.class);
 		intent.putParcelableArrayListExtra(HCConstants.EXTRA_PASS, formData);

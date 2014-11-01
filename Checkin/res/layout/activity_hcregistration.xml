@@ -298,7 +298,7 @@
                         android:src="@drawable/name_icon" />
 
                     <com.mavericks.checkin.views.HCEditText
-                        android:id="@+id/edt_pfname"
+                        android:id="@+id/edt_pname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
@@ -459,6 +459,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/male_icon_non_press"
                         android:button="@drawable/male"
+                        android:checked="true"
                         checkin:font_type="@integer/fnt_btn" />
 
                     <com.mavericks.checkin.views.HCRadioButton
@@ -543,7 +544,6 @@
                     android:background="@drawable/tab_line"
                     android:contentDescription="@string/about" />
 
-                
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -566,6 +566,15 @@
                         android:hint="@string/location"
                         checkin:font_type="@integer/fnt_edit_small" />
                 </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/tab_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ms"
+                    android:background="@drawable/tab_line"
+                    android:contentDescription="@string/about" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -584,9 +593,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_ms"
-                        android:background="@color/white"
-                        android:entries="@array/religion_arrays"
-                        android:popupBackground="@color/sky_blue"
                         android:prompt="@string/religion_prompt"
                         android:textColor="@android:color/black" />
                 </LinearLayout>
